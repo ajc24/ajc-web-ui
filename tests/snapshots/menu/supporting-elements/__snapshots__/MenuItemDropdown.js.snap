@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuItemDropdown Default props and rendering verifies the snapshot for the component 1`] = `
+<div
+  role="navigation"
+>
+  <div
+    className="ajc-flex-row ajc-justify-left ajc-menu-item"
+    id="test-id"
+  >
+    <div
+      className="ajc-flex-row ajc-menu-item-content ajc-font-menu ajc-text-white ajc-menu-item-grey"
+      data-expanded="false"
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      tabIndex={0}
+    >
+        
+      Dropdown Menu
+        
+      <div
+        className="ajc-flex-row ajc-justify-left"
+        role="presentation"
+      >
+        <div
+          className="ajc-flex-row ajc-small-down-arrow-icon ajc-border-colour-white"
+        />
+      </div>
+        
+    </div>
+    <div
+      className="ajc-flex-column ajc-dropdown-menu ajc-background-grey-2 ajc-dropdown-menu-hidden ajc-visibility-hidden"
+      id="test-id--content-parent"
+    >
+      <a
+        className="ajc-flex-row ajc-dropdown-menu-item ajc-font-menu ajc-menu-item-grey"
+        href="/test-menu-item-1"
+        id="test-id--content-parent--dropdown-menu-item-0"
+        onClick={[Function]}
+        tabIndex={0}
+      >
+          
+        Dropdown Menu Item 1
+          
+        <div
+          className="ajc-flex-row ajc-justify-left"
+          role="presentation"
+        >
+          <div
+            className="ajc-flex-row ajc-small-right-arrow-icon ajc-border-colour-white"
+          />
+        </div>
+          
+      </a>
+      <a
+        className="ajc-flex-row ajc-dropdown-menu-item ajc-font-menu ajc-menu-item-grey"
+        href="/test-menu-item-2"
+        id="test-id--content-parent--dropdown-menu-item-1"
+        onClick={[Function]}
+        tabIndex={0}
+      >
+          
+        Dropdown Menu Item 2
+          
+        <div
+          className="ajc-flex-row ajc-justify-left"
+          role="presentation"
+        >
+          <div
+            className="ajc-flex-row ajc-small-right-arrow-icon ajc-border-colour-white"
+          />
+        </div>
+          
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MenuItemDropdown Transferred props and rendering - Component in a red colour verifies the snapshot for the component 1`] = `
+<div
+  role="navigation"
+>
+  <div
+    className="ajc-flex-row ajc-justify-left ajc-menu-item"
+    id="test-id"
+  >
+    <div
+      className="ajc-flex-row ajc-menu-item-content ajc-font-menu ajc-text-white ajc-menu-item-red"
+      data-expanded="false"
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      tabIndex={0}
+    >
+        
+      Dropdown Menu
+        
+      <div
+        className="ajc-flex-row ajc-justify-left"
+        role="presentation"
+      >
+        <div
+          className="ajc-flex-row ajc-small-down-arrow-icon ajc-border-colour-white"
+        />
+      </div>
+        
+    </div>
+    <div
+      className="ajc-flex-column ajc-dropdown-menu ajc-background-red ajc-dropdown-menu-hidden ajc-visibility-hidden"
+      id="test-id--content-parent"
+    >
+      <a
+        className="ajc-flex-row ajc-dropdown-menu-item ajc-font-menu ajc-menu-item-red"
+        href="/test-menu-item-1"
+        id="test-id--content-parent--dropdown-menu-item-0"
+        onClick={[Function]}
+        tabIndex={0}
+      >
+          
+        Dropdown Menu Item 1
+          
+        <div
+          className="ajc-flex-row ajc-justify-left"
+          role="presentation"
+        >
+          <div
+            className="ajc-flex-row ajc-small-right-arrow-icon ajc-border-colour-white"
+          />
+        </div>
+          
+      </a>
+      <a
+        className="ajc-flex-row ajc-dropdown-menu-item ajc-font-menu ajc-menu-item-red"
+        href="/test-menu-item-2"
+        id="test-id--content-parent--dropdown-menu-item-1"
+        onClick={[Function]}
+        tabIndex={0}
+      >
+          
+        Dropdown Menu Item 2
+          
+        <div
+          className="ajc-flex-row ajc-justify-left"
+          role="presentation"
+        >
+          <div
+            className="ajc-flex-row ajc-small-right-arrow-icon ajc-border-colour-white"
+          />
+        </div>
+          
+      </a>
+    </div>
+  </div>
+</div>
+`;
