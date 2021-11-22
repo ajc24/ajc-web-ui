@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SmallDownArrowIcon Default props and rendering - Component in black colour verifies the snapshot for the component 1`] = `
+<div
+  className="ajc-flex-row ajc-justify-left"
+  role="presentation"
+>
+  <div
+    className="ajc-flex-row ajc-small-down-arrow-icon ajc-border-colour-black"
+  />
+</div>
+`;
+
+exports[`SmallDownArrowIcon Transferred props and rendering - Component in white colour verifies the snapshot for the component 1`] = `
+<div
+  className="ajc-flex-row ajc-justify-left"
+  role="presentation"
+>
+  <div
+    className="ajc-flex-row ajc-small-down-arrow-icon ajc-border-colour-white"
+  />
+</div>
+`;
