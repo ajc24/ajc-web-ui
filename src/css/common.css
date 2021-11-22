@@ -14,6 +14,14 @@
   background-color: #FFFBDD;
 }
 
+.ajc-border-colour-white {
+  border-color: #FFFFFF;
+}
+
+.ajc-border-colour-black {
+  border-color: #000000;
+}
+
 .ajc-flex-justify-center {
   justify-content: center;
 }
