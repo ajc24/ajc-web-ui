@@ -1,0 +1,40 @@
+{
+  "name": "ajc-web-ui",
+  "version": "1.0.0",
+  "description": "ReactJs user interface components store.",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "babel src --out-dir build --copy-files",
+    "build-storybook": "build-storybook -c .storybook -o ./docs",
+    "storybook": "start-storybook -p 6006",
+    "test": "npm run test-unit-coverage && npm run test-snapshots && npm run test-accessibility",
+    "test-accessibility": "jest --config=./tests/jest-config/accessibility.config.js",
+    "test-snapshots": "jest --config=./tests/jest-config/snapshots.config.js",
+    "test-snapshots-update": "npm run test-snapshots -- -u",
+    "test-unit": "jest --config=./tests/jest-config/unit.config.js",
+    "test-unit-coverage": "npm run test-unit -- --collectCoverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajc24/ajc-web-ui.git"
+  },
+  "author": "Anthony Cox",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajc24/ajc-web-ui/issues"
+  },
+  "homepage": "https://github.com/ajc24/ajc-web-ui#readme",
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.0.2"
+  },
+  "devDependencies": {
+    "ajc-accessibility": "github:ajc24/ajc-accessibility",
+    "ajc-babel-config": "github:ajc24/ajc-babel-config",
+    "ajc-jest-enzyme": "github:ajc24/ajc-jest-enzyme",
+    "ajc-storybook": "github:ajc24/ajc-storybook",
+    "babel-loader": "^8.2.3"
+  }
+}
