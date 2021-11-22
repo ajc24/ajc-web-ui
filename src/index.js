@@ -1,3 +1,6 @@
+/* Export all of the footer components */
+export { default as SmallFooter } from './ui-elements/footer/SmallFooter';
+
 /* Export all of the header components */
 export { default as Header } from './ui-elements/header/Header';
 
