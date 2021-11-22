@@ -7,3 +7,6 @@ export { default as SmallRightArrowIcon } from './ui-elements/icons/SmallRightAr
 
 /* Export all of the menu components */
 export { default as Menu } from './ui-elements/menu/Menu';
+
+/* Export all of the page components */
+export { default as PageContent } from './ui-elements/page/PageContent';
