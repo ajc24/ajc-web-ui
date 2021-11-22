@@ -54,6 +54,14 @@
   word-wrap: break-word;
 }
 
+.ajc-spacing-bottom-small {
+  padding-bottom: 15px;
+}
+
+.ajc-spacing-top-small {
+  padding-top: 15px;
+}
+
 .ajc-text-black {
   color: #000000;
 }
