@@ -1,0 +1,64 @@
+.ajc-background-grey-1 {
+  background-color: #F6F6F6;
+}
+
+.ajc-background-transparent {
+  background-color: transparent;
+}
+
+.ajc-background-white {
+  background-color: #FFFFFF;
+}
+
+.ajc-background-yellow {
+  background-color: #FFFBDD;
+}
+
+.ajc-flex-justify-center {
+  justify-content: center;
+}
+
+.ajc-flex-justify-left {
+  justify-content: flex-start;
+}
+
+.ajc-flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.ajc-font-default {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  word-wrap: break-word;
+}
+
+.ajc-text-black {
+  color: #000000;
+}
+
+.ajc-width-4k {
+  width: 100%;
+  max-width: 3825px;
+  min-width: 705px;
+}
+
+.ajc-width-full-hd {
+  width: 100%;
+  max-width: 1905px;
+  min-width: 705px;
+}
+
+.ajc-width-hd {
+  width: 100%;
+  max-width: 1351px;
+  min-width: 705px;
+}
+
+.ajc-width-hd-with-padding {
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+  max-width: 1321px;
+  min-width: 675px;
+}

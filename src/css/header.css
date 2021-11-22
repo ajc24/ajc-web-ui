@@ -1,0 +1,13 @@
+.ajc-header-border-grey {
+  border-top: 5px solid #757575;
+}
+
+.ajc-header-border-red {
+  border-top: 5px solid #AE1E01;
+}
+
+.ajc-header-content {
+  height: 145px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
