@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageContent Default props and rendering - Component with white background verifies the snapshot for the component 1`] = `
+<div
+  className="ajc-flex-row ajc-flex-justify-center ajc-page-content-panel ajc-spacing-top-small ajc-spacing-bottom-small ajc-width-4k ajc-background-white"
+  role="region"
+>
+  <div
+    className="ajc-flex-row ajc-flex-justify-center ajc-width-full-hd"
+  >
+    <div
+      className="ajc-flex-row ajc-flex-justify-left ajc-width-hd"
+    >
+      <div
+        className="ajc-flex-column ajc-width-hd-with-padding ajc-text-black ajc-font-default"
+      >
+        This is a test.
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PageContent Transferred props and rendering - Component with grey background verifies the snapshot for the component 1`] = `
+<div
+  className="ajc-flex-row ajc-flex-justify-center ajc-page-content-panel ajc-spacing-top-small ajc-spacing-bottom-small ajc-width-4k ajc-background-grey-1"
+  role="region"
+>
+  <div
+    className="ajc-flex-row ajc-flex-justify-center ajc-width-full-hd"
+  >
+    <div
+      className="ajc-flex-row ajc-flex-justify-left ajc-width-hd"
+    >
+      <div
+        className="ajc-flex-column ajc-width-hd-with-padding ajc-text-black ajc-font-default"
+      >
+        This is a test.
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PageContent Transferred props and rendering - Component with transparent background verifies the snapshot for the component 1`] = `
+<div
+  className="ajc-flex-row ajc-flex-justify-center ajc-page-content-panel ajc-spacing-top-small ajc-spacing-bottom-small ajc-width-4k ajc-background-transparent"
+  role="region"
+>
+  <div
+    className="ajc-flex-row ajc-flex-justify-center ajc-width-full-hd"
+  >
+    <div
+      className="ajc-flex-row ajc-flex-justify-left ajc-width-hd"
+    >
+      <div
+        className="ajc-flex-column ajc-width-hd-with-padding ajc-text-black ajc-font-default"
+      >
+        This is a test.
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PageContent Transferred props and rendering - Component with yellow background verifies the snapshot for the component 1`] = `
+<div
+  className="ajc-flex-row ajc-flex-justify-center ajc-page-content-panel ajc-spacing-top-small ajc-spacing-bottom-small ajc-width-4k ajc-background-yellow"
+  role="region"
+>
+  <div
+    className="ajc-flex-row ajc-flex-justify-center ajc-width-full-hd"
+  >
+    <div
+      className="ajc-flex-row ajc-flex-justify-left ajc-width-hd"
+    >
+      <div
+        className="ajc-flex-column ajc-width-hd-with-padding ajc-text-black ajc-font-default"
+      >
+        This is a test.
+      </div>
+    </div>
+  </div>
+</div>
+`;
