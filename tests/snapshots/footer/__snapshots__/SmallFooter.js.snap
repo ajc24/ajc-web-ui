@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SmallFooter Default props and rendering - Component with grey background verifies the snapshot for the component 1`] = `
+<div
+  className="ajc-flex-row ajc-flex-justify-center ajc-footer-small ajc-width-4k ajc-background-grey-2"
+  role="contentinfo"
+>
+  <div
+    className="ajc-flex-row ajc-flex-justify-center ajc-width-full-hd"
+  >
+    <div
+      className="ajc-flex-row ajc-flex-justify-center ajc-width-hd"
+    >
+      <div
+        className="ajc-flex-row ajc-flex-justify-center ajc-footer-small-content ajc-width-hd-with-padding ajc-text-white ajc-font-default"
+      >
+        This is a test.
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SmallFooter Transferred props and rendering - Component with red background verifies the snapshot for the component 1`] = `
+<div
+  className="ajc-flex-row ajc-flex-justify-center ajc-footer-small ajc-width-4k ajc-background-red"
+  role="contentinfo"
+>
+  <div
+    className="ajc-flex-row ajc-flex-justify-center ajc-width-full-hd"
+  >
+    <div
+      className="ajc-flex-row ajc-flex-justify-center ajc-width-hd"
+    >
+      <div
+        className="ajc-flex-row ajc-flex-justify-center ajc-footer-small-content ajc-width-hd-with-padding ajc-text-white ajc-font-default"
+      >
+        This is a test.
+      </div>
+    </div>
+  </div>
+</div>
+`;
