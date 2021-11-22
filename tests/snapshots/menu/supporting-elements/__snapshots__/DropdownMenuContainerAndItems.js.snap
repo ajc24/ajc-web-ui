@@ -1,0 +1,209 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DropdownMenuContainerAndItems Default props and rendering - Component marked as hidden verifies the snapshot for the component 1`] = `
+<div
+  role="navigation"
+>
+  <div
+    className="ajc-flex-column ajc-dropdown-menu ajc-background-grey-2 ajc-dropdown-menu-hidden ajc-visibility-hidden"
+    id="test-id"
+  >
+    <a
+      className="ajc-flex-row ajc-dropdown-menu-item ajc-font-menu ajc-menu-item-grey"
+      href="/test-menu-item-1"
+      id="test-id--dropdown-menu-item-0"
+      onClick={[Function]}
+      tabIndex={0}
+    >
+        
+      Dropdown Menu Item 1
+        
+      <div
+        className="ajc-flex-row ajc-justify-left"
+        role="presentation"
+      >
+        <div
+          className="ajc-flex-row ajc-small-right-arrow-icon ajc-border-colour-white"
+        />
+      </div>
+        
+    </a>
+    <a
+      className="ajc-flex-row ajc-dropdown-menu-item ajc-font-menu ajc-menu-item-grey"
+      href="/test-menu-item-2"
+      id="test-id--dropdown-menu-item-1"
+      onClick={[Function]}
+      tabIndex={0}
+    >
+        
+      Dropdown Menu Item 2
+        
+      <div
+        className="ajc-flex-row ajc-justify-left"
+        role="presentation"
+      >
+        <div
+          className="ajc-flex-row ajc-small-right-arrow-icon ajc-border-colour-white"
+        />
+      </div>
+        
+    </a>
+  </div>
+</div>
+`;
+
+exports[`DropdownMenuContainerAndItems Transferred props and rendering - Component in red and marked as hidden verifies the snapshot for the component 1`] = `
+<div
+  role="navigation"
+>
+  <div
+    className="ajc-flex-column ajc-dropdown-menu ajc-background-red ajc-dropdown-menu-hidden ajc-visibility-hidden"
+    id="test-id"
+  >
+    <a
+      className="ajc-flex-row ajc-dropdown-menu-item ajc-font-menu ajc-menu-item-red"
+      href="/test-menu-item-1"
+      id="test-id--dropdown-menu-item-0"
+      onClick={[Function]}
+      tabIndex={0}
+    >
+        
+      Dropdown Menu Item 1
+        
+      <div
+        className="ajc-flex-row ajc-justify-left"
+        role="presentation"
+      >
+        <div
+          className="ajc-flex-row ajc-small-right-arrow-icon ajc-border-colour-white"
+        />
+      </div>
+        
+    </a>
+    <a
+      className="ajc-flex-row ajc-dropdown-menu-item ajc-font-menu ajc-menu-item-red"
+      href="/test-menu-item-2"
+      id="test-id--dropdown-menu-item-1"
+      onClick={[Function]}
+      tabIndex={0}
+    >
+        
+      Dropdown Menu Item 2
+        
+      <div
+        className="ajc-flex-row ajc-justify-left"
+        role="presentation"
+      >
+        <div
+          className="ajc-flex-row ajc-small-right-arrow-icon ajc-border-colour-white"
+        />
+      </div>
+        
+    </a>
+  </div>
+</div>
+`;
+
+exports[`DropdownMenuContainerAndItems Transferred props and rendering - Component in red and marked as visible verifies the snapshot for the component 1`] = `
+<div
+  role="navigation"
+>
+  <div
+    className="ajc-flex-column ajc-dropdown-menu ajc-background-red ajc-dropdown-menu-visible ajc-visibility-visible"
+    id="test-id"
+  >
+    <a
+      className="ajc-flex-row ajc-dropdown-menu-item ajc-font-menu ajc-menu-item-red"
+      href="/test-menu-item-1"
+      id="test-id--dropdown-menu-item-0"
+      onClick={[Function]}
+      tabIndex={0}
+    >
+        
+      Dropdown Menu Item 1
+        
+      <div
+        className="ajc-flex-row ajc-justify-left"
+        role="presentation"
+      >
+        <div
+          className="ajc-flex-row ajc-small-right-arrow-icon ajc-border-colour-white"
+        />
+      </div>
+        
+    </a>
+    <a
+      className="ajc-flex-row ajc-dropdown-menu-item ajc-font-menu ajc-menu-item-red"
+      href="/test-menu-item-2"
+      id="test-id--dropdown-menu-item-1"
+      onClick={[Function]}
+      tabIndex={0}
+    >
+        
+      Dropdown Menu Item 2
+        
+      <div
+        className="ajc-flex-row ajc-justify-left"
+        role="presentation"
+      >
+        <div
+          className="ajc-flex-row ajc-small-right-arrow-icon ajc-border-colour-white"
+        />
+      </div>
+        
+    </a>
+  </div>
+</div>
+`;
+
+exports[`DropdownMenuContainerAndItems Transferred props and rendering - Component marked as visible verifies the snapshot for the component 1`] = `
+<div
+  role="navigation"
+>
+  <div
+    className="ajc-flex-column ajc-dropdown-menu ajc-background-grey-2 ajc-dropdown-menu-visible ajc-visibility-visible"
+    id="test-id"
+  >
+    <a
+      className="ajc-flex-row ajc-dropdown-menu-item ajc-font-menu ajc-menu-item-grey"
+      href="/test-menu-item-1"
+      id="test-id--dropdown-menu-item-0"
+      onClick={[Function]}
+      tabIndex={0}
+    >
+        
+      Dropdown Menu Item 1
+        
+      <div
+        className="ajc-flex-row ajc-justify-left"
+        role="presentation"
+      >
+        <div
+          className="ajc-flex-row ajc-small-right-arrow-icon ajc-border-colour-white"
+        />
+      </div>
+        
+    </a>
+    <a
+      className="ajc-flex-row ajc-dropdown-menu-item ajc-font-menu ajc-menu-item-grey"
+      href="/test-menu-item-2"
+      id="test-id--dropdown-menu-item-1"
+      onClick={[Function]}
+      tabIndex={0}
+    >
+        
+      Dropdown Menu Item 2
+        
+      <div
+        className="ajc-flex-row ajc-justify-left"
+        role="presentation"
+      >
+        <div
+          className="ajc-flex-row ajc-small-right-arrow-icon ajc-border-colour-white"
+        />
+      </div>
+        
+    </a>
+  </div>
+</div>
+`;
