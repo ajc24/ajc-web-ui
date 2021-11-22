@@ -47,6 +47,30 @@
   word-wrap: break-word;
 }
 
+.ajc-menu-item {
+  text-align: center;
+  white-space: nowrap;
+  height: 55px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 7.5px;
+  margin-right: 7.5px;
+  user-select: none;
+}
+
+.ajc-menu-item-content {
+  align-items: center;
+  height: inherit;
+  width: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.ajc-menu-item-content:focus {
+  opacity: 0.75;
+}
+
 .ajc-menu-item-grey {
   background: transparent;
   transition: none;

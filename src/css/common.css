@@ -58,6 +58,10 @@
   color: #000000;
 }
 
+.ajc-text-white {
+  color: #FFFFFF;
+}
+
 .ajc-visibility-hidden {
   visibility: hidden;
 }
