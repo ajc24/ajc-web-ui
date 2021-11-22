@@ -1,3 +1,13 @@
+.ajc-small-down-arrow-icon {
+  height: 5px;
+  width: 5px;
+  border-style: solid;
+  border-width: 2px;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
 .ajc-small-right-arrow-icon {
   height: 5px;
   width: 5px;
