@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuItemSingle Default props and rendering verifies the snapshot for the component 1`] = `
+<div
+  role="navigation"
+>
+  <div
+    className="ajc-flex-row ajc-justify-left"
+    id="test-menu-item-single-root"
+  >
+    <div
+      className="ajc-flex-row ajc-menu-item ajc-menu-item-grey"
+      id="test-menu-item-single"
+    >
+      <a
+        className="ajc-flex-row ajc-menu-item-content ajc-font-menu ajc-text-white"
+        href="/test-route"
+        onClick={[Function]}
+        tabIndex={0}
+      >
+          
+        Menu Item (Single)
+          
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`MenuItemSingle Transferred props and rendering: MenuItemSingle in red verifies the snapshot for the component 1`] = `
+<div
+  role="navigation"
+>
+  <div
+    className="ajc-flex-row ajc-justify-left"
+    id="test-menu-item-single-root"
+  >
+    <div
+      className="ajc-flex-row ajc-menu-item ajc-menu-item-red"
+      id="test-menu-item-single"
+    >
+      <a
+        className="ajc-flex-row ajc-menu-item-content ajc-font-menu ajc-text-white"
+        href="/test-route"
+        onClick={[Function]}
+        tabIndex={0}
+      >
+          
+        Menu Item (Single)
+          
+      </a>
+    </div>
+  </div>
+</div>
+`;
