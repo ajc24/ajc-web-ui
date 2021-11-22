@@ -1,0 +1,16 @@
+.ajc-footer-small {
+  height: 55px;
+  min-height: 55px;
+  max-height: 55px;
+  font-weight: 600;
+  cursor: default;
+  user-select: none;
+}
+
+.ajc-footer-small-content {
+  margin: 0px;
+  padding: 0px;
+  height: inherit;
+  text-align: center;
+  align-items: center;
+}
