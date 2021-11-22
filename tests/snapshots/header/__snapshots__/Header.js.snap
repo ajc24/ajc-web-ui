@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Default props and rendering - Header with no top border and transparent background verifies the snapshot for the component 1`] = `
+<div
+  className="ajc-flex-row ajc-flex-justify-center ajc-width-4k ajc-background-transparent"
+  id="test-header-id-root"
+  role="banner"
+>
+  <div
+    className="ajc-flex-row ajc-flex-justify-center ajc-width-full-hd"
+  >
+    <div
+      className="ajc-flex-row ajc-flex-justify-left ajc-header-content ajc-width-hd"
+    >
+      <div
+        className="ajc-flex-row ajc-flex-justify-left ajc-width-hd-with-padding ajc-text-black ajc-font-default"
+        id="test-header-id"
+      >
+        Header text content.
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Header Transferred props and rendering - Header with grey top border and white background verifies the snapshot for the component 1`] = `
+<div
+  className="ajc-flex-row ajc-flex-justify-center ajc-width-4k ajc-header-border-grey ajc-background-white"
+  id="test-header-id-root"
+  role="banner"
+>
+  <div
+    className="ajc-flex-row ajc-flex-justify-center ajc-width-full-hd"
+  >
+    <div
+      className="ajc-flex-row ajc-flex-justify-left ajc-header-content ajc-width-hd"
+    >
+      <div
+        className="ajc-flex-row ajc-flex-justify-left ajc-width-hd-with-padding ajc-text-black ajc-font-default"
+        id="test-header-id"
+      >
+        Header text content.
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Header Transferred props and rendering - Header with grey top border and yellow background verifies the snapshot for the component 1`] = `
+<div
+  className="ajc-flex-row ajc-flex-justify-center ajc-width-4k ajc-header-border-grey ajc-background-yellow"
+  id="test-header-id-root"
+  role="banner"
+>
+  <div
+    className="ajc-flex-row ajc-flex-justify-center ajc-width-full-hd"
+  >
+    <div
+      className="ajc-flex-row ajc-flex-justify-left ajc-header-content ajc-width-hd"
+    >
+      <div
+        className="ajc-flex-row ajc-flex-justify-left ajc-width-hd-with-padding ajc-text-black ajc-font-default"
+        id="test-header-id"
+      >
+        Header text content.
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Header Transferred props and rendering - Header with no top border and grey background verifies the snapshot for the component 1`] = `
+<div
+  className="ajc-flex-row ajc-flex-justify-center ajc-width-4k ajc-background-grey-1"
+  id="test-header-id-root"
+  role="banner"
+>
+  <div
+    className="ajc-flex-row ajc-flex-justify-center ajc-width-full-hd"
+  >
+    <div
+      className="ajc-flex-row ajc-flex-justify-left ajc-header-content ajc-width-hd"
+    >
+      <div
+        className="ajc-flex-row ajc-flex-justify-left ajc-width-hd-with-padding ajc-text-black ajc-font-default"
+        id="test-header-id"
+      >
+        Header text content.
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Header Transferred props and rendering - Header with red top border and image background verifies the snapshot for the component 1`] = `
+<div
+  className="ajc-flex-row ajc-flex-justify-center ajc-width-4k ajc-header-border-red ajc-background-transparent"
+  id="test-header-id-root"
+  role="banner"
+>
+  <div
+    className="ajc-flex-row ajc-flex-justify-center ajc-width-full-hd"
+  >
+    <div
+      className="ajc-flex-row ajc-flex-justify-left ajc-header-content ajc-width-hd"
+    >
+      <div
+        className="ajc-flex-row ajc-flex-justify-left ajc-width-hd-with-padding ajc-text-black ajc-font-default"
+        id="test-header-id"
+      >
+        Header text content.
+      </div>
+    </div>
+  </div>
+</div>
+`;
