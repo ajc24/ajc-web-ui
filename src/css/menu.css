@@ -47,6 +47,18 @@
   word-wrap: break-word;
 }
 
+.ajc-menu {
+  height: 55px;
+  min-height: 55px;
+  max-height: 55px;
+}
+
+.ajc-menu-content {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  font-weight: 600;
+}
+
 .ajc-menu-item {
   text-align: center;
   white-space: nowrap;
