@@ -2,6 +2,14 @@
   background-color: #F6F6F6;
 }
 
+.ajc-background-grey-2 {
+  background-color: #757575;
+}
+
+.ajc-background-red {
+  background-color: #AE1E01;
+}
+
 .ajc-background-transparent {
   background-color: transparent;
 }
@@ -20,6 +28,11 @@
 
 .ajc-border-colour-black {
   border-color: #000000;
+}
+
+.ajc-flex-column {
+  display: flex;
+  flex-direction: column;
 }
 
 .ajc-flex-justify-center {
@@ -43,6 +56,14 @@
 
 .ajc-text-black {
   color: #000000;
+}
+
+.ajc-visibility-hidden {
+  visibility: hidden;
+}
+
+.ajc-visibility-visible {
+  visibility: visible;
 }
 
 .ajc-width-4k {

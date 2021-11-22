@@ -1,0 +1,70 @@
+.ajc-dropdown-menu {
+  position: absolute;
+  overflow: hidden;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #FFFFFF;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+.ajc-dropdown-menu-hidden {
+  opacity: 0;
+  transition: none;
+}
+
+.ajc-dropdown-menu-item {
+  align-items: center;
+  padding: 5px;
+  font-family: inherit;
+  font-size: inherit;
+  height: 30px;
+  border-width: 1px;
+  border-style: solid;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-color: #FFFFFF;
+  white-space: nowrap;
+  text-decoration: none;
+  opacity: 1;
+  outline: none;
+}
+
+.ajc-dropdown-menu-item:focus {
+  opacity: 0.75;
+}
+
+.ajc-dropdown-menu-visible {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.ajc-font-menu {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  word-wrap: break-word;
+}
+
+.ajc-menu-item-grey {
+  background: transparent;
+  transition: none;
+  color: #FFFFFF;
+}
+
+.ajc-menu-item-grey:hover {
+  background: #939393;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.ajc-menu-item-red {
+  background: transparent;
+  transition: none;
+  color: #FFFFFF;
+}
+
+.ajc-menu-item-red:hover {
+  background: #D35A44;
+  transition: all 0.3s ease-in-out 0s;
+}
