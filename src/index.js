@@ -4,6 +4,9 @@ export { default as DocumentEditor } from './ui-elements/editor/DocumentEditor';
 /* Export all of the footer components */
 export { default as SmallFooter } from './ui-elements/footer/SmallFooter';
 
+/* Export all of the form controls components */
+export { default as HorizontalButtonList } from './ui-elements/form/HorizontalButtonList';
+
 /* Export all of the header components */
 export { default as Header } from './ui-elements/header/Header';
 
