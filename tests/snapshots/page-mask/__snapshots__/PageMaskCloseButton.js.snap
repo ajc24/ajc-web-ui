@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageMaskCloseButton Default props and rendering - onClose functionality not set verifies the snapshot for the component 1`] = `null`;
+
+exports[`PageMaskCloseButton Transferred props and rendering - Default component with onClose functionality set verifies the snapshot for the component 1`] = `
+<button
+  className="ajc-flex-row ajc-button ajc-button-page-mask-close ajc-text-white ajc-font-default ajc-button-grey"
+  id="test-id"
+  onClick={[Function]}
+  title="Click to close"
+>
+   X 
+</button>
+`;
+
+exports[`PageMaskCloseButton Transferred props and rendering - Red button with onClose functionality set verifies the snapshot for the component 1`] = `
+<button
+  className="ajc-flex-row ajc-button ajc-button-page-mask-close ajc-text-white ajc-font-default ajc-button-red"
+  id="test-id"
+  onClick={[Function]}
+  title="Click to close"
+>
+   X 
+</button>
+`;
