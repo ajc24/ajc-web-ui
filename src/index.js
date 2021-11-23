@@ -1,3 +1,6 @@
+/* Export all of the editor components */
+export { default as DocumentEditor } from './ui-elements/editor/DocumentEditor';
+
 /* Export all of the footer components */
 export { default as SmallFooter } from './ui-elements/footer/SmallFooter';
 
