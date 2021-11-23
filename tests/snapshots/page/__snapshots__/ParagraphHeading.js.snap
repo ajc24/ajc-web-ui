@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ParagraphHeading Default props and rendering - Component with left aligned text verifies the snapshot for the component 1`] = `
+<div
+  className="ajc-flex-row ajc-spacing-bottom-small ajc-width-hd-inner ajc-text-black ajc-font-default ajc-flex-justify-left ajc-spacing-top-large"
+>
+  <h2
+    className="ajc-font-paragraph-heading"
+  >
+    Test paragraph heading.
+  </h2>
+</div>
+`;
+
+exports[`ParagraphHeading Transferred props and rendering - Component with center aligned text and reduced upper spacing verifies the snapshot for the component 1`] = `
+<div
+  className="ajc-flex-row ajc-spacing-bottom-small ajc-width-hd-inner ajc-text-black ajc-font-default ajc-flex-justify-center"
+>
+  <h2
+    className="ajc-font-paragraph-heading"
+  >
+    Test paragraph heading.
+  </h2>
+</div>
+`;
+
+exports[`ParagraphHeading Transferred props and rendering - Component with right aligned text verifies the snapshot for the component 1`] = `
+<div
+  className="ajc-flex-row ajc-spacing-bottom-small ajc-width-hd-inner ajc-text-black ajc-font-default ajc-flex-justify-right ajc-spacing-top-large"
+>
+  <h2
+    className="ajc-font-paragraph-heading"
+  >
+    Test paragraph heading.
+  </h2>
+</div>
+`;
