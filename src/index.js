@@ -20,3 +20,6 @@ export { default as Menu } from './ui-elements/menu/Menu';
 /* Export all of the page components */
 export { default as PageContent } from './ui-elements/page/PageContent';
 export { default as ParagraphHeading } from './ui-elements/page/ParagraphHeading';
+
+/* Export all of the page mask components */
+export { default as PageMaskCloseButton } from './ui-elements/page-mask/PageMaskCloseButton';
