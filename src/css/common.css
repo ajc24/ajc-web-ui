@@ -62,6 +62,14 @@
   padding-bottom: 15px;
 }
 
+.ajc-spacing-right-small {
+  margin-right: 20px;
+}
+
+.ajc-spacing-top-reduced {
+  margin-top: -5px;
+}
+
 .ajc-spacing-top-large {
   padding-top: 30px;
 }
