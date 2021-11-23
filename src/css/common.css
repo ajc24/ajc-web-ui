@@ -43,6 +43,10 @@
   justify-content: flex-start;
 }
 
+.ajc-flex-justify-right {
+  justify-content: flex-end;
+}
+
 .ajc-flex-row {
   display: flex;
   flex-direction: row;
@@ -56,6 +60,10 @@
 
 .ajc-spacing-bottom-small {
   padding-bottom: 15px;
+}
+
+.ajc-spacing-top-large {
+  padding-top: 30px;
 }
 
 .ajc-spacing-top-small {
@@ -82,6 +90,14 @@
   width: 100%;
   max-width: 3825px;
   min-width: 705px;
+}
+
+.ajc-width-body {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .ajc-width-full-hd {

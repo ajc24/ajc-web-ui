@@ -1,3 +1,11 @@
+.ajc-font-paragraph-heading {
+  margin: 0px;
+  padding: 0px;
+  font-size: 20px;
+  font-weight: 600;
+  word-wrap: break-word;
+}
+
 .ajc-page-content-panel {
   height: auto;
   margin: 0px;
