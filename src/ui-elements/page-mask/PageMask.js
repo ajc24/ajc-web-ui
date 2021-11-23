@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../../styling/ui-css.css';
+import PageMaskCloseButton from './PageMaskCloseButton';
+import '../../css/common.css';
 
 /**
  * The PageMask component renders a mask over all other elements on the page.
@@ -15,34 +16,22 @@ class PageMask extends React.Component {
     const rootStyling = 'ajc-flex-row ajc-flex-justify-center ajc-page-mask ajc-width-4k';
     const contentFullHdStyling = 'ajc-flex-row ajc-flex-justify-center ajc-width-full-hd';
     const contentHdStyling = 'ajc-flex-row ajc-flex-justify-center ajc-width-hd';
-    const contentStyling = 'ajc-flex-column ajc-flex-justify-center ajc-width-hd-with-padding ajc-text-white ajc-font-default';
-    /* Set the styling for the close button of the page mask */
-    let closeButtonStyling = 'ajc-flex-row ajc-button ajc-page-mask-close-button ajc-text-white ajc-font-default';
-    if (this.props.colour === 'red') {
-      closeButtonStyling += ' ajc-button-red';
-    } else {
-      closeButtonStyling += ' ajc-button-grey';
-    }
+    const contentStyling = 'ajc-flex-column ajc-flex-justify-start ajc-spacing-top-large ajc-spacing-bottom-large ajc-width-hd-with-padding ajc-text-white ajc-font-default';
     return (
       <React.Fragment>
         {
           this.props.isDisplayed === true &&
             <React.Fragment>
-              <div id={`${this.props.id}-root`} className={rootStyling}>
+              <div id={`page-mask-${this.props.id}-root`} className={rootStyling}>
                 <div className={contentFullHdStyling}>
                   <div className={contentHdStyling}>
-                    <div id={this.props.id} className={contentStyling}>
+                    <div id={`page-mask-${this.props.id}-content`} className={contentStyling}>
                       {this.props.children}
                     </div>
                   </div>
                 </div>
               </div>
-              {
-                this.props.onClose !== undefined &&
-                  <button id={`${this.props.id}-close-button`} className={closeButtonStyling} onClick={this.props.onClose} title="Click to close">
-                    &nbsp;X&nbsp;
-                  </button>
-              }
+              <PageMaskCloseButton id={`page-mask-${this.props.id}-close-button`} colour={this.props.colour} onClose={this.props.onClose} />
             </React.Fragment>
         }
       </React.Fragment>
@@ -50,15 +39,15 @@ class PageMask extends React.Component {
 	}
 }
 PageMask.propTypes = {
-  /** The unique identifier for the page mask component */
+  /** The components unique identifier. */
   id: PropTypes.string.isRequired,
-  /** The child components to be rendered within the component. */
+  /** The child components to be rendered within the page mask. */
   children: PropTypes.node,
-  /** The background colour set to the close button of the mask. */
+  /** The colour set to the close button of the mask. By default this is set to grey. */
   colour: PropTypes.oneOf([ 'grey', 'red' ]),
-  /** Switch for whether the page mask is to be displayed or not */
+  /** Switch for whether the page mask is displayed (true) or not (false). By default this is false. */
   isDisplayed: PropTypes.bool,
-  /** Functionality to be carried out when the close button of the page mask is clicked. */
+  /** Functionality to be executed on clicking the close button of the page mask. If you do not want this button to be rendered, leave this value as undefined. */
   onClose: PropTypes.func,
 };
 PageMask.defaultProps = {

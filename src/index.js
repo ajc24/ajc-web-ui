@@ -22,4 +22,5 @@ export { default as PageContent } from './ui-elements/page/PageContent';
 export { default as ParagraphHeading } from './ui-elements/page/ParagraphHeading';
 
 /* Export all of the page mask components */
+export { default as PageMask } from './ui-elements/page-mask/PageMask';
 export { default as PageMaskCloseButton } from './ui-elements/page-mask/PageMaskCloseButton';
