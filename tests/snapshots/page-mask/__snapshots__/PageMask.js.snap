@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageMask Default props and rendering - Non visible page mask verifies the snapshot for the component 1`] = `null`;
+
+exports[`PageMask Transferred props and rendering - Component with grey theme verifies the snapshot for the component 1`] = `
+Array [
+  <div
+    className="ajc-flex-row ajc-flex-justify-center ajc-page-mask ajc-width-4k"
+    id="page-mask-test-id-root"
+  >
+    <div
+      className="ajc-flex-row ajc-flex-justify-center ajc-width-full-hd"
+    >
+      <div
+        className="ajc-flex-row ajc-flex-justify-center ajc-width-hd"
+      >
+        <div
+          className="ajc-flex-column ajc-flex-justify-start ajc-spacing-top-large ajc-spacing-bottom-large ajc-width-hd-with-padding ajc-text-white ajc-font-default"
+          id="page-mask-test-id-content"
+        >
+          Test Page Mask text.
+        </div>
+      </div>
+    </div>
+  </div>,
+  <button
+    className="ajc-flex-row ajc-button ajc-button-page-mask-close ajc-text-white ajc-font-default ajc-button-grey"
+    id="page-mask-test-id-close-button"
+    onClick={[Function]}
+    title="Click to close"
+  >
+     X 
+  </button>,
+]
+`;
+
+exports[`PageMask Transferred props and rendering - Component with red theme verifies the snapshot for the component 1`] = `
+Array [
+  <div
+    className="ajc-flex-row ajc-flex-justify-center ajc-page-mask ajc-width-4k"
+    id="page-mask-test-id-root"
+  >
+    <div
+      className="ajc-flex-row ajc-flex-justify-center ajc-width-full-hd"
+    >
+      <div
+        className="ajc-flex-row ajc-flex-justify-center ajc-width-hd"
+      >
+        <div
+          className="ajc-flex-column ajc-flex-justify-start ajc-spacing-top-large ajc-spacing-bottom-large ajc-width-hd-with-padding ajc-text-white ajc-font-default"
+          id="page-mask-test-id-content"
+        >
+          Test Page Mask text.
+        </div>
+      </div>
+    </div>
+  </div>,
+  <button
+    className="ajc-flex-row ajc-button ajc-button-page-mask-close ajc-text-white ajc-font-default ajc-button-red"
+    id="page-mask-test-id-close-button"
+    onClick={[Function]}
+    title="Click to close"
+  >
+     X 
+  </button>,
+]
+`;
+
+exports[`PageMask Transferred props and rendering - onClose functionality not set verifies the snapshot for the component 1`] = `
+<div
+  className="ajc-flex-row ajc-flex-justify-center ajc-page-mask ajc-width-4k"
+  id="page-mask-test-id-root"
+>
+  <div
+    className="ajc-flex-row ajc-flex-justify-center ajc-width-full-hd"
+  >
+    <div
+      className="ajc-flex-row ajc-flex-justify-center ajc-width-hd"
+    >
+      <div
+        className="ajc-flex-column ajc-flex-justify-start ajc-spacing-top-large ajc-spacing-bottom-large ajc-width-hd-with-padding ajc-text-white ajc-font-default"
+        id="page-mask-test-id-content"
+      >
+        Test Page Mask text.
+      </div>
+    </div>
+  </div>
+</div>
+`;
