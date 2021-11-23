@@ -21,6 +21,18 @@
   transition: all 0.3s ease-in-out 0s;
 }
 
+.ajc-button-page-mask-close {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  border-radius: 20px;
+  align-items: center;
+  height: 40px;
+  font-size: 20px;
+  font-weight: 600;
+  z-index: 10;
+}
+
 .ajc-button-red {
   background-color: #AE1E01;
 }
