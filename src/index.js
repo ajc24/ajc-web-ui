@@ -3,6 +3,7 @@ export { default as Dialog } from './ui-elements/dialog/Dialog';
 export { default as DialogContentArea } from './ui-elements/dialog/DialogContentArea';
 export { default as DialogFooter } from './ui-elements/dialog/DialogFooter';
 export { default as DialogTitle } from './ui-elements/dialog/DialogTitle';
+export { default as DialogWithPageMask } from './ui-elements/dialog/DialogWithPageMask';
 
 /* Export all of the editor components */
 export { default as DocumentEditor } from './ui-elements/editor/DocumentEditor';
