@@ -1,3 +1,27 @@
+.ajc-dialog-footer {
+  height: 45px;
+}
+
+.ajc-dialog-footer-button {
+  border: none;
+  text-align: center;
+  white-space: nowrap;
+  height: 45px;
+  font-size: 18px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  user-select: none;
+  outline: none;
+}
+
+.ajc-dialog-footer-button:focus {
+  opacity: 0.75;
+}
+
 .ajc-dialog-title {
   height: 25px;
   padding-top: 10px;
