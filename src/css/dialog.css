@@ -64,3 +64,9 @@
   padding-left: 15px;
   padding-right: 30px;
 }
+
+.ajc-width-dialog-parent {
+  width: auto;
+  min-width: 645px;
+  max-width: 802px;
+}
