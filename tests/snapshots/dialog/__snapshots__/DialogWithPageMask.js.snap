@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DialogWithPageMask Default props and rendering verifies the snapshot for the component 1`] = `
+<div
+  role="region"
+/>
+`;
+
+exports[`DialogWithPageMask Transferred props and rendering - All properties set verifies the snapshot for the component 1`] = `
+<div
+  role="region"
+>
+  <div
+    className="ajc-flex-row ajc-flex-justify-center ajc-page-mask ajc-width-4k"
+    id="page-mask-test-page-mask-dialog-id-root"
+  >
+    <div
+      className="ajc-flex-row ajc-flex-justify-center ajc-width-full-hd"
+    >
+      <div
+        className="ajc-flex-row ajc-flex-justify-center ajc-width-hd"
+      >
+        <div
+          className="ajc-flex-column ajc-flex-justify-start ajc-spacing-top-large ajc-spacing-bottom-large ajc-width-hd-with-padding ajc-text-white ajc-font-default"
+          id="page-mask-test-page-mask-dialog-id-content"
+        >
+          <div
+            className="ajc-flex-row ajc-flex-justify-center ajc-width-hd-inner"
+          >
+            <div
+              className="ajc-flex-column ajc-flex-justify-left ajc-width-dialog-parent"
+              id="test-page-mask-dialog-id-root"
+            >
+              <div
+                className="ajc-flex-row ajc-flex-justify-left ajc-dialog-title ajc-width-dialog ajc-text-white ajc-font-default ajc-background-red"
+                id="test-page-mask-dialog-id-title"
+              >
+                <h1
+                  className="ajc-font-dialog-title"
+                >
+                  Test Page Mask Dialog Title
+                </h1>
+              </div>
+              <div
+                className="ajc-flex-row ajc-flex-justify-left ajc-dialog-content ajc-width-dialog-content ajc-background-grey-1"
+                id="test-page-mask-dialog-id-content-area-root"
+              >
+                <div
+                  className="ajc-flex-column ajc-flex-justify-left ajc-text-black ajc-font-default"
+                  id="test-page-mask-dialog-id-content-area"
+                >
+                  Test Page Mask Dialog Content.
+                </div>
+              </div>
+              <div
+                className="ajc-flex-row ajc-flex-justify-center ajc-dialog-footer ajc-width-dialog ajc-font-default ajc-background-red"
+                id="test-page-mask-dialog-id-footer"
+              >
+                <button
+                  className="ajc-dialog-footer-button ajc-text-white ajc-menu-item-red"
+                  id="save-button"
+                  onClick={[Function]}
+                  type="submit"
+                >
+                  Save
+                </button>
+                <button
+                  className="ajc-dialog-footer-button ajc-text-white ajc-menu-item-red"
+                  id="cancel-button"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    className="ajc-flex-row ajc-button ajc-button-page-mask-close ajc-text-white ajc-font-default ajc-button-red"
+    id="page-mask-test-page-mask-dialog-id-close-button"
+    onClick={[Function]}
+    title="Click to close"
+  >
+     X 
+  </button>
+</div>
+`;
