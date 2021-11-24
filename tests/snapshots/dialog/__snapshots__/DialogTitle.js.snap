@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DialogTitle Default props and rendering - Component with grey theme verifies the snapshot for the component 1`] = `
+<div
+  className="ajc-flex-row ajc-flex-justify-left ajc-dialog-title ajc-width-dialog ajc-text-white ajc-font-default ajc-background-grey-2"
+  id="test-dialog-title-id"
+>
+  <h1
+    className="ajc-font-dialog-title"
+  >
+    Test Dialog Title Text
+  </h1>
+</div>
+`;
+
+exports[`DialogTitle Transferred props and rendering - Component with red theme verifies the snapshot for the component 1`] = `
+<div
+  className="ajc-flex-row ajc-flex-justify-left ajc-dialog-title ajc-width-dialog ajc-text-white ajc-font-default ajc-background-red"
+  id="test-dialog-title-id"
+>
+  <h1
+    className="ajc-font-dialog-title"
+  >
+    Test Dialog Title Text
+  </h1>
+</div>
+`;
