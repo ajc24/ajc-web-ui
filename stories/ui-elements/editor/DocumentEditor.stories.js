@@ -17,7 +17,10 @@ const Template = args => {
 }
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+	colour: 'red',
+	dialogContentAreaColour: 'grey',
+};
 
 // export const RedEditor = Template.bind({});
 // RedEditor.args = {
