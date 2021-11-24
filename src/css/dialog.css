@@ -1,0 +1,25 @@
+.ajc-dialog-title {
+  height: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  align-items: center;
+  cursor: default;
+  user-select: none;
+}
+
+.ajc-font-dialog-title {
+  margin: 0px;
+  padding: 0px;
+  font-size: 20px;
+  font-weight: 600;
+  word-wrap: break-word;
+}
+
+.ajc-width-dialog {
+  width: auto;
+  min-width: 615px;
+  max-width: 772px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
