@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../../css/common.css';
-import ControlsEditor from './supporting-elements/ControlsEditor';
+import AddNewItemDialog from './supporting-elements/dialogs/AddNewItemDialog';
+import ControlsEditor from './supporting-elements/controls/ControlsEditor';
+
 
 /**
  * The DocumentEditor component allows a user to generate a written article which can then be rendered in your web application.
@@ -10,12 +12,14 @@ class DocumentEditor extends React.Component {
 	constructor(props) {
 		super(props);
     this.state = {
+      dialogAddNewItem: false,
       editorItems: [],
       showEditorPanel: true,
     };
 
     /* Bind all of the relevant functionality to this component */
     this.addEditorItem = this.addEditorItem.bind(this);
+    this.hideAddNewItemDialog = this.hideAddNewItemDialog.bind(this);
     this.showAddNewItemDialog = this.showAddNewItemDialog.bind(this);
 	}
 
@@ -28,10 +32,23 @@ class DocumentEditor extends React.Component {
   }
 
   /**
+   * Marks the add new item dialog as hidden
+   */
+  hideAddNewItemDialog() {
+    const newState = Object.assign({}, this.state, {
+      dialogAddNewItem: false,
+    });
+    this.setState(newState);
+  }
+
+  /**
    * Marks the add new item dialog as visible
    */
   showAddNewItemDialog() {
-    alert('Clicked');
+    const newState = Object.assign({}, this.state, {
+      dialogAddNewItem: true,
+    });
+    this.setState(newState);
   }
 
 	render() {
@@ -55,6 +72,10 @@ class DocumentEditor extends React.Component {
           <ControlsEditor colour={this.props.colour} handleClickAddNewItem={this.showAddNewItemDialog} upperButtonListAdditionalSpacing={false} />
         </div>
 
+        {/* Add new item dialog */}
+        <AddNewItemDialog colour={this.props.colour} dialogContentAreaColour={this.props.dialogContentAreaColour} isDisplayed={this.state.dialogAddNewItem}
+          handleClickClose={this.hideAddNewItemDialog} handleClickCancel={this.hideAddNewItemDialog} handleClickConfirmAddItem={this.addEditorItem} />
+
         {/* Preview panel */}
         <div className={previewPanelRootStyling}>
           Hello World
@@ -64,10 +85,13 @@ class DocumentEditor extends React.Component {
 	}
 }
 DocumentEditor.propTypes = {
-  /** The colour to be applied to all form controls. By default these are rendered in grey. */
+  /** The colour to be applied to all form controls. By default this is set to grey. */
   colour: PropTypes.oneOf([ 'grey', 'red' ]),
+  /** The background colour for the content area of any dialogs rendered in the editor. By default this is set to white. */
+  dialogContentAreaColour: PropTypes.oneOf([ 'grey', 'white', 'yellow' ]),
 };
 DocumentEditor.defaultProps = {
-	colour: 'grey'
+	colour: 'grey',
+  dialogContentAreaColour: 'white',
 };
 export default DocumentEditor;
