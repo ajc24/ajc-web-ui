@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DialogFooter Default props and rendering - Component with grey background verifies the snapshot for the component 1`] = `
+<div
+  role="region"
+>
+  <div
+    className="ajc-flex-row ajc-flex-justify-center ajc-dialog-footer ajc-width-dialog ajc-font-default ajc-background-grey-2"
+    id="test-dialog-buttons-list-id"
+  />
+</div>
+`;
+
+exports[`DialogFooter Transferred props and rendering - Component with red background verifies the snapshot for the component 1`] = `
+<div
+  role="region"
+>
+  <div
+    className="ajc-flex-row ajc-flex-justify-center ajc-dialog-footer ajc-width-dialog ajc-font-default ajc-background-grey-2"
+    id="test-dialog-buttons-list-id"
+  />
+</div>
+`;
+
+exports[`DialogFooter Transferred props and rendering - Grey component with buttons list verifies the snapshot for the component 1`] = `
+<div
+  role="region"
+>
+  <div
+    className="ajc-flex-row ajc-flex-justify-center ajc-dialog-footer ajc-width-dialog ajc-font-default ajc-background-grey-2"
+    id="test-dialog-buttons-list-id"
+  >
+    <button
+      className="ajc-dialog-footer-button ajc-text-white ajc-menu-item-grey"
+      id="save-button"
+      onClick={[Function]}
+      type="submit"
+    >
+      Save
+    </button>
+    <button
+      className="ajc-dialog-footer-button ajc-text-white ajc-menu-item-grey"
+      id="cancel-button"
+      onClick={[Function]}
+      type="button"
+    >
+      Cancel
+    </button>
+  </div>
+</div>
+`;
+
+exports[`DialogFooter Transferred props and rendering - Red component with buttons list verifies the snapshot for the component 1`] = `
+<div
+  role="region"
+>
+  <div
+    className="ajc-flex-row ajc-flex-justify-center ajc-dialog-footer ajc-width-dialog ajc-font-default ajc-background-red"
+    id="test-dialog-buttons-list-id"
+  >
+    <button
+      className="ajc-dialog-footer-button ajc-text-white ajc-menu-item-red"
+      id="save-button"
+      onClick={[Function]}
+      type="submit"
+    >
+      Save
+    </button>
+    <button
+      className="ajc-dialog-footer-button ajc-text-white ajc-menu-item-red"
+      id="cancel-button"
+      onClick={[Function]}
+      type="button"
+    >
+      Cancel
+    </button>
+  </div>
+</div>
+`;
