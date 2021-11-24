@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DialogContentArea Default props and rendering - Component with white background verifies the snapshot for the component 1`] = `
+<div
+  className="ajc-flex-row ajc-flex-justify-left ajc-dialog-content ajc-width-dialog-content ajc-background-white"
+  id="test-dialog-content-area-id-root"
+>
+  <div
+    className="ajc-flex-column ajc-flex-justify-left ajc-text-black ajc-font-default"
+    id="test-dialog-content-area-id"
+  >
+    Test dialog content area text.
+  </div>
+</div>
+`;
+
+exports[`DialogContentArea Transferred props and rendering - Component with grey background verifies the snapshot for the component 1`] = `
+<div
+  className="ajc-flex-row ajc-flex-justify-left ajc-dialog-content ajc-width-dialog-content ajc-background-grey-1"
+  id="test-dialog-content-area-id-root"
+>
+  <div
+    className="ajc-flex-column ajc-flex-justify-left ajc-text-black ajc-font-default"
+    id="test-dialog-content-area-id"
+  >
+    Test dialog content area text.
+  </div>
+</div>
+`;
+
+exports[`DialogContentArea Transferred props and rendering - Component with yellow background verifies the snapshot for the component 1`] = `
+<div
+  className="ajc-flex-row ajc-flex-justify-left ajc-dialog-content ajc-width-dialog-content ajc-background-yellow"
+  id="test-dialog-content-area-id-root"
+>
+  <div
+    className="ajc-flex-column ajc-flex-justify-left ajc-text-black ajc-font-default"
+    id="test-dialog-content-area-id"
+  >
+    Test dialog content area text.
+  </div>
+</div>
+`;
