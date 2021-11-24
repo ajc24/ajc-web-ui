@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import HorizontalButtonList from '../../form/HorizontalButtonList';
+import HorizontalButtonList from '../../../form/HorizontalButtonList';
 
 /**
  * The ControlsEditor component renders the controls / buttons for the editor panel of the document editor.
