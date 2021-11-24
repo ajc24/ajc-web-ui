@@ -1,5 +1,5 @@
 import React from 'react';
-import { DocumentEditor } from '../../src';
+import { DocumentEditor } from '../../../src';
 
 export default {
 	component: DocumentEditor,
