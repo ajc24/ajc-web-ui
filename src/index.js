@@ -1,3 +1,6 @@
+/* Export all of the dialog components */
+export { default as DialogTitle } from './ui-elements/dialog/DialogTitle';
+
 /* Export all of the editor components */
 export { default as DocumentEditor } from './ui-elements/editor/DocumentEditor';
 
