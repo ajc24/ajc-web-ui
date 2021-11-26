@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import '../../css/common.css';
 import AddNewItemDialog from './supporting-elements/dialogs/AddNewItemDialog';
 import ControlsEditor from './supporting-elements/controls/ControlsEditor';
+import LoadingNewItemDialog from './supporting-elements/dialogs/LoadingNewItemDialog';
 
+/* Data for use with the editor */
+const reRenderAllowance = 100;
 
 /**
  * The DocumentEditor component allows a user to generate a written article which can then be rendered in your web application.
@@ -13,14 +16,18 @@ class DocumentEditor extends React.Component {
 		super(props);
     this.state = {
       dialogAddNewItem: false,
+      dialogLoadingNewItem: false,
       editorItems: [],
       showEditorPanel: true,
     };
 
     /* Bind all of the relevant functionality to this component */
     this.addEditorItem = this.addEditorItem.bind(this);
+    this.countNumberOfExistingItemTypes = this.countNumberOfExistingItemTypes.bind(this);
+    this.generateCopyOfEditorItems = this.generateCopyOfEditorItems.bind(this);
     this.hideAddNewItemDialog = this.hideAddNewItemDialog.bind(this);
     this.showAddNewItemDialog = this.showAddNewItemDialog.bind(this);
+    this.showLoadingNewItemDialog = this.showLoadingNewItemDialog.bind(this);
 	}
 
   /**
@@ -28,7 +35,55 @@ class DocumentEditor extends React.Component {
    * @param {string} itemId 
    */
   addEditorItem(itemId) {
-    alert('Add editor item');
+    const editorItemsCopy = this.generateCopyOfEditorItems();
+    const numberOfExistingItemTypes = this.countNumberOfExistingItemTypes(itemId);
+    if (itemId === 'screenshot-with-caption') {
+      /* Add a new screenshot with caption editor item */
+      editorItemsCopy.push({
+        caption: undefined,
+        characterLimit: this.props.screenshotCaptionCharacterLimit,
+        filename: undefined,
+        imageData: undefined,
+      });
+    }
+    /* Add the common data key and value pairs to the latest editor item */
+    editorItemsCopy[this.state.editorItems.length].index = this.state.editorItems.length;
+    editorItemsCopy[this.state.editorItems.length].isDeleted = false;
+    editorItemsCopy[this.state.editorItems.length].itemIndex = numberOfExistingItemTypes + 1;
+    editorItemsCopy[this.state.editorItems.length].itemType = itemId;
+    /* Update state to include the new editor items list and set the loading dialog as hidden */
+    const newState = Object.assign({}, this.state, {
+      dialogLoadingNewItem: false,
+      editorItems: editorItemsCopy,
+    });
+    this.setState(newState);
+  }
+
+  /**
+   * Counts the number of existing editor items which are of the specified type
+   * @param {string} itemType
+   * @returns {number} 
+   */
+  countNumberOfExistingItemTypes(itemType) {
+    let numberOfItemTypes = 0;
+    for (let index = 0; index < this.state.editorItems.length; index += 1) {
+      if (this.state.editorItems[index].itemType === itemType) {
+        numberOfItemTypes += 1;
+      }
+    }
+    return numberOfItemTypes;
+  }
+
+  /**
+   * Generates a copy of the current editor items list stored in state
+   * @returns {Array.<JSON>}
+   */
+   generateCopyOfEditorItems() {
+    const editorItemsCopy = [];
+    this.state.editorItems.map(item => {
+      editorItemsCopy.push(item);
+    });
+    return editorItemsCopy;
   }
 
   /**
@@ -51,6 +106,25 @@ class DocumentEditor extends React.Component {
     this.setState(newState);
   }
 
+  /**
+   * Marks the loading dialog for adding a new item as visible.
+   * Then proceeds to determine the itemId for the newly selected item and
+   * forwards that value to the addEditorItem function.
+   */
+  showLoadingNewItemDialog() {
+    /* Now work on adding the new item to the editor */
+    const itemId = 'screenshot-with-caption';
+    const newState = Object.assign({}, this.state, {
+      dialogAddNewItem: false,
+      dialogLoadingNewItem: true,
+    });
+    this.setState(newState);
+    /* Invoke the functionality to add the new editor item */
+    setTimeout(() => {
+      this.addEditorItem(itemId);
+    }, reRenderAllowance);
+  }
+
 	render() {
     /* Set the styling for the root component */
     const rootStyling = 'ajc-flex-column ajc-flex-justify-left ajc-background-transparent ajc-width-hd-inner ajc-spacing-bottom-small ajc-text-black ajc-font-default';
@@ -69,12 +143,23 @@ class DocumentEditor extends React.Component {
       <div className={rootStyling}>
         {/* Editor panel */}
         <div className={editorPanelRootStyling}>
+          <form id="main-editor-form-id">
+            {
+              this.state.editorItems.map((item, index) => {
+                const data = JSON.stringify(item);
+                return <p key={`item-${index}`}>{data}</p>
+              })
+            }
+          </form>
           <ControlsEditor colour={this.props.colour} handleClickAddNewItem={this.showAddNewItemDialog} upperButtonListAdditionalSpacing={false} />
         </div>
 
         {/* Add new item dialog */}
         <AddNewItemDialog colour={this.props.colour} dialogContentAreaColour={this.props.dialogContentAreaColour} isDisplayed={this.state.dialogAddNewItem}
-          handleClickClose={this.hideAddNewItemDialog} handleClickCancel={this.hideAddNewItemDialog} handleClickConfirmAddItem={this.addEditorItem} />
+          handleClickClose={this.hideAddNewItemDialog} handleClickCancel={this.hideAddNewItemDialog} handleClickConfirmAddItem={this.showLoadingNewItemDialog} />
+        
+        {/* Loading new item dialog */}
+        <LoadingNewItemDialog colour={this.props.colour} dialogContentAreaColour={this.props.dialogContentAreaColour} isDisplayed={this.state.dialogLoadingNewItem} />
 
         {/* Preview panel */}
         <div className={previewPanelRootStyling}>
@@ -89,9 +174,12 @@ DocumentEditor.propTypes = {
   colour: PropTypes.oneOf([ 'grey', 'red' ]),
   /** The background colour for the content area of any dialogs rendered in the editor. By default this is set to white. */
   dialogContentAreaColour: PropTypes.oneOf([ 'grey', 'white', 'yellow' ]),
+  /** The character limit to be set to any screenshot caption text entered in the editor. By default this is set to 50 characters. */
+  screenshotCaptionCharacterLimit: PropTypes.number,
 };
 DocumentEditor.defaultProps = {
 	colour: 'grey',
   dialogContentAreaColour: 'white',
+  screenshotCaptionCharacterLimit: 50,
 };
 export default DocumentEditor;
