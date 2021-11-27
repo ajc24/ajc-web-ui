@@ -25,6 +25,16 @@ describe('PageContent', () => {
       componentDidMountSpy.mockRestore();
     });
 
+    it('verifies that the aria-label attribute is correctly set to the root element', () => {
+      expect(wrapper.find('div').at(0).prop('aria-label')).toBe('Test Title');
+    });
+
+    it('verifies that the id attribute of the root element is correctly referenced by the href attribute of the skip nav element', () => {
+      const rootId = wrapper.find('div').at(0).prop('id');
+      const href = wrapper.find('div a').prop('href').replace('#', '').trim();
+      expect(rootId).toBe(href);
+    });
+
     it('verifies that the "ajc-background-grey-1" class is not assigned to the root element', () => {
       expect(wrapper.find('div').at(0).hasClass('ajc-background-grey-1')).toBeFalsy();
     });
