@@ -35,7 +35,7 @@ describe('Dialog', () => {
           </Dialog>
         </PageContent>
       );
-      aCheckerResults = await AccessibilityDev.runAccessibilityChecker(html, 'Default Dialog');
+      aCheckerResults = await AccessibilityDev.runAccessibilityChecker(html, 'Default dialog');
     }, testTimeout);
 
     it('verifies the accessibility-checker standards for the component', () => {

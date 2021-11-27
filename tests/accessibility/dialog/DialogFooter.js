@@ -1,16 +1,12 @@
 import 'jsdom-global/register';
 import React from 'react';
-import { toHaveNoViolations } from 'jest-axe';
 import { AccessibilityDev } from 'ajc-accessibility';
 import { TestDev } from 'ajc-jest-enzyme';
-import { DialogFooter } from '../../../src';
+import { DialogFooter, PageContent } from '../../../src';
 
 describe('DialogFooter', () => {
   /* Create the test data for the menu */
   const testTimeout = AccessibilityDev.getMaximumTimeout();
-
-  /* Extend the expect behaviour of jest */
-  expect.extend(toHaveNoViolations);
 
   /* Create the buttons list */
   const twoButtonsList = [
@@ -29,70 +25,70 @@ describe('DialogFooter', () => {
   ];
 
   describe('Default props and rendering - Component with grey background', () => {
-    let jestAxeResults;
+    let aCheckerResults
 
     beforeAll(async () => {
       const html = TestDev.mountHtmlTemplate(
-        <div role="region">
+        <PageContent title="Accessibility Test">
           <DialogFooter id="test-dialog-buttons-list-id" />
-        </div>
+        </PageContent>
       );
-      jestAxeResults = await AccessibilityDev.runJestAxe(html);
+      aCheckerResults = await AccessibilityDev.runAccessibilityChecker(html, 'Default dialog footer');
     }, testTimeout);
 
-    it('verifies the jest-axe accessibility standards for the component', () => {
-      expect(jestAxeResults).toHaveNoViolations();
+    it('verifies the accessibility checker standards for the component', () => {
+      expect(aCheckerResults).toBeTruthy();
     });
   });
 
   describe('Transferred props and rendering - Component with red background', () => {
-    let jestAxeResults;
+    let aCheckerResults
 
     beforeAll(async () => {
       const html = TestDev.mountHtmlTemplate(
-        <div role="region">
+        <PageContent title="Accessibility Test">
           <DialogFooter id="test-dialog-buttons-list-id" colour="red" />
-        </div>
+        </PageContent>
       );
-      jestAxeResults = await AccessibilityDev.runJestAxe(html);
+      aCheckerResults = await AccessibilityDev.runAccessibilityChecker(html, 'Dialog footer with red background');
     }, testTimeout);
 
-    it('verifies the jest-axe accessibility standards for the component', () => {
-      expect(jestAxeResults).toHaveNoViolations();
+    it('verifies the accessibility checker standards for the component', () => {
+      expect(aCheckerResults).toBeTruthy();
     });
   });
 
   describe('Transferred props and rendering - Grey component with buttons list', () => {
-    let jestAxeResults;
+    let aCheckerResults
 
     beforeAll(async () => {
       const html = TestDev.mountHtmlTemplate(
-        <div role="region">
+        <PageContent title="Accessibility Test">
           <DialogFooter id="test-dialog-buttons-list-id" colour="grey" buttonsList={twoButtonsList} />
-        </div>
+        </PageContent>
       );
-      jestAxeResults = await AccessibilityDev.runJestAxe(html);
+      aCheckerResults = await AccessibilityDev.runAccessibilityChecker(html, 'Dialog footer, grey background, buttons list');
     }, testTimeout);
 
-    it('verifies the jest-axe accessibility standards for the component', () => {
-      expect(jestAxeResults).toHaveNoViolations();
+    it('verifies the accessibility checker standards for the component', () => {
+      expect(aCheckerResults).toBeTruthy();
     });
   });
 
   describe('Transferred props and rendering - Red component with buttons list', () => {
-    let jestAxeResults;
+    let aCheckerResults
 
     beforeAll(async () => {
       const html = TestDev.mountHtmlTemplate(
-        <div role="region">
+        <PageContent title="Accessibility Test">
           <DialogFooter id="test-dialog-buttons-list-id" colour="red" buttonsList={twoButtonsList} />
-        </div>
+        </PageContent>
       );
-      jestAxeResults = await AccessibilityDev.runJestAxe(html);
+      aCheckerResults = await AccessibilityDev.runAccessibilityChecker(html, 'Dialog footer, red background, buttons list');
     }, testTimeout);
 
-    it('verifies the jest-axe accessibility standards for the component', () => {
-      expect(jestAxeResults).toHaveNoViolations();
+    it('verifies the accessibility checker standards for the component', () => {
+      expect(aCheckerResults).toBeTruthy();
     });
   });
 });
