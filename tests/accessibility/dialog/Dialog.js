@@ -2,7 +2,7 @@ import 'jsdom-global/register';
 import React from 'react';
 import { AccessibilityDev } from 'ajc-accessibility';
 import { TestDev } from 'ajc-jest-enzyme';
-import { Dialog } from '../../../src';
+import { Dialog, PageContent } from '../../../src';
 
 describe('Dialog', () => {
   /* Create the test data for the menu */
@@ -29,12 +29,11 @@ describe('Dialog', () => {
 
     beforeAll(async () => {
       const html = TestDev.mountHtmlTemplate(
-        <div id="main-content" role="region" aria-label="Accessibility Test">
-          <a href="#main-content">Skip to main content</a>
+        <PageContent title="Accessibility Test">
           <Dialog id="test-dialog-id" titleTextContent="Test Dialog Title">
             Test Dialog Content.
           </Dialog>
-        </div>
+        </PageContent>
       );
       aCheckerResults = await AccessibilityDev.runAccessibilityChecker(html, 'Default Dialog');
     }, testTimeout);
@@ -49,12 +48,11 @@ describe('Dialog', () => {
 
     beforeAll(async () => {
       const html = TestDev.mountHtmlTemplate(
-        <div id="main-content" role="region" aria-label="Accessibility Test">
-          <a href="#main-content">Skip to main content</a>
+        <PageContent title="Accessibility Test">
           <Dialog id="test-dialog-id" titleTextContent="Test Dialog Title" colour="red" bgColour="grey" buttonsList={twoButtonsList}>
             Test Dialog Content.
           </Dialog>
-        </div>
+        </PageContent>
       );
       aCheckerResults = await AccessibilityDev.runAccessibilityChecker(html, 'Dialog with red theme, grey background, buttons list');
     }, testTimeout);
@@ -69,12 +67,11 @@ describe('Dialog', () => {
 
     beforeAll(async () => {
       const html = TestDev.mountHtmlTemplate(
-        <div id="main-content" role="region" aria-label="Accessibility Test">
-          <a href="#main-content">Skip to main content</a>
+        <PageContent title="Accessibility Test">
           <Dialog id="test-dialog-id" titleTextContent="Test Dialog Title" colour="grey" bgColour="yellow" buttonsList={twoButtonsList}>
             Test Dialog Content.
           </Dialog>
-        </div>
+        </PageContent>
       );
       aCheckerResults = await AccessibilityDev.runAccessibilityChecker(html, 'Dialog with grey theme, yellow background, buttons list');
     }, testTimeout);
