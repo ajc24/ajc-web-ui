@@ -32,11 +32,13 @@ class PageContent extends React.Component {
     } else {
       rootStyling += ' ajc-background-transparent';
     }
+    const skipNavStyling = 'ajc-visibility-hidden';
     const contentFullHdStyling = 'ajc-flex-row ajc-flex-justify-center ajc-width-full-hd';
     const contentHdStyling = 'ajc-flex-row ajc-flex-justify-left ajc-width-hd';
     const contentStyling = 'ajc-flex-column ajc-width-hd-with-padding ajc-text-black ajc-font-default';
     return (
-      <div role="region" className={rootStyling}>
+      <div id="main-content" role="region" className={rootStyling} aria-label={this.props.title}>
+        <a href="#main-content" className={skipNavStyling}>Skip to main content</a>
         <div className={contentFullHdStyling}>
           <div className={contentHdStyling}>
             <div className={contentStyling}>
