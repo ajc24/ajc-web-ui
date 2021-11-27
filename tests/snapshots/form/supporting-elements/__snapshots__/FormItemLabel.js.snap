@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormItemLabel Default props and rendering - Standalone component, no additional spacing verifies the snapshot for the component 1`] = `
+<label
+  className="ajc-row ajc-flex-justify-left ajc-spacing-bottom-small ajc-spacing-bottom-reduced ajc-label-standalone"
+  htmlFor="form-item-label-id"
+>
+  Test Form Item Label Text:
+</label>
+`;
+
+exports[`FormItemLabel Transferred props and rendering - Dialog component with additional spacing verifies the snapshot for the component 1`] = `
+<label
+  className="ajc-row ajc-flex-justify-left ajc-spacing-bottom-small ajc-spacing-bottom-reduced ajc-label-dialog ajc-spacing-top-large"
+  htmlFor="form-item-label-id"
+>
+  Test Form Item Label Text:
+</label>
+`;
