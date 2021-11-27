@@ -75,6 +75,10 @@
   padding-bottom: 30px;
 }
 
+.ajc-spacing-bottom-reduced {
+  margin-bottom: -5px;
+}
+
 .ajc-spacing-bottom-small {
   padding-bottom: 15px;
 }
