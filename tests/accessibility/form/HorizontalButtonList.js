@@ -1,12 +1,16 @@
 import 'jsdom-global/register';
 import React from 'react';
+import { toHaveNoViolations } from 'jest-axe';
 import { AccessibilityDev } from 'ajc-accessibility';
 import { TestDev } from 'ajc-jest-enzyme';
-import { HorizontalButtonList, PageContent } from '../../../src';
+import { HorizontalButtonList } from '../../../src';
 
 describe('HorizontalButtonList', () => {
   /* Create the test data for the menu */
   const testTimeout = AccessibilityDev.getMaximumTimeout();
+
+  /* Extend the expect behaviour of jest */
+  expect.extend(toHaveNoViolations);
 
   /* Set the data for use in the tests */
   const singleButtonList = [
@@ -45,104 +49,104 @@ describe('HorizontalButtonList', () => {
   ];
 
   describe('Default props and rendering - Single left aligned grey button', () => {
-    let aCheckerResults
+    let jestAxeResults;
 
     beforeAll(async () => {
       const html = TestDev.mountHtmlTemplate(
-        <PageContent title="Accessibility Test">
+        <div role="region">
           <HorizontalButtonList buttonList={singleButtonList} />
-        </PageContent>
+        </div>
       );
-      aCheckerResults = await AccessibilityDev.runAccessibilityChecker(html, 'Default single left aligned grey button');
+      jestAxeResults = await AccessibilityDev.runJestAxe(html);
     }, testTimeout);
 
-    it('verifies the accessibility checker standards for the component', () => {
-      expect(aCheckerResults).toBeTruthy();
+    it('verifies the jest-axe accessibility standards for the component', () => {
+      expect(jestAxeResults).toHaveNoViolations();
     });
   });
 
   describe('Transferred props and rendering - Multiple center aligned red buttons', () => {
-    let aCheckerResults
+    let jestAxeResults;
 
     beforeAll(async () => {
       const html = TestDev.mountHtmlTemplate(
-        <PageContent title="Accessibility Test">
+        <div role="region">
           <HorizontalButtonList colour="red" alignment="center" buttonList={twoButtonsList} />
-        </PageContent>
+        </div>
       );
-      aCheckerResults = await AccessibilityDev.runAccessibilityChecker(html, 'Multiple center aligned red buttons');
+      jestAxeResults = await AccessibilityDev.runJestAxe(html);
     }, testTimeout);
 
-    it('verifies the accessibility checker standards for the component', () => {
-      expect(aCheckerResults).toBeTruthy();
+    it('verifies the jest-axe accessibility standards for the component', () => {
+      expect(jestAxeResults).toHaveNoViolations();
     });
   });
 
   describe('Transferred props and rendering - Single right aligned grey submit button', () => {
-    let aCheckerResults
+    let jestAxeResults;
 
     beforeAll(async () => {
       const html = TestDev.mountHtmlTemplate(
-        <PageContent title="Accessibility Test">
+        <div role="region">
           <HorizontalButtonList colour="grey" alignment="right" buttonList={singleSubmitButtonList} />
-        </PageContent>
+        </div>
       );
-      aCheckerResults = await AccessibilityDev.runAccessibilityChecker(html, 'Single right aligned grey submit button');
+      jestAxeResults = await AccessibilityDev.runJestAxe(html);
     }, testTimeout);
 
-    it('verifies the accessibility checker standards for the component', () => {
-      expect(aCheckerResults).toBeTruthy();
+    it('verifies the jest-axe accessibility standards for the component', () => {
+      expect(jestAxeResults).toHaveNoViolations();
     });
   });
 
   describe('Transferred props and rendering - Left aligned multiple red buttons with label text, default upper spacing', () => {
-    let aCheckerResults
+    let jestAxeResults;
 
     beforeAll(async () => {
       const html = TestDev.mountHtmlTemplate(
-        <PageContent title="Accessibility Test">
+        <div role="region">
           <HorizontalButtonList colour="red" alignment="left" buttonList={twoButtonsList} labelText="Test Buttons List Label Text" />
-        </PageContent>
+        </div>
       );
-      aCheckerResults = await AccessibilityDev.runAccessibilityChecker(html, 'Left aligned multiple red buttons with label text, default upper spacing');
+      jestAxeResults = await AccessibilityDev.runJestAxe(html);
     }, testTimeout);
 
-    it('verifies the accessibility checker standards for the component', () => {
-      expect(aCheckerResults).toBeTruthy();
+    it('verifies the jest-axe accessibility standards for the component', () => {
+      expect(jestAxeResults).toHaveNoViolations();
     });
   });
 
   describe('Transferred props and rendering - Center aligned multiple grey buttons with label text, added upper spacing', () => {
-    let aCheckerResults
+    let jestAxeResults;
 
     beforeAll(async () => {
       const html = TestDev.mountHtmlTemplate(
-        <PageContent title="Accessibility Test">
+        <div role="region">
           <HorizontalButtonList colour="grey" additionalUpperSpacing={true} alignment="center" buttonList={twoButtonsList} labelText="Test Buttons List Label Text" />
-        </PageContent>
+        </div>
       );
-      aCheckerResults = await AccessibilityDev.runAccessibilityChecker(html, 'Center aligned multiple grey buttons with label text, added upper spacing');
+      jestAxeResults = await AccessibilityDev.runJestAxe(html);
     }, testTimeout);
 
-    it('verifies the accessibility checker standards for the component', () => {
-      expect(aCheckerResults).toBeTruthy();
+    it('verifies the jest-axe accessibility standards for the component', () => {
+      expect(jestAxeResults).toHaveNoViolations();
     });
   });
 
   describe('Transferred props and rendering - Right aligned multiple red buttons with label text, no upper spacing', () => {
-    let aCheckerResults
+    let jestAxeResults;
 
     beforeAll(async () => {
       const html = TestDev.mountHtmlTemplate(
-        <PageContent title="Accessibility Test">
+        <div role="region">
           <HorizontalButtonList colour="red" additionalUpperSpacing={false} alignment="right" buttonList={twoButtonsList} labelText="Test Buttons List Label Text" />
-        </PageContent>
+        </div>
       );
-      aCheckerResults = await AccessibilityDev.runAccessibilityChecker(html, 'Right aligned multiple red buttons with label text, no upper spacing');
+      jestAxeResults = await AccessibilityDev.runJestAxe(html);
     }, testTimeout);
 
-    it('verifies the accessibility checker standards for the component', () => {
-      expect(aCheckerResults).toBeTruthy();
+    it('verifies the jest-axe accessibility standards for the component', () => {
+      expect(jestAxeResults).toHaveNoViolations();
     });
   });
 });
