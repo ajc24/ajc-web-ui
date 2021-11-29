@@ -1,6 +1,5 @@
 import 'jsdom-global/register';
 import React from 'react';
-// import { toHaveNoViolations } from 'jest-axe';
 import { AccessibilityDev } from 'ajc-accessibility';
 import { TestDev } from 'ajc-jest-enzyme';
 import { PageContent } from '../../../src';
@@ -9,9 +8,6 @@ describe('PageContent', () => {
   /* Create the test data for the menu */
   let componentDidMountSpy;
   const testTimeout = AccessibilityDev.getMaximumTimeout();
-
-  /* Extend the expect behaviour of jest */
-  // expect.extend(toHaveNoViolations);
 
   beforeAll(() => {
     componentDidMountSpy = jest
