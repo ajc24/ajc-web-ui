@@ -21,7 +21,7 @@ class DialogTitle extends React.Component {
     const headingStyling = 'ajc-font-dialog-title';
 		return (
 			<div id={this.props.id} className={rootStyling}>
-        <h1 className={headingStyling}>{this.props.children}</h1>
+        <h2 className={headingStyling}>{this.props.children}</h2>
 			</div>
 		);
 	}
