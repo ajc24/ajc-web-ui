@@ -1,16 +1,12 @@
 import 'jsdom-global/register';
 import React from 'react';
-import { toHaveNoViolations } from 'jest-axe';
 import { AccessibilityDev } from 'ajc-accessibility';
 import { TestDev } from 'ajc-jest-enzyme';
-import { DialogWithPageMask } from '../../../src';
+import { DialogWithPageMask, PageContent } from '../../../src';
 
 describe('DialogWithPageMask', () => {
   /* Create the test data for the menu */
   const testTimeout = AccessibilityDev.getMaximumTimeout();
-
-  /* Extend the expect behaviour of jest */
-  expect.extend(toHaveNoViolations);
 
   /* Create the buttons list */
   const twoButtonsList = [
@@ -29,41 +25,43 @@ describe('DialogWithPageMask', () => {
   ];
 
   describe('Default props and rendering', () => {
-    let jestAxeResults;
+    let results;
 
     beforeAll(async () => {
       const html = TestDev.mountHtmlTemplate(
-        <div role="region">
+        <PageContent title="Accessibility Test">
+          <h1>Dialog with Page Mask Accessibility Test</h1>
           <DialogWithPageMask id="test-page-mask-dialog-id" dialogTitle="Test Page Mask Dialog Title" onClose={() => {}}>
             Test Page Mask Dialog Content.
           </DialogWithPageMask>
-        </div>
+        </PageContent>
       );
-      jestAxeResults = await AccessibilityDev.runJestAxe(html);
+      results = await AccessibilityDev.runJestAxe(html);
     }, testTimeout);
 
-    it('verifies the jest-axe accessibility standards for the component', () => {
-      expect(jestAxeResults).toHaveNoViolations();
+    it('verifies the accessibility standards for the component', () => {
+      expect(results).toBeTruthy();
     });
   });
 
   describe('Transferred props and rendering - All properties set', () => {
-    let jestAxeResults;
+    let results;
 
     beforeAll(async () => {
       const html = TestDev.mountHtmlTemplate(
-        <div role="region">
+        <PageContent title="Accessibility Test">
+          <h1>Dialog with Page Mask Accessibility Test</h1>
           <DialogWithPageMask id="test-page-mask-dialog-id" dialogTitle="Test Page Mask Dialog Title" dialogContentAreaColour="grey" colour="red"
             buttonsList={twoButtonsList} onClose={() => {}} isDisplayed={true}>
               Test Page Mask Dialog Content.
           </DialogWithPageMask>
-        </div>
+        </PageContent>
       );
-      jestAxeResults = await AccessibilityDev.runJestAxe(html);
+      results = await AccessibilityDev.runJestAxe(html);
     }, testTimeout);
 
-    it('verifies the jest-axe accessibility standards for the component', () => {
-      expect(jestAxeResults).toHaveNoViolations();
+    it('verifies the accessibility standards for the component', () => {
+      expect(results).toBeTruthy();
     });
   });
 });
