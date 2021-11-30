@@ -30,7 +30,7 @@ describe('DialogTitle', () => {
     });
 
     it('verifies that the title text content is rendered within the heading element', () => {
-      expect(wrapper.find('h1').text()).toBe('Test Dialog Title Text');
+      expect(wrapper.find('h2').text()).toBe('Test Dialog Title Text');
     });
   });
 

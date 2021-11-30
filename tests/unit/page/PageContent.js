@@ -26,33 +26,27 @@ describe('PageContent', () => {
     });
 
     it('verifies that the aria-label attribute is correctly set to the root element', () => {
-      expect(wrapper.find('div').at(0).prop('aria-label')).toBe('Test Title');
-    });
-
-    it('verifies that the id attribute of the root element is correctly referenced by the href attribute of the skip nav element', () => {
-      const rootId = wrapper.find('div').at(0).prop('id');
-      const href = wrapper.find('div a').prop('href').replace('#', '').trim();
-      expect(rootId).toBe(href);
+      expect(wrapper.find('main').prop('aria-label')).toBe('Test Title');
     });
 
     it('verifies that the "ajc-background-grey-1" class is not assigned to the root element', () => {
-      expect(wrapper.find('div').at(0).hasClass('ajc-background-grey-1')).toBeFalsy();
+      expect(wrapper.find('main').hasClass('ajc-background-grey-1')).toBeFalsy();
     });
 
     it('verifies that the "ajc-background-white" class is assigned to the root element', () => {
-      expect(wrapper.find('div').at(0).hasClass('ajc-background-white')).toBeTruthy();
+      expect(wrapper.find('main').hasClass('ajc-background-white')).toBeTruthy();
     });
 
     it('verifies that the "ajc-background-transparent" class is not assigned to the root element', () => {
-      expect(wrapper.find('div').at(0).hasClass('ajc-background-transparent')).toBeFalsy();
+      expect(wrapper.find('main').hasClass('ajc-background-transparent')).toBeFalsy();
     });
 
     it('verifies that the "ajc-background-yellow" class is not assigned to the root element', () => {
-      expect(wrapper.find('div').at(0).hasClass('ajc-background-yellow')).toBeFalsy();
+      expect(wrapper.find('main').hasClass('ajc-background-yellow')).toBeFalsy();
     }); 
 
     it('verifies that the children text content is correctly rendered in the content element', () => {
-      expect(wrapper.find('div').at(3).text()).toBe('This is a test.');
+      expect(wrapper.find('div').at(2).text()).toBe('This is a test.');
     });
   });
 
@@ -78,19 +72,19 @@ describe('PageContent', () => {
     });
     
     it('verifies that the "ajc-background-grey-1" class is assigned to the root element', () => {
-      expect(wrapper.find('div').at(0).hasClass('ajc-background-grey-1')).toBeTruthy();
+      expect(wrapper.find('main').hasClass('ajc-background-grey-1')).toBeTruthy();
     });
 
     it('verifies that the "ajc-background-white" class is not assigned to the root element', () => {
-      expect(wrapper.find('div').at(0).hasClass('ajc-background-white')).toBeFalsy();
+      expect(wrapper.find('main').hasClass('ajc-background-white')).toBeFalsy();
     });
 
     it('verifies that the "ajc-background-transparent" class is not assigned to the root element', () => {
-      expect(wrapper.find('div').at(0).hasClass('ajc-background-transparent')).toBeFalsy();
+      expect(wrapper.find('main').hasClass('ajc-background-transparent')).toBeFalsy();
     });
 
     it('verifies that the "ajc-background-yellow" class is not assigned to the root element', () => {
-      expect(wrapper.find('div').at(0).hasClass('ajc-background-yellow')).toBeFalsy();
+      expect(wrapper.find('main').hasClass('ajc-background-yellow')).toBeFalsy();
     });
   });
 
@@ -116,19 +110,19 @@ describe('PageContent', () => {
     });
     
     it('verifies that the "ajc-background-grey-1" class is not assigned to the root element', () => {
-      expect(wrapper.find('div').at(0).hasClass('ajc-background-grey-1')).toBeFalsy();
+      expect(wrapper.find('main').hasClass('ajc-background-grey-1')).toBeFalsy();
     });
 
     it('verifies that the "ajc-background-white" class is not assigned to the root element', () => {
-      expect(wrapper.find('div').at(0).hasClass('ajc-background-white')).toBeFalsy();
+      expect(wrapper.find('main').hasClass('ajc-background-white')).toBeFalsy();
     });
 
     it('verifies that the "ajc-background-transparent" class is assigned to the root element', () => {
-      expect(wrapper.find('div').at(0).hasClass('ajc-background-transparent')).toBeTruthy();
+      expect(wrapper.find('main').hasClass('ajc-background-transparent')).toBeTruthy();
     });
 
     it('verifies that the "ajc-background-yellow" class is not assigned to the root element', () => {
-      expect(wrapper.find('div').at(0).hasClass('ajc-background-yellow')).toBeFalsy();
+      expect(wrapper.find('main').hasClass('ajc-background-yellow')).toBeFalsy();
     });
   });
 
@@ -154,19 +148,19 @@ describe('PageContent', () => {
     });
     
     it('verifies that the "ajc-background-grey-1" class is not assigned to the root element', () => {
-      expect(wrapper.find('div').at(0).hasClass('ajc-background-grey-1')).toBeFalsy();
+      expect(wrapper.find('main').hasClass('ajc-background-grey-1')).toBeFalsy();
     });
 
     it('verifies that the "ajc-background-white" class is not assigned to the root element', () => {
-      expect(wrapper.find('div').at(0).hasClass('ajc-background-white')).toBeFalsy();
+      expect(wrapper.find('main').hasClass('ajc-background-white')).toBeFalsy();
     });
 
     it('verifies that the "ajc-background-transparent" class is not assigned to the root element', () => {
-      expect(wrapper.find('div').at(0).hasClass('ajc-background-transparent')).toBeFalsy();
+      expect(wrapper.find('main').hasClass('ajc-background-transparent')).toBeFalsy();
     });
 
     it('verifies that the "ajc-background-yellow" class is assigned to the root element', () => {
-      expect(wrapper.find('div').at(0).hasClass('ajc-background-yellow')).toBeTruthy();
+      expect(wrapper.find('main').hasClass('ajc-background-yellow')).toBeTruthy();
     });
   });
 
