@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DropdownMenu Default props and rendering - Standalone component, no additional spacing verifies the snapshot for the component 1`] = `
+<div
+  className="ajc-flex-column ajc-flex-justify-left ajc-background-transparent ajc-spacing-bottom-small ajc-text-black ajc-font-default"
+>
+  <label
+    className="ajc-row ajc-flex-justify-left ajc-spacing-bottom-small ajc-spacing-bottom-reduced ajc-label-standalone"
+    htmlFor="dropdown-menu-id"
+  >
+    Test Dropdown Menu Label Text:
+  </label>
+  <select
+    className="ajc-select ajc-font-default"
+    defaultValue="one"
+    id="dropdown-menu-id"
+    name="dropdown-menu-id"
+  >
+    <option
+      title="One"
+      value="one"
+    >
+      One
+    </option>
+    <option
+      title="Two"
+      value="two"
+    >
+      Two
+    </option>
+    <option
+      title="Three"
+      value="three"
+    >
+      Three
+    </option>
+    <option
+      title="Four"
+      value="four"
+    >
+      Four
+    </option>
+    <option
+      title="Five"
+      value="five"
+    >
+      Five
+    </option>
+  </select>
+</div>
+`;
+
+exports[`DropdownMenu Transferred props and rendering - Dialog component, no additional spacing verifies the snapshot for the component 1`] = `
+<div
+  className="ajc-flex-column ajc-flex-justify-left ajc-background-transparent ajc-spacing-bottom-small ajc-text-black ajc-font-default"
+>
+  <label
+    className="ajc-row ajc-flex-justify-left ajc-spacing-bottom-small ajc-spacing-bottom-reduced ajc-label-dialog"
+    htmlFor="dropdown-menu-id"
+  >
+    Test Dropdown Menu Label Text:
+  </label>
+  <select
+    className="ajc-select ajc-font-default"
+    defaultValue="one"
+    id="dropdown-menu-id"
+    name="dropdown-menu-id"
+  >
+    <option
+      title="One"
+      value="one"
+    >
+      One
+    </option>
+    <option
+      title="Two"
+      value="two"
+    >
+      Two
+    </option>
+    <option
+      title="Three"
+      value="three"
+    >
+      Three
+    </option>
+    <option
+      title="Four"
+      value="four"
+    >
+      Four
+    </option>
+    <option
+      title="Five"
+      value="five"
+    >
+      Five
+    </option>
+  </select>
+</div>
+`;
+
+exports[`DropdownMenu Transferred props and rendering - Standalone component with additional spacing verifies the snapshot for the component 1`] = `
+<div
+  className="ajc-flex-column ajc-flex-justify-left ajc-background-transparent ajc-spacing-bottom-small ajc-text-black ajc-font-default"
+>
+  <label
+    className="ajc-row ajc-flex-justify-left ajc-spacing-bottom-small ajc-spacing-bottom-reduced ajc-label-standalone ajc-spacing-top-large"
+    htmlFor="dropdown-menu-id"
+  >
+    Test Dropdown Menu Label Text:
+  </label>
+  <select
+    className="ajc-select ajc-font-default"
+    defaultValue="one"
+    id="dropdown-menu-id"
+    name="dropdown-menu-id"
+  >
+    <option
+      title="One"
+      value="one"
+    >
+      One
+    </option>
+    <option
+      title="Two"
+      value="two"
+    >
+      Two
+    </option>
+    <option
+      title="Three"
+      value="three"
+    >
+      Three
+    </option>
+    <option
+      title="Four"
+      value="four"
+    >
+      Four
+    </option>
+    <option
+      title="Five"
+      value="five"
+    >
+      Five
+    </option>
+  </select>
+</div>
+`;
