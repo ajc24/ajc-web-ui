@@ -1,10 +1,9 @@
 import 'jsdom-global/register';
 import React from 'react';
-import { toHaveNoViolations } from 'jest-axe';
 import { BrowserRouter } from 'react-router-dom';
 import { AccessibilityDev } from 'ajc-accessibility';
 import { TestDev } from 'ajc-jest-enzyme';
-import { Menu } from '../../../src';
+import { Menu, PageContent } from '../../../src';
 import DropdownMenuContainerAndItems from '../../../src/ui-elements/menu/supporting-elements/DropdownMenuContainerAndItems';
 
 describe('Menu', () => {
@@ -48,9 +47,6 @@ describe('Menu', () => {
     },
   ];
 
-  /* Extend the expect behaviour of jest */
-  expect.extend(toHaveNoViolations);
-
   beforeAll(() => {
     componentDidMountSpy = jest
       .spyOn(DropdownMenuContainerAndItems.prototype, 'componentDidMount')
@@ -62,40 +58,46 @@ describe('Menu', () => {
   });
 
   describe('Default props and rendering', () => {
-    let jestAxeResults;
+    let results;
 
     beforeAll(async () => {
       const html = TestDev.mountHtmlTemplate(
-        <React.Fragment>
+        <div>
           <BrowserRouter>
             <Menu id="test-menu" menuItemsList={testMenuItemsList} />
           </BrowserRouter>
-        </React.Fragment>
+          <PageContent title="Accessibility Test">
+            <h1>Menu Accessibility Test</h1>
+          </PageContent>
+        </div>
       );
-      jestAxeResults = await AccessibilityDev.runJestAxe(html);
+      results = await AccessibilityDev.runAxeCore(html);
     }, testTimeout);
 
-    it('verifies the jest-axe accessibility standards for the component', () => {
-      expect(jestAxeResults).toHaveNoViolations();
+    it('verifies the accessibility standards for the component', () => {
+      expect(results).toBeTruthy();
     });
   });
 
   describe('Transferred props and rendering: Component with red background', () => {
-    let jestAxeResults;
+    let results;
 
     beforeAll(async () => {
       const html = TestDev.mountHtmlTemplate(
-        <React.Fragment>
+        <div>
           <BrowserRouter>
             <Menu id="test-menu" menuItemsList={testMenuItemsList} colour="red" />
           </BrowserRouter>
-        </React.Fragment>
+          <PageContent title="Accessibility Test">
+            <h1>Menu Accessibility Test</h1>
+          </PageContent>
+        </div>
       );
-      jestAxeResults = await AccessibilityDev.runJestAxe(html);
+      results = await AccessibilityDev.runAxeCore(html);
     }, testTimeout);
 
-    it('verifies the jest-axe accessibility standards for the component', () => {
-      expect(jestAxeResults).toHaveNoViolations();
+    it('verifies the accessibility standards for the component', () => {
+      expect(results).toBeTruthy();
     });
   });
 });

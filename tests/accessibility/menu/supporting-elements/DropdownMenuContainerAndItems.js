@@ -1,17 +1,14 @@
 import 'jsdom-global/register';
 import React from 'react';
-import { toHaveNoViolations } from 'jest-axe';
 import { AccessibilityDev } from 'ajc-accessibility';
 import { TestDev } from 'ajc-jest-enzyme';
 import { BrowserRouter } from 'react-router-dom';
 import DropdownMenuContainerAndItems from '../../../../src/ui-elements/menu/supporting-elements/DropdownMenuContainerAndItems';
+import { PageContent } from '../../../../src';
 
 describe('DropdownMenuContainerAndItems', () => {
   /* Retrieve the timeout for jest-axe tests */
   const testTimeout = AccessibilityDev.getMaximumTimeout();
-
-  /* Extend the expect behaviour of jest */
-  expect.extend(toHaveNoViolations);
 
   /* Test data */
   const testDropdownMenuItemsList = [
@@ -27,109 +24,129 @@ describe('DropdownMenuContainerAndItems', () => {
 
   describe('Default props and rendering - Component marked as hidden', () => {
     let componentDidMountSpy;
-    let jestAxeResults;
+    let results;
 
     beforeAll(async () => {
       componentDidMountSpy = jest
         .spyOn(DropdownMenuContainerAndItems.prototype, 'componentDidMount')
         .mockImplementation(() => {});
       const html = TestDev.mountHtmlTemplate(
-        <div role="navigation">
-          <BrowserRouter>
-            <DropdownMenuContainerAndItems id="test-id" parentId="test-parent-id" isDisplayed={false} dropdownMenuItemsList={testDropdownMenuItemsList} />
-          </BrowserRouter>
+        <div>
+          <div role="navigation">
+            <BrowserRouter>
+              <DropdownMenuContainerAndItems id="test-id" parentId="test-parent-id" isDisplayed={false} dropdownMenuItemsList={testDropdownMenuItemsList} />
+            </BrowserRouter>
+          </div>
+          <PageContent title="Accessibility Test">
+            <h1>Dropdown Menu Container and Items Accessibility Test</h1>
+          </PageContent>
         </div>
       );
-      jestAxeResults = await AccessibilityDev.runJestAxe(html);
+      results = await AccessibilityDev.runAxeCore(html);
     }, testTimeout);
 
     afterAll(() => {
       componentDidMountSpy.mockRestore();
     });
 
-    it('verifies the jest-axe accessibility standards for the component', () => {
-      expect(jestAxeResults).toHaveNoViolations();
+    it('verifies the accessibility standards for the component', () => {
+      expect(results).toBeTruthy();
     });
   });
 
   describe('Transferred props and rendering - Component marked as visible', () => {
     let componentDidMountSpy;
-    let jestAxeResults;
+    let results;
     
     beforeAll(async () => {
       componentDidMountSpy = jest
         .spyOn(DropdownMenuContainerAndItems.prototype, 'componentDidMount')
         .mockImplementation(() => {});
       const html = TestDev.mountHtmlTemplate(
-        <div role="navigation">
-          <BrowserRouter>
-            <DropdownMenuContainerAndItems id="test-id" parentId="test-parent-id" isDisplayed={true} dropdownMenuItemsList={testDropdownMenuItemsList} />
-          </BrowserRouter>
+        <div>
+          <div role="navigation">
+            <BrowserRouter>
+              <DropdownMenuContainerAndItems id="test-id" parentId="test-parent-id" isDisplayed={true} dropdownMenuItemsList={testDropdownMenuItemsList} />
+            </BrowserRouter>
+          </div>
+          <PageContent title="Accessibility Test">
+            <h1>Dropdown Menu Container and Items Accessibility Test</h1>
+          </PageContent>
         </div>
       );
-      jestAxeResults = await AccessibilityDev.runJestAxe(html);
+      results = await AccessibilityDev.runAxeCore(html);
     }, testTimeout);
 
     afterAll(() => {
       componentDidMountSpy.mockRestore();
     });
 
-    it('verifies the jest-axe accessibility standards for the component', () => {
-      expect(jestAxeResults).toHaveNoViolations();
+    it('verifies the accessibility standards for the component', () => {
+      expect(results).toBeTruthy();
     });
   });
 
   describe('Transferred props and rendering - Component in red and marked as hidden', () => {
     let componentDidMountSpy;
-    let jestAxeResults;
+    let results;
     
     beforeAll(async () => {
       componentDidMountSpy = jest
         .spyOn(DropdownMenuContainerAndItems.prototype, 'componentDidMount')
         .mockImplementation(() => {});
       const html = TestDev.mountHtmlTemplate(
-        <div role="navigation">
-          <BrowserRouter>
-            <DropdownMenuContainerAndItems id="test-id" parentId="test-parent-id" isDisplayed={false} dropdownMenuItemsList={testDropdownMenuItemsList} colour="red" />
-          </BrowserRouter>
+        <div>
+          <div role="navigation">
+            <BrowserRouter>
+              <DropdownMenuContainerAndItems id="test-id" parentId="test-parent-id" isDisplayed={false} dropdownMenuItemsList={testDropdownMenuItemsList} colour="red" />
+            </BrowserRouter>
+          </div>
+          <PageContent title="Accessibility Test">
+            <h1>Dropdown Menu Container and Items Accessibility Test</h1>
+          </PageContent>
         </div>
       );
-      jestAxeResults = await AccessibilityDev.runJestAxe(html);
+      results = await AccessibilityDev.runAxeCore(html);
     }, testTimeout);
 
     afterAll(() => {
       componentDidMountSpy.mockRestore();
     });
 
-    it('verifies the jest-axe accessibility standards for the component', () => {
-      expect(jestAxeResults).toHaveNoViolations();
+    it('verifies the accessibility standards for the component', () => {
+      expect(results).toBeTruthy();
     });
   });
 
   describe('Transferred props and rendering - Component in red and marked as visible', () => {
     let componentDidMountSpy;
-    let jestAxeResults;
+    let results;
 
     beforeAll(async () => {
       componentDidMountSpy = jest
         .spyOn(DropdownMenuContainerAndItems.prototype, 'componentDidMount')
         .mockImplementation(() => {});
       const html = TestDev.mountHtmlTemplate(
-        <div role="navigation">
-          <BrowserRouter>
-            <DropdownMenuContainerAndItems id="test-id" parentId="test-parent-id" isDisplayed={true} dropdownMenuItemsList={testDropdownMenuItemsList} colour="red" />
-          </BrowserRouter>
+        <div>
+          <div role="navigation">
+            <BrowserRouter>
+              <DropdownMenuContainerAndItems id="test-id" parentId="test-parent-id" isDisplayed={true} dropdownMenuItemsList={testDropdownMenuItemsList} colour="red" />
+            </BrowserRouter>
+          </div>
+          <PageContent title="Accessibility Test">
+            <h1>Dropdown Menu Container and Items Accessibility Test</h1>
+          </PageContent>
         </div>
       );
-      jestAxeResults = await AccessibilityDev.runJestAxe(html);
+      results = await AccessibilityDev.runAxeCore(html);
     }, testTimeout);
 
     afterAll(() => {
       componentDidMountSpy.mockRestore();
     });
 
-    it('verifies the jest-axe accessibility standards for the component', () => {
-      expect(jestAxeResults).toHaveNoViolations();
+    it('verifies the accessibility standards for the component', () => {
+      expect(results).toBeTruthy();
     });
   });
 });
