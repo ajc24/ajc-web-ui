@@ -1,48 +1,50 @@
 import 'jsdom-global/register';
 import React from 'react';
-import { toHaveNoViolations } from 'jest-axe';
 import { AccessibilityDev } from 'ajc-accessibility';
 import { TestDev } from 'ajc-jest-enzyme';
-import { SmallDownArrowIcon } from '../../../src';
+import { PageContent, SmallDownArrowIcon } from '../../../src';
 
 describe('SmallDownArrowIcon', () => {
   /* Create the test data for the menu */
   const testTimeout = AccessibilityDev.getMaximumTimeout();
   
-  /* Extend the expect behaviour of jest */
-  expect.extend(toHaveNoViolations);
-
   describe('Default props and rendering - Component in black colour', () => {
-    let jestAxeResults;
+    let results;
 
     beforeAll(async () => {
       const html = TestDev.mountHtmlTemplate(
         <React.Fragment>
-          <SmallDownArrowIcon />
+          <PageContent title="Accessibility Test">
+            <h1>Small Down Arrow Icon Accessibility Test</h1>
+            <SmallDownArrowIcon />
+          </PageContent>
         </React.Fragment>
       );
-      jestAxeResults = await AccessibilityDev.runJestAxe(html);
+      results = await AccessibilityDev.runAxeCore(html);
     }, testTimeout);
 
-    it('verifies the jest-axe accessibility standards for the component', () => {
-      expect(jestAxeResults).toHaveNoViolations();
+    it('verifies the accessibility standards for the component', () => {
+      expect(results).toBeTruthy();
     });
   });
 
   describe('Transferred props and rendering - Component in white colour', () => {
-    let jestAxeResults;
+    let results;
 
     beforeAll(async () => {
       const html = TestDev.mountHtmlTemplate(
         <React.Fragment>
-          <SmallDownArrowIcon colour="white" />
+          <PageContent title="Accessibility Test">
+            <h1>Small Down Arrow Icon Accessibility Test</h1>
+            <SmallDownArrowIcon colour="white" />
+          </PageContent>
         </React.Fragment>
       );
-      jestAxeResults = await AccessibilityDev.runJestAxe(html);
+      results = await AccessibilityDev.runAxeCore(html);
     }, testTimeout);
 
-    it('verifies the jest-axe accessibility standards for the component', () => {
-      expect(jestAxeResults).toHaveNoViolations();
+    it('verifies the accessibility standards for the component', () => {
+      expect(results).toBeTruthy();
     });
   });
 });
