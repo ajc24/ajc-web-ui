@@ -12,11 +12,11 @@ exports[`Dialog Default props and rendering - Component with grey theme, white b
       className="ajc-flex-row ajc-flex-justify-left ajc-dialog-title ajc-width-dialog ajc-text-white ajc-font-default ajc-background-grey-2"
       id="test-dialog-id-title"
     >
-      <h1
+      <h2
         className="ajc-font-dialog-title"
       >
         Test Dialog Title
-      </h1>
+      </h2>
     </div>
     <div
       className="ajc-flex-row ajc-flex-justify-left ajc-dialog-content ajc-width-dialog-content ajc-background-white"
@@ -49,11 +49,11 @@ exports[`Dialog Transferred props and rendering - Component with grey theme, yel
       className="ajc-flex-row ajc-flex-justify-left ajc-dialog-title ajc-width-dialog ajc-text-white ajc-font-default ajc-background-grey-2"
       id="test-dialog-id-title"
     >
-      <h1
+      <h2
         className="ajc-font-dialog-title"
       >
         Test Dialog Title
-      </h1>
+      </h2>
     </div>
     <div
       className="ajc-flex-row ajc-flex-justify-left ajc-dialog-content ajc-width-dialog-content ajc-background-yellow"
@@ -103,11 +103,11 @@ exports[`Dialog Transferred props and rendering - Component with red theme, grey
       className="ajc-flex-row ajc-flex-justify-left ajc-dialog-title ajc-width-dialog ajc-text-white ajc-font-default ajc-background-red"
       id="test-dialog-id-title"
     >
-      <h1
+      <h2
         className="ajc-font-dialog-title"
       >
         Test Dialog Title
-      </h1>
+      </h2>
     </div>
     <div
       className="ajc-flex-row ajc-flex-justify-left ajc-dialog-content ajc-width-dialog-content ajc-background-grey-1"

@@ -35,11 +35,11 @@ exports[`DialogWithPageMask Transferred props and rendering - All properties set
                 className="ajc-flex-row ajc-flex-justify-left ajc-dialog-title ajc-width-dialog ajc-text-white ajc-font-default ajc-background-red"
                 id="test-page-mask-dialog-id-title"
               >
-                <h1
+                <h2
                   className="ajc-font-dialog-title"
                 >
                   Test Page Mask Dialog Title
-                </h1>
+                </h2>
               </div>
               <div
                 className="ajc-flex-row ajc-flex-justify-left ajc-dialog-content ajc-width-dialog-content ajc-background-grey-1"

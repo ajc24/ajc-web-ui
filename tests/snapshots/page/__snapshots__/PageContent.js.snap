@@ -1,18 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PageContent Default props and rendering - Component with white background verifies the snapshot for the component 1`] = `
-<div
+<main
   aria-label="Test Title"
   className="ajc-flex-row ajc-flex-justify-center ajc-page-content-panel ajc-spacing-top-small ajc-spacing-bottom-small ajc-width-4k ajc-background-white"
   id="main-content"
-  role="region"
 >
-  <a
-    className="ajc-visibility-hidden"
-    href="#main-content"
-  >
-    Skip to main content
-  </a>
   <div
     className="ajc-flex-row ajc-flex-justify-center ajc-width-full-hd"
   >
@@ -26,22 +19,15 @@ exports[`PageContent Default props and rendering - Component with white backgrou
       </div>
     </div>
   </div>
-</div>
+</main>
 `;
 
 exports[`PageContent Transferred props and rendering - Component with grey background verifies the snapshot for the component 1`] = `
-<div
+<main
   aria-label="Test Title"
   className="ajc-flex-row ajc-flex-justify-center ajc-page-content-panel ajc-spacing-top-small ajc-spacing-bottom-small ajc-width-4k ajc-background-grey-1"
   id="main-content"
-  role="region"
 >
-  <a
-    className="ajc-visibility-hidden"
-    href="#main-content"
-  >
-    Skip to main content
-  </a>
   <div
     className="ajc-flex-row ajc-flex-justify-center ajc-width-full-hd"
   >
@@ -55,22 +41,15 @@ exports[`PageContent Transferred props and rendering - Component with grey backg
       </div>
     </div>
   </div>
-</div>
+</main>
 `;
 
 exports[`PageContent Transferred props and rendering - Component with transparent background verifies the snapshot for the component 1`] = `
-<div
+<main
   aria-label="Test Title"
   className="ajc-flex-row ajc-flex-justify-center ajc-page-content-panel ajc-spacing-top-small ajc-spacing-bottom-small ajc-width-4k ajc-background-transparent"
   id="main-content"
-  role="region"
 >
-  <a
-    className="ajc-visibility-hidden"
-    href="#main-content"
-  >
-    Skip to main content
-  </a>
   <div
     className="ajc-flex-row ajc-flex-justify-center ajc-width-full-hd"
   >
@@ -84,22 +63,15 @@ exports[`PageContent Transferred props and rendering - Component with transparen
       </div>
     </div>
   </div>
-</div>
+</main>
 `;
 
 exports[`PageContent Transferred props and rendering - Component with yellow background verifies the snapshot for the component 1`] = `
-<div
+<main
   aria-label="Test Title"
   className="ajc-flex-row ajc-flex-justify-center ajc-page-content-panel ajc-spacing-top-small ajc-spacing-bottom-small ajc-width-4k ajc-background-yellow"
   id="main-content"
-  role="region"
 >
-  <a
-    className="ajc-visibility-hidden"
-    href="#main-content"
-  >
-    Skip to main content
-  </a>
   <div
     className="ajc-flex-row ajc-flex-justify-center ajc-width-full-hd"
   >
@@ -113,5 +85,5 @@ exports[`PageContent Transferred props and rendering - Component with yellow bac
       </div>
     </div>
   </div>
-</div>
+</main>
 `;
