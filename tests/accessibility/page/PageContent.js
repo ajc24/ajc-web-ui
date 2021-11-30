@@ -24,11 +24,11 @@ describe('PageContent', () => {
 
     beforeAll(async () => {
       const html = TestDev.mountHtmlTemplate(
-        <React.Fragment>
-          <PageContent title="Test Title">
+        <div>
+          <PageContent title="Accessibility Test">
             <h1>This is a test.</h1>
           </PageContent>
-        </React.Fragment>
+        </div>
       );
       results = await AccessibilityDev.runAxeCore(html);
     }, testTimeout);
@@ -43,11 +43,11 @@ describe('PageContent', () => {
 
     beforeAll(async () => {
       const html = TestDev.mountHtmlTemplate(
-        <React.Fragment>
-          <PageContent title="Test Title" colour="grey">
+        <div>
+          <PageContent title="Accessibility Test" colour="grey">
             <h1>This is a test.</h1>
           </PageContent>
-        </React.Fragment>
+        </div>
       );
       results = await AccessibilityDev.runAxeCore(html);
     }, testTimeout);
@@ -62,11 +62,11 @@ describe('PageContent', () => {
 
     beforeAll(async () => {
       const html = TestDev.mountHtmlTemplate(
-        <React.Fragment>
-          <PageContent title="Test Title" colour="transparent">
-            <h1>This is a test.</h1>
+        <div>
+          <PageContent title="Accessibility Test" colour="transparent">
+            <h1>Page Content Accessibility Test</h1>
           </PageContent>
-        </React.Fragment>
+        </div>
       );
       results = await AccessibilityDev.runAxeCore(html);
     }, testTimeout);
@@ -81,11 +81,11 @@ describe('PageContent', () => {
 
     beforeAll(async () => {
       const html = TestDev.mountHtmlTemplate(
-        <React.Fragment>
-          <PageContent title="Test Title" colour="yellow">
-            <h1>This is a test.</h1>
+        <div>
+          <PageContent title="Accessibility Test" colour="yellow">
+            <h1>Page Content Accessibility Test</h1>
           </PageContent>
-        </React.Fragment>
+        </div>
       );
       results = await AccessibilityDev.runAxeCore(html);
     }, testTimeout);
