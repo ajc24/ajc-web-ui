@@ -113,7 +113,7 @@ class DocumentEditor extends React.Component {
    */
   showLoadingNewItemDialog() {
     /* Now work on adding the new item to the editor */
-    const itemId = 'screenshot-with-caption';
+    const itemId = document.querySelector('select[id="add-new-item-dropdown-menu-id"]').value;
     const newState = Object.assign({}, this.state, {
       dialogAddNewItem: false,
       dialogLoadingNewItem: true,
