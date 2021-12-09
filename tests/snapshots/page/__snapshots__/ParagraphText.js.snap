@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ParagraphText Default props and rendering - Default style with left aligned text verifies the snapshot for the component 1`] = `
+<p
+  className="ajc-flex-row ajc-background-transparent ajc-page-content-text ajc-spacing-bottom-small ajc-text-black ajc-font-default ajc-flex-justify-left"
+>
+  Test paragraph text.
+</p>
+`;
+
+exports[`ParagraphText Transferred props and rendering - Bold style with left aligned text verifies the snapshot for the component 1`] = `
+<p
+  className="ajc-flex-row ajc-background-transparent ajc-page-content-text ajc-spacing-bottom-small ajc-text-black ajc-font-default ajc-flex-justify-left"
+>
+  <b>
+    Test paragraph text.
+  </b>
+</p>
+`;
+
+exports[`ParagraphText Transferred props and rendering - Default style with center aligned text verifies the snapshot for the component 1`] = `
+<p
+  className="ajc-flex-row ajc-background-transparent ajc-page-content-text ajc-spacing-bottom-small ajc-text-black ajc-font-default ajc-flex-justify-center"
+>
+  Test paragraph text.
+</p>
+`;
+
+exports[`ParagraphText Transferred props and rendering - Default style with right aligned text verifies the snapshot for the component 1`] = `
+<p
+  className="ajc-flex-row ajc-background-transparent ajc-page-content-text ajc-spacing-bottom-small ajc-text-black ajc-font-default ajc-flex-justify-right"
+>
+  Test paragraph text.
+</p>
+`;
+
+exports[`ParagraphText Transferred props and rendering - Italics style with left aligned text verifies the snapshot for the component 1`] = `
+<p
+  className="ajc-flex-row ajc-background-transparent ajc-page-content-text ajc-spacing-bottom-small ajc-text-black ajc-font-default ajc-flex-justify-left"
+>
+  <i>
+    Test paragraph text.
+  </i>
+</p>
+`;
