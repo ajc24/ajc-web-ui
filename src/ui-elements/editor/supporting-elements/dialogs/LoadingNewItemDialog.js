@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import DialogWithPageMask from '../../../dialog/DialogWithPageMask';
+import ParagraphText from '../../../page/ParagraphText';
 
 /**
  * The LoadingNewItemDialog component renders a dialog for when the application is in the process of adding a new item to the editor
@@ -13,7 +14,10 @@ class LoadingNewItemDialog extends React.Component {
   render() {
     return (
       <DialogWithPageMask id="loading-new-item-dialog-id" dialogContentAreaColour={this.props.dialogContentAreaColour} colour={this.props.colour}
-        dialogTitle="Please Wait... Adding Your New Item" buttonsList={[]} isDisplayed={this.props.isDisplayed} onClose={undefined}>
+        dialogTitle="Adding Your New Item" buttonsList={[]} isDisplayed={this.props.isDisplayed} onClose={undefined}>
+          <ParagraphText>
+            Please wait just a moment. We are getting your new item ready for you.
+          </ParagraphText>
       </DialogWithPageMask>
     );
   }
