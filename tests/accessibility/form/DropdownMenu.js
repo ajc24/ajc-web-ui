@@ -39,7 +39,7 @@ describe('DropdownMenu', () => {
       const html = TestDev.mountHtmlTemplate(
         <PageContent title="Accessibility Test">
           <h1>Dropdown Menu Accessibility Test</h1>
-          <DropdownMenu id="dropdown-menu-id" labelText="Test Dropdown Menu Label Text:" optionsList={mockOptionsList} accessibleMenuName="Number" />
+          <DropdownMenu id="dropdown-menu-id" labelText="Test Dropdown Menu Label Text:" optionsList={mockOptionsList} />
         </PageContent>
       );
       results = await AccessibilityDev.runAxeCore(html);
@@ -57,8 +57,7 @@ describe('DropdownMenu', () => {
       const html = TestDev.mountHtmlTemplate(
         <PageContent title="Accessibility Test">
           <h1>Dropdown Menu Accessibility Test</h1>
-          <DropdownMenu id="dropdown-menu-id" labelText="Test Dropdown Menu Label Text:" optionsList={mockOptionsList} additionalUpperSpacing={true}
-            accessibleMenuName="Number" />
+          <DropdownMenu id="dropdown-menu-id" labelText="Test Dropdown Menu Label Text:" optionsList={mockOptionsList} additionalUpperSpacing={true} />
         </PageContent>
       );
       results = await AccessibilityDev.runAxeCore(html);
@@ -76,8 +75,7 @@ describe('DropdownMenu', () => {
       const html = TestDev.mountHtmlTemplate(
         <PageContent title="Accessibility Test">
           <h1>Dropdown Menu Accessibility Test</h1>
-          <DropdownMenu id="dropdown-menu-id" labelText="Test Dropdown Menu Label Text:" optionsList={mockOptionsList} isDialogFormItem={true}
-            accessibleMenuName="Number" />
+          <DropdownMenu id="dropdown-menu-id" labelText="Test Dropdown Menu Label Text:" optionsList={mockOptionsList} isDialogFormItem={true} />
         </PageContent>
       );
       results = await AccessibilityDev.runAxeCore(html);

@@ -21,7 +21,7 @@ describe('DropdownMenu', () => {
     beforeAll(() => {
       wrapper = TestDev.mount(
         <React.Fragment>
-          <DropdownMenu id="dropdown-menu-id" labelText="Test Dropdown Menu Label Text:" optionsList={mockOptionsList} accessibleMenuName="Number" />
+          <DropdownMenu id="dropdown-menu-id" labelText="Test Dropdown Menu Label Text:" optionsList={mockOptionsList} />
         </React.Fragment>
       );
     });
@@ -90,7 +90,7 @@ describe('DropdownMenu', () => {
       wrapper = TestDev.mount(
         <React.Fragment>
           <DropdownMenu id="dropdown-menu-id" labelText="Test Dropdown Menu Label Text:" optionsList={mockOptionsList} additionalUpperSpacing={true}
-            isDialogFormItem={true} accessibleMenuName="Number" />
+            isDialogFormItem={true} />
         </React.Fragment>
       );
     });

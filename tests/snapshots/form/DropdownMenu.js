@@ -33,7 +33,7 @@ describe('DropdownMenu', () => {
     beforeAll(() => {
       jsonSnapshot = TestDev.createSnapshot(
         <React.Fragment>
-          <DropdownMenu id="dropdown-menu-id" labelText="Test Dropdown Menu Label Text:" optionsList={mockOptionsList} accessibleMenuName="Number" />
+          <DropdownMenu id="dropdown-menu-id" labelText="Test Dropdown Menu Label Text:" optionsList={mockOptionsList} />
         </React.Fragment>
       );
     });
@@ -49,8 +49,7 @@ describe('DropdownMenu', () => {
     beforeAll(() => {
       jsonSnapshot = TestDev.createSnapshot(
         <React.Fragment>
-          <DropdownMenu id="dropdown-menu-id" labelText="Test Dropdown Menu Label Text:" optionsList={mockOptionsList} additionalUpperSpacing={true}
-            accessibleMenuName="Number" />
+          <DropdownMenu id="dropdown-menu-id" labelText="Test Dropdown Menu Label Text:" optionsList={mockOptionsList} additionalUpperSpacing={true} />
         </React.Fragment>
       );
     });
@@ -66,8 +65,7 @@ describe('DropdownMenu', () => {
     beforeAll(() => {
       jsonSnapshot = TestDev.createSnapshot(
         <React.Fragment>
-          <DropdownMenu id="dropdown-menu-id" labelText="Test Dropdown Menu Label Text:" optionsList={mockOptionsList} isDialogFormItem={true}
-            accessibleMenuName="Number" />
+          <DropdownMenu id="dropdown-menu-id" labelText="Test Dropdown Menu Label Text:" optionsList={mockOptionsList} isDialogFormItem={true} />
         </React.Fragment>
       );
     });
