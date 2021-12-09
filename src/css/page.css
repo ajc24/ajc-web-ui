@@ -11,3 +11,9 @@
   margin: 0px;
   min-height: 425px;
 }
+
+.ajc-page-content-text {
+  margin: 0px;
+  line-height: 1.5em;
+  word-wrap: break-word;
+}
