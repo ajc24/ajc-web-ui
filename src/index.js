@@ -13,7 +13,9 @@ export { default as SmallFooter } from './ui-elements/footer/SmallFooter';
 
 /* Export all of the form controls components */
 export { default as DropdownMenu } from './ui-elements/form/DropdownMenu';
+export { default as FileSelection } from './ui-elements/form/FileSelection';
 export { default as HorizontalButtonList } from './ui-elements/form/HorizontalButtonList';
+export { default as TextInput } from './ui-elements/form/TextInput';
 
 /* Export all of the header components */
 export { default as Header } from './ui-elements/header/Header';
