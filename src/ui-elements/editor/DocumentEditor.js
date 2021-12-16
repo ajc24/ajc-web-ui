@@ -4,6 +4,8 @@ import '../../css/common.css';
 import AddNewItemDialog from './supporting-elements/dialogs/AddNewItemDialog';
 import ControlsEditor from './supporting-elements/controls/ControlsEditor';
 import LoadingNewItemDialog from './supporting-elements/dialogs/LoadingNewItemDialog';
+import FileSelection from '../form/FileSelection';
+import TextInput from '../form/TextInput';
 
 /* Data for use with the editor */
 const reRenderAllowance = 100;
@@ -24,6 +26,7 @@ class DocumentEditor extends React.Component {
     /* Bind all of the relevant functionality to this component */
     this.addEditorItem = this.addEditorItem.bind(this);
     this.countNumberOfExistingItemTypes = this.countNumberOfExistingItemTypes.bind(this);
+    this.countNumberOfValidItemTypes = this.countNumberOfValidItemTypes.bind(this);
     this.generateCopyOfEditorItems = this.generateCopyOfEditorItems.bind(this);
     this.hideAddNewItemDialog = this.hideAddNewItemDialog.bind(this);
     this.showAddNewItemDialog = this.showAddNewItemDialog.bind(this);
@@ -68,6 +71,20 @@ class DocumentEditor extends React.Component {
     let numberOfItemTypes = 0;
     for (let index = 0; index < this.state.editorItems.length; index += 1) {
       if (this.state.editorItems[index].itemType === itemType) {
+        numberOfItemTypes += 1;
+      }
+    }
+    return numberOfItemTypes;
+  }
+
+  /**
+   * Counts the number of valid (ie. non-deleted) editor items
+   * @returns {number}
+   */
+  countNumberOfValidItemTypes() {
+    let numberOfItemTypes = 0;
+    for (let index = 0; index < this.state.editorItems.length; index += 1) {
+      if (this.state.editorItems[index].isDeleted === false) {
         numberOfItemTypes += 1;
       }
     }
@@ -139,6 +156,9 @@ class DocumentEditor extends React.Component {
       editorPanelRootStyling = 'ajc-visibility-visible';
       previewPanelRootStyling = 'ajc-visibility-hidden';
     }
+
+    /* Determine whether any valid items are displayed or not */
+    let upperControlsEditorAdditionalSpacing = this.countNumberOfValidItemTypes() > 0;
     return (
       <div className={rootStyling}>
         {/* Editor panel */}
@@ -146,12 +166,20 @@ class DocumentEditor extends React.Component {
           <form id="main-editor-form-id">
             {
               this.state.editorItems.map((item, index) => {
-                const data = JSON.stringify(item);
-                return <p key={`item-${index}`}>{data}</p>
+                if (item.itemType === 'screenshot-with-caption' && item.isDeleted === false) {
+                  /** Render the screenshot with caption form item */
+                  return (
+                    <React.Fragment>
+                      <FileSelection id={`screenshot-with-caption-${index}`} key={`screenshot-with-caption-item-${index}-0`} colour={this.props.colour} />
+                      <TextInput id={`screenshot-with-caption-${index}`} key={`screenshot-with-caption-item-${index}-1`} />
+                    </React.Fragment>
+                  );
+                }
               })
             }
           </form>
-          <ControlsEditor colour={this.props.colour} handleClickAddNewItem={this.showAddNewItemDialog} upperButtonListAdditionalSpacing={false} />
+          <ControlsEditor colour={this.props.colour} handleClickAddNewItem={this.showAddNewItemDialog}
+            upperButtonListAdditionalSpacing={upperControlsEditorAdditionalSpacing} />
         </div>
 
         {/* Add new item dialog */}
