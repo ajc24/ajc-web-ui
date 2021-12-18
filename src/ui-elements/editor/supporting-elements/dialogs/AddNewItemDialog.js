@@ -31,14 +31,14 @@ class AddNewItemDialog extends React.Component {
     ];
     /* Create the options list for the dialog dropdown menu */
     const dialogDropdownMenuOptionsList = [
-    //   {
-    //     textContent: 'Paragraph',
-    //     value: 'paragraph',
-    //   },
-    //   {
-    //     textContent: 'Paragraph Heading',
-    //     value: 'paragraph_heading',
-    //   },
+      // {
+      //   textContent: 'Paragraph',
+      //   value: 'paragraph',
+      // },
+      // {
+      //   textContent: 'Paragraph Heading',
+      //   value: 'paragraph_heading',
+      // },
       {
         textContent: 'Screenshot With Caption Text',
         value: 'screenshot-with-caption',
