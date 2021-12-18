@@ -169,9 +169,9 @@ class DocumentEditor extends React.Component {
                 if (item.itemType === 'screenshot-with-caption' && item.isDeleted === false) {
                   /** Render the screenshot with caption form item */
                   return (
-                    <React.Fragment>
-                      <FileSelection id={`screenshot-with-caption-${index}`} key={`screenshot-with-caption-item-${index}-0`} colour={this.props.colour} />
-                      <TextInput id={`screenshot-with-caption-${index}`} key={`screenshot-with-caption-item-${index}-1`} />
+                    <React.Fragment key={`screenshot-with-caption-item-${index}`}>
+                      <FileSelection id={`screenshot-with-caption-${index}`} colour={this.props.colour} />
+                      <TextInput id={`screenshot-with-caption-${index}`} />
                     </React.Fragment>
                   );
                 }
