@@ -24,21 +24,21 @@ class ControlsEditor extends React.Component {
     const middleEditorButtonsList = [
       {
         id: 'save-as-draft-button',
-        // onClick: this.props.onClickSaveAsDraft,
+        onClick: () => {},// this.props.onClickSaveAsDraft,
         title: 'Save as Draft',
         tooltip: 'Save your document in its current incomplete state. You may return to finish it later.',
         type: 'button',
       },
       {
         id: 'generate-preview-button',
-        // onClick: this.props.onClickGeneratePreview,
+        onClick: () => {},// this.props.onClickGeneratePreview,
         title: 'Generate Preview',
         tooltip: 'Generate a preview of your document in its current state.',
         type: 'button',
       },
       {
         id: 'publish-document-button',
-        // onClick: this.props.onClickPublishDocument,
+        onClick: () => {},// this.props.onClickPublishDocument,
         title: 'Publish Document',
         tooltip: 'When you are finished with your document, click here to publish it.',
         type: 'button',
@@ -47,7 +47,7 @@ class ControlsEditor extends React.Component {
     const lowerEditorButtonsList = [
       {
         id: 'discard-draft-button',
-        // onClick: this.props.onClickDiscardDraft,
+        onClick: () => {},// this.props.onClickDiscardDraft,
         title: 'Discard Draft',
         tooltip: 'Discard your current working document. Please note you will not be able to return to it after discarding it.',
         type: 'button',
