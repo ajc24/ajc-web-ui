@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../../css/common.css';
 import AddNewItemDialog from './supporting-elements/dialogs/AddNewItemDialog';
 import ControlsEditor from './supporting-elements/controls/ControlsEditor';
 import LoadingNewItemDialog from './supporting-elements/dialogs/LoadingNewItemDialog';
 import FileSelection from '../form/FileSelection';
 import TextInput from '../form/TextInput';
+import '../../css/common.css';
 
 /* Data for use with the editor */
 const reRenderAllowance = 100;
+const screenshotCaptionTextCharacterLimit = 50;
+const validImageFileTypes = ['png', 'jpg', 'jpeg'];
 
 /**
  * The DocumentEditor component allows a user to generate a written article which can then be rendered in your web application.
@@ -30,6 +32,7 @@ class DocumentEditor extends React.Component {
     this.generateCopyOfEditorItems = this.generateCopyOfEditorItems.bind(this);
     this.hideAddNewItemDialog = this.hideAddNewItemDialog.bind(this);
     this.showAddNewItemDialog = this.showAddNewItemDialog.bind(this);
+    this.showInvalidFileTypeDialog = this.showInvalidFileTypeDialog.bind(this);
     this.showLoadingNewItemDialog = this.showLoadingNewItemDialog.bind(this);
 	}
 
@@ -40,18 +43,23 @@ class DocumentEditor extends React.Component {
   addEditorItem(itemId) {
     const editorItemsCopy = this.generateCopyOfEditorItems();
     const numberOfExistingItemTypes = this.countNumberOfExistingItemTypes(itemId);
+    let isInvalidItem = false;
     if (itemId === 'screenshot-with-caption') {
       /* Add a new screenshot with caption editor item */
       editorItemsCopy.push({
         caption: undefined,
-        characterLimit: this.props.screenshotCaptionCharacterLimit,
+        characterLimit: screenshotCaptionTextCharacterLimit,
         filename: undefined,
         imageData: undefined,
       });
+    } else {
+      /* Mark this item as invalid - this also marks the item as deleted so as it can never be rendered */
+      isInvalidItem = true;
+      editorItemsCopy.push({});
     }
     /* Add the common data key and value pairs to the latest editor item */
     editorItemsCopy[this.state.editorItems.length].index = this.state.editorItems.length;
-    editorItemsCopy[this.state.editorItems.length].isDeleted = false;
+    editorItemsCopy[this.state.editorItems.length].isDeleted = isInvalidItem;
     editorItemsCopy[this.state.editorItems.length].itemIndex = numberOfExistingItemTypes + 1;
     editorItemsCopy[this.state.editorItems.length].itemType = itemId;
     /* Update state to include the new editor items list and set the loading dialog as hidden */
@@ -124,6 +132,11 @@ class DocumentEditor extends React.Component {
   }
 
   /**
+   * Marks the invalid file type dialog as visible
+   */
+  showInvalidFileTypeDialog() {}
+
+  /**
    * Marks the loading dialog for adding a new item as visible.
    * Then proceeds to determine the itemId for the newly selected item and
    * forwards that value to the addEditorItem function.
@@ -162,17 +175,18 @@ class DocumentEditor extends React.Component {
     return (
       <div className={rootStyling}>
         {/* Editor panel */}
-        <div className={editorPanelRootStyling}>
+        <div id="main-editor-container" className={editorPanelRootStyling}>
           <form id="main-editor-form-id">
             {
               this.state.editorItems.map((item, index) => {
                 if (item.itemType === 'screenshot-with-caption' && item.isDeleted === false) {
                   /** Render the screenshot with caption form item */
                   return (
-                    <React.Fragment key={`screenshot-with-caption-item-${index}`}>
-                      <FileSelection id={`screenshot-with-caption-${index}`} colour={this.props.colour} />
-                      <TextInput id={`screenshot-with-caption-${index}`} />
-                    </React.Fragment>
+                    <div id={`screenshot-with-caption-${index}-container`} key={`screenshot-with-caption-${index}-container`}>
+                      <FileSelection id={`screenshot-with-caption-${index}`} colour={this.props.colour} validFileTypes={validImageFileTypes} 
+                        onInvalidFileType={this.showInvalidFileTypeDialog} />
+                      <TextInput id={`screenshot-with-caption-${index}`} characterLimit={screenshotCaptionTextCharacterLimit} />
+                    </div>
                   );
                 }
               })
@@ -190,7 +204,7 @@ class DocumentEditor extends React.Component {
         <LoadingNewItemDialog colour={this.props.colour} dialogContentAreaColour={this.props.dialogContentAreaColour} isDisplayed={this.state.dialogLoadingNewItem} />
 
         {/* Preview panel */}
-        <div className={previewPanelRootStyling}>
+        <div id="preview-panel-container" className={previewPanelRootStyling}>
           Hello World
         </div>
       </div>
@@ -202,12 +216,9 @@ DocumentEditor.propTypes = {
   colour: PropTypes.oneOf([ 'grey', 'red' ]),
   /** The background colour for the content area of any dialogs rendered in the editor. By default this is set to white. */
   dialogContentAreaColour: PropTypes.oneOf([ 'grey', 'white', 'yellow' ]),
-  /** The character limit to be set to any screenshot caption text entered in the editor. By default this is set to 50 characters. */
-  screenshotCaptionCharacterLimit: PropTypes.number,
 };
 DocumentEditor.defaultProps = {
 	colour: 'grey',
   dialogContentAreaColour: 'white',
-  screenshotCaptionCharacterLimit: 50,
 };
 export default DocumentEditor;
