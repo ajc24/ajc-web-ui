@@ -1,0 +1,217 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DocumentEditor Default props and rendering - Component with grey theme verifies the snapshot for the component 1`] = `
+<div
+  className="ajc-flex-column ajc-flex-justify-left ajc-background-transparent ajc-width-hd-inner ajc-spacing-bottom-small ajc-text-black ajc-font-default"
+>
+  <div
+    className="ajc-visibility-visible"
+    id="main-editor-container"
+  >
+    <form
+      id="main-editor-form-id"
+    />
+    <div
+      className="ajc-flex-row ajc-spacing-bottom-small ajc-width-hd-inner ajc-text-black ajc-font-default ajc-flex-justify-left"
+    >
+      <h2
+        className="ajc-font-paragraph-heading"
+      >
+        Click the button below to add new items to your document:
+      </h2>
+    </div>
+    <div
+      className="ajc-flex-row ajc-spacing-bottom-small ajc-background-transparent ajc-width-hd-inner ajc-flex-justify-left ajc-spacing-top-reduced"
+    >
+      <button
+        className="ajc-button ajc-font-default ajc-button-grey"
+        id="add-new-item-button"
+        onClick={[Function]}
+        title="Add a new item to your document."
+        type="button"
+      >
+        Add New Item
+      </button>
+    </div>
+    <div
+      className="ajc-flex-row ajc-spacing-bottom-small ajc-width-hd-inner ajc-text-black ajc-font-default ajc-flex-justify-left ajc-spacing-top-large"
+    >
+      <h2
+        className="ajc-font-paragraph-heading"
+      >
+        Save your current draft, generate a preview or publish your document:
+      </h2>
+    </div>
+    <div
+      className="ajc-flex-row ajc-spacing-bottom-small ajc-background-transparent ajc-width-hd-inner ajc-flex-justify-left ajc-spacing-top-reduced"
+    >
+      <button
+        className="ajc-button ajc-font-default ajc-button-grey ajc-spacing-right-small"
+        id="save-as-draft-button"
+        onClick={[Function]}
+        title="Save your document in its current incomplete state. You may return to finish it later."
+        type="button"
+      >
+        Save as Draft
+      </button>
+      <button
+        className="ajc-button ajc-font-default ajc-button-grey ajc-spacing-right-small"
+        id="generate-preview-button"
+        onClick={[Function]}
+        title="Generate a preview of your document in its current state."
+        type="button"
+      >
+        Generate Preview
+      </button>
+      <button
+        className="ajc-button ajc-font-default ajc-button-grey"
+        id="publish-document-button"
+        onClick={[Function]}
+        title="When you are finished with your document, click here to publish it."
+        type="button"
+      >
+        Publish Document
+      </button>
+    </div>
+    <div
+      className="ajc-flex-row ajc-spacing-bottom-small ajc-width-hd-inner ajc-text-black ajc-font-default ajc-flex-justify-left ajc-spacing-top-large"
+    >
+      <h2
+        className="ajc-font-paragraph-heading"
+      >
+        Click the button below to discard this current draft:
+      </h2>
+    </div>
+    <div
+      className="ajc-flex-row ajc-spacing-bottom-small ajc-background-transparent ajc-width-hd-inner ajc-flex-justify-left ajc-spacing-top-reduced"
+    >
+      <button
+        className="ajc-button ajc-font-default ajc-button-grey"
+        id="discard-draft-button"
+        onClick={[Function]}
+        title="Discard your current working document. Please note you will not be able to return to it after discarding it."
+        type="button"
+      >
+        Discard Draft
+      </button>
+    </div>
+  </div>
+  <div
+    className="ajc-visibility-hidden"
+    id="preview-panel-container"
+  >
+    Hello World
+  </div>
+</div>
+`;
+
+exports[`DocumentEditor Dialog visible - Add new item dialog verifies the snapshot for the component 1`] = `"<div class=\\"ajc-flex-column ajc-flex-justify-left ajc-background-transparent ajc-width-hd-inner ajc-spacing-bottom-small ajc-text-black ajc-font-default\\"><div id=\\"main-editor-container\\" class=\\"ajc-visibility-visible\\"><form id=\\"main-editor-form-id\\"></form><div class=\\"ajc-flex-row ajc-spacing-bottom-small ajc-width-hd-inner ajc-text-black ajc-font-default ajc-flex-justify-left\\"><h2 class=\\"ajc-font-paragraph-heading\\">Click the button below to add new items to your document:</h2></div><div class=\\"ajc-flex-row ajc-spacing-bottom-small ajc-background-transparent ajc-width-hd-inner ajc-flex-justify-left ajc-spacing-top-reduced\\"><button id=\\"add-new-item-button\\" class=\\"ajc-button ajc-font-default ajc-button-grey\\" type=\\"button\\" title=\\"Add a new item to your document.\\">Add New Item</button></div><div class=\\"ajc-flex-row ajc-spacing-bottom-small ajc-width-hd-inner ajc-text-black ajc-font-default ajc-flex-justify-left ajc-spacing-top-large\\"><h2 class=\\"ajc-font-paragraph-heading\\">Save your current draft, generate a preview or publish your document:</h2></div><div class=\\"ajc-flex-row ajc-spacing-bottom-small ajc-background-transparent ajc-width-hd-inner ajc-flex-justify-left ajc-spacing-top-reduced\\"><button id=\\"save-as-draft-button\\" class=\\"ajc-button ajc-font-default ajc-button-grey ajc-spacing-right-small\\" type=\\"button\\" title=\\"Save your document in its current incomplete state. You may return to finish it later.\\">Save as Draft</button><button id=\\"generate-preview-button\\" class=\\"ajc-button ajc-font-default ajc-button-grey ajc-spacing-right-small\\" type=\\"button\\" title=\\"Generate a preview of your document in its current state.\\">Generate Preview</button><button id=\\"publish-document-button\\" class=\\"ajc-button ajc-font-default ajc-button-grey\\" type=\\"button\\" title=\\"When you are finished with your document, click here to publish it.\\">Publish Document</button></div><div class=\\"ajc-flex-row ajc-spacing-bottom-small ajc-width-hd-inner ajc-text-black ajc-font-default ajc-flex-justify-left ajc-spacing-top-large\\"><h2 class=\\"ajc-font-paragraph-heading\\">Click the button below to discard this current draft:</h2></div><div class=\\"ajc-flex-row ajc-spacing-bottom-small ajc-background-transparent ajc-width-hd-inner ajc-flex-justify-left ajc-spacing-top-reduced\\"><button id=\\"discard-draft-button\\" class=\\"ajc-button ajc-font-default ajc-button-grey\\" type=\\"button\\" title=\\"Discard your current working document. Please note you will not be able to return to it after discarding it.\\">Discard Draft</button></div></div><div id=\\"page-mask-add-new-item-dialog-id-root\\" class=\\"ajc-flex-row ajc-flex-justify-center ajc-page-mask ajc-width-4k\\"><div class=\\"ajc-flex-row ajc-flex-justify-center ajc-width-full-hd\\"><div class=\\"ajc-flex-row ajc-flex-justify-center ajc-width-hd\\"><div id=\\"page-mask-add-new-item-dialog-id-content\\" class=\\"ajc-flex-column ajc-flex-justify-start ajc-spacing-top-large ajc-spacing-bottom-large ajc-width-hd-with-padding ajc-text-white ajc-font-default\\"><div class=\\"ajc-flex-row ajc-flex-justify-center ajc-width-hd-inner\\"><div id=\\"add-new-item-dialog-id-root\\" class=\\"ajc-flex-column ajc-flex-justify-left ajc-width-dialog-parent\\"><div id=\\"add-new-item-dialog-id-title\\" class=\\"ajc-flex-row ajc-flex-justify-left ajc-dialog-title ajc-width-dialog ajc-text-white ajc-font-default ajc-background-grey-2\\"><h2 class=\\"ajc-font-dialog-title\\">Add New Document Item</h2></div><div id=\\"add-new-item-dialog-id-content-area-root\\" class=\\"ajc-flex-row ajc-flex-justify-left ajc-dialog-content ajc-width-dialog-content ajc-background-white\\"><div id=\\"add-new-item-dialog-id-content-area\\" class=\\"ajc-flex-column ajc-flex-justify-left ajc-text-black ajc-font-default\\"><div class=\\"ajc-flex-column ajc-flex-justify-left ajc-background-transparent ajc-spacing-bottom-small ajc-text-black ajc-font-default\\"><label for=\\"add-new-item-dropdown-menu-id\\" class=\\"ajc-row ajc-flex-justify-left ajc-spacing-bottom-small ajc-spacing-bottom-reduced ajc-label-standalone\\">Please select an item to be added to your document:</label><select id=\\"add-new-item-dropdown-menu-id\\" name=\\"add-new-item-dropdown-menu-id\\" class=\\"ajc-select ajc-font-default\\"><option value=\\"screenshot-with-caption\\" title=\\"Screenshot With Caption Text\\" selected=\\"\\">Screenshot With Caption Text</option></select></div></div></div><div id=\\"add-new-item-dialog-id-footer\\" class=\\"ajc-flex-row ajc-flex-justify-center ajc-dialog-footer ajc-width-dialog ajc-font-default ajc-background-grey-2\\"><button id=\\"confirm-add-new-item-button\\" class=\\"ajc-dialog-footer-button ajc-text-white ajc-menu-item-grey\\" type=\\"button\\">Confirm and Add</button><button id=\\"cancel-add-new-item-button\\" class=\\"ajc-dialog-footer-button ajc-text-white ajc-menu-item-grey\\" type=\\"button\\">Cancel and Exit</button></div></div></div></div></div></div></div><button id=\\"page-mask-add-new-item-dialog-id-close-button\\" class=\\"ajc-flex-row ajc-button ajc-button-page-mask-close ajc-text-white ajc-font-default ajc-button-grey\\" title=\\"Click to close\\">&nbsp;X&nbsp;</button><div id=\\"preview-panel-container\\" class=\\"ajc-visibility-hidden\\">Hello World</div></div>"`;
+
+exports[`DocumentEditor Dialog visible - Loading new item dialog verifies the snapshot for the component 1`] = `"<div class=\\"ajc-flex-column ajc-flex-justify-left ajc-background-transparent ajc-width-hd-inner ajc-spacing-bottom-small ajc-text-black ajc-font-default\\"><div id=\\"main-editor-container\\" class=\\"ajc-visibility-visible\\"><form id=\\"main-editor-form-id\\"></form><div class=\\"ajc-flex-row ajc-spacing-bottom-small ajc-width-hd-inner ajc-text-black ajc-font-default ajc-flex-justify-left\\"><h2 class=\\"ajc-font-paragraph-heading\\">Click the button below to add new items to your document:</h2></div><div class=\\"ajc-flex-row ajc-spacing-bottom-small ajc-background-transparent ajc-width-hd-inner ajc-flex-justify-left ajc-spacing-top-reduced\\"><button id=\\"add-new-item-button\\" class=\\"ajc-button ajc-font-default ajc-button-grey\\" type=\\"button\\" title=\\"Add a new item to your document.\\">Add New Item</button></div><div class=\\"ajc-flex-row ajc-spacing-bottom-small ajc-width-hd-inner ajc-text-black ajc-font-default ajc-flex-justify-left ajc-spacing-top-large\\"><h2 class=\\"ajc-font-paragraph-heading\\">Save your current draft, generate a preview or publish your document:</h2></div><div class=\\"ajc-flex-row ajc-spacing-bottom-small ajc-background-transparent ajc-width-hd-inner ajc-flex-justify-left ajc-spacing-top-reduced\\"><button id=\\"save-as-draft-button\\" class=\\"ajc-button ajc-font-default ajc-button-grey ajc-spacing-right-small\\" type=\\"button\\" title=\\"Save your document in its current incomplete state. You may return to finish it later.\\">Save as Draft</button><button id=\\"generate-preview-button\\" class=\\"ajc-button ajc-font-default ajc-button-grey ajc-spacing-right-small\\" type=\\"button\\" title=\\"Generate a preview of your document in its current state.\\">Generate Preview</button><button id=\\"publish-document-button\\" class=\\"ajc-button ajc-font-default ajc-button-grey\\" type=\\"button\\" title=\\"When you are finished with your document, click here to publish it.\\">Publish Document</button></div><div class=\\"ajc-flex-row ajc-spacing-bottom-small ajc-width-hd-inner ajc-text-black ajc-font-default ajc-flex-justify-left ajc-spacing-top-large\\"><h2 class=\\"ajc-font-paragraph-heading\\">Click the button below to discard this current draft:</h2></div><div class=\\"ajc-flex-row ajc-spacing-bottom-small ajc-background-transparent ajc-width-hd-inner ajc-flex-justify-left ajc-spacing-top-reduced\\"><button id=\\"discard-draft-button\\" class=\\"ajc-button ajc-font-default ajc-button-grey\\" type=\\"button\\" title=\\"Discard your current working document. Please note you will not be able to return to it after discarding it.\\">Discard Draft</button></div></div><div id=\\"page-mask-loading-new-item-dialog-id-root\\" class=\\"ajc-flex-row ajc-flex-justify-center ajc-page-mask ajc-width-4k\\"><div class=\\"ajc-flex-row ajc-flex-justify-center ajc-width-full-hd\\"><div class=\\"ajc-flex-row ajc-flex-justify-center ajc-width-hd\\"><div id=\\"page-mask-loading-new-item-dialog-id-content\\" class=\\"ajc-flex-column ajc-flex-justify-start ajc-spacing-top-large ajc-spacing-bottom-large ajc-width-hd-with-padding ajc-text-white ajc-font-default\\"><div class=\\"ajc-flex-row ajc-flex-justify-center ajc-width-hd-inner\\"><div id=\\"loading-new-item-dialog-id-root\\" class=\\"ajc-flex-column ajc-flex-justify-left ajc-width-dialog-parent\\"><div id=\\"loading-new-item-dialog-id-title\\" class=\\"ajc-flex-row ajc-flex-justify-left ajc-dialog-title ajc-width-dialog ajc-text-white ajc-font-default ajc-background-grey-2\\"><h2 class=\\"ajc-font-dialog-title\\">Adding Your New Item</h2></div><div id=\\"loading-new-item-dialog-id-content-area-root\\" class=\\"ajc-flex-row ajc-flex-justify-left ajc-dialog-content ajc-width-dialog-content ajc-background-white\\"><div id=\\"loading-new-item-dialog-id-content-area\\" class=\\"ajc-flex-column ajc-flex-justify-left ajc-text-black ajc-font-default\\"><p class=\\"ajc-flex-row ajc-background-transparent ajc-page-content-text ajc-spacing-bottom-small ajc-text-black ajc-font-default ajc-flex-justify-left\\">Please wait just a moment. We are getting your new item ready for you.</p></div></div><div id=\\"loading-new-item-dialog-id-footer\\" class=\\"ajc-flex-row ajc-flex-justify-center ajc-dialog-footer ajc-width-dialog ajc-font-default ajc-background-grey-2\\"></div></div></div></div></div></div></div><div id=\\"preview-panel-container\\" class=\\"ajc-visibility-hidden\\">Hello World</div></div>"`;
+
+exports[`DocumentEditor Transferred props and rendering - Component with all custom properties set verifies the snapshot for the component 1`] = `
+<div
+  className="ajc-flex-column ajc-flex-justify-left ajc-background-transparent ajc-width-hd-inner ajc-spacing-bottom-small ajc-text-black ajc-font-default"
+>
+  <div
+    className="ajc-visibility-visible"
+    id="main-editor-container"
+  >
+    <form
+      id="main-editor-form-id"
+    />
+    <div
+      className="ajc-flex-row ajc-spacing-bottom-small ajc-width-hd-inner ajc-text-black ajc-font-default ajc-flex-justify-left"
+    >
+      <h2
+        className="ajc-font-paragraph-heading"
+      >
+        Click the button below to add new items to your document:
+      </h2>
+    </div>
+    <div
+      className="ajc-flex-row ajc-spacing-bottom-small ajc-background-transparent ajc-width-hd-inner ajc-flex-justify-left ajc-spacing-top-reduced"
+    >
+      <button
+        className="ajc-button ajc-font-default ajc-button-red"
+        id="add-new-item-button"
+        onClick={[Function]}
+        title="Add a new item to your document."
+        type="button"
+      >
+        Add New Item
+      </button>
+    </div>
+    <div
+      className="ajc-flex-row ajc-spacing-bottom-small ajc-width-hd-inner ajc-text-black ajc-font-default ajc-flex-justify-left ajc-spacing-top-large"
+    >
+      <h2
+        className="ajc-font-paragraph-heading"
+      >
+        Save your current draft, generate a preview or publish your document:
+      </h2>
+    </div>
+    <div
+      className="ajc-flex-row ajc-spacing-bottom-small ajc-background-transparent ajc-width-hd-inner ajc-flex-justify-left ajc-spacing-top-reduced"
+    >
+      <button
+        className="ajc-button ajc-font-default ajc-button-red ajc-spacing-right-small"
+        id="save-as-draft-button"
+        onClick={[Function]}
+        title="Save your document in its current incomplete state. You may return to finish it later."
+        type="button"
+      >
+        Save as Draft
+      </button>
+      <button
+        className="ajc-button ajc-font-default ajc-button-red ajc-spacing-right-small"
+        id="generate-preview-button"
+        onClick={[Function]}
+        title="Generate a preview of your document in its current state."
+        type="button"
+      >
+        Generate Preview
+      </button>
+      <button
+        className="ajc-button ajc-font-default ajc-button-red"
+        id="publish-document-button"
+        onClick={[Function]}
+        title="When you are finished with your document, click here to publish it."
+        type="button"
+      >
+        Publish Document
+      </button>
+    </div>
+    <div
+      className="ajc-flex-row ajc-spacing-bottom-small ajc-width-hd-inner ajc-text-black ajc-font-default ajc-flex-justify-left ajc-spacing-top-large"
+    >
+      <h2
+        className="ajc-font-paragraph-heading"
+      >
+        Click the button below to discard this current draft:
+      </h2>
+    </div>
+    <div
+      className="ajc-flex-row ajc-spacing-bottom-small ajc-background-transparent ajc-width-hd-inner ajc-flex-justify-left ajc-spacing-top-reduced"
+    >
+      <button
+        className="ajc-button ajc-font-default ajc-button-red"
+        id="discard-draft-button"
+        onClick={[Function]}
+        title="Discard your current working document. Please note you will not be able to return to it after discarding it."
+        type="button"
+      >
+        Discard Draft
+      </button>
+    </div>
+  </div>
+  <div
+    className="ajc-visibility-hidden"
+    id="preview-panel-container"
+  >
+    Hello World
+  </div>
+</div>
+`;
+
+exports[`DocumentEditor Transferred props and rendering - Editor displaying screenshot with caption item verifies the snapshot for the component 1`] = `"<div class=\\"ajc-flex-column ajc-flex-justify-left ajc-background-transparent ajc-width-hd-inner ajc-spacing-bottom-small ajc-text-black ajc-font-default\\"><div id=\\"main-editor-container\\" class=\\"ajc-visibility-visible\\"><form id=\\"main-editor-form-id\\"><div id=\\"screenshot-with-caption-0-container\\"><div id=\\"screenshot-with-caption-0-file-selection-root\\" class=\\"ajc-flex-column ajc-flex-justify-left ajc-background-transparent ajc-black-text ajc-font-default\\">File Selection Component</div><div id=\\"screenshot-with-caption-0-text-input-root\\" class=\\"ajc-flex-column ajc-flex-justify-left ajc-background-transparent ajc-spacing-bottom-small ajc-text-black ajc-font-default\\">Text Input Component</div></div></form><div class=\\"ajc-flex-row ajc-spacing-bottom-small ajc-width-hd-inner ajc-text-black ajc-font-default ajc-flex-justify-left ajc-spacing-top-large\\"><h2 class=\\"ajc-font-paragraph-heading\\">Click the button below to add new items to your document:</h2></div><div class=\\"ajc-flex-row ajc-spacing-bottom-small ajc-background-transparent ajc-width-hd-inner ajc-flex-justify-left ajc-spacing-top-reduced\\"><button id=\\"add-new-item-button\\" class=\\"ajc-button ajc-font-default ajc-button-grey\\" type=\\"button\\" title=\\"Add a new item to your document.\\">Add New Item</button></div><div class=\\"ajc-flex-row ajc-spacing-bottom-small ajc-width-hd-inner ajc-text-black ajc-font-default ajc-flex-justify-left ajc-spacing-top-large\\"><h2 class=\\"ajc-font-paragraph-heading\\">Save your current draft, generate a preview or publish your document:</h2></div><div class=\\"ajc-flex-row ajc-spacing-bottom-small ajc-background-transparent ajc-width-hd-inner ajc-flex-justify-left ajc-spacing-top-reduced\\"><button id=\\"save-as-draft-button\\" class=\\"ajc-button ajc-font-default ajc-button-grey ajc-spacing-right-small\\" type=\\"button\\" title=\\"Save your document in its current incomplete state. You may return to finish it later.\\">Save as Draft</button><button id=\\"generate-preview-button\\" class=\\"ajc-button ajc-font-default ajc-button-grey ajc-spacing-right-small\\" type=\\"button\\" title=\\"Generate a preview of your document in its current state.\\">Generate Preview</button><button id=\\"publish-document-button\\" class=\\"ajc-button ajc-font-default ajc-button-grey\\" type=\\"button\\" title=\\"When you are finished with your document, click here to publish it.\\">Publish Document</button></div><div class=\\"ajc-flex-row ajc-spacing-bottom-small ajc-width-hd-inner ajc-text-black ajc-font-default ajc-flex-justify-left ajc-spacing-top-large\\"><h2 class=\\"ajc-font-paragraph-heading\\">Click the button below to discard this current draft:</h2></div><div class=\\"ajc-flex-row ajc-spacing-bottom-small ajc-background-transparent ajc-width-hd-inner ajc-flex-justify-left ajc-spacing-top-reduced\\"><button id=\\"discard-draft-button\\" class=\\"ajc-button ajc-font-default ajc-button-grey\\" type=\\"button\\" title=\\"Discard your current working document. Please note you will not be able to return to it after discarding it.\\">Discard Draft</button></div></div><div id=\\"preview-panel-container\\" class=\\"ajc-visibility-hidden\\">Hello World</div></div>"`;
