@@ -1,0 +1,179 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlsEditor Default props and rendering verifies the snapshot for the component 1`] = `
+Array [
+  <div
+    className="ajc-flex-row ajc-spacing-bottom-small ajc-width-hd-inner ajc-text-black ajc-font-default ajc-flex-justify-left"
+  >
+    <h2
+      className="ajc-font-paragraph-heading"
+    >
+      Click the button below to add new items to your document:
+    </h2>
+  </div>,
+  <div
+    className="ajc-flex-row ajc-spacing-bottom-small ajc-background-transparent ajc-width-hd-inner ajc-flex-justify-left ajc-spacing-top-reduced"
+  >
+    <button
+      className="ajc-button ajc-font-default ajc-button-grey"
+      id="add-new-item-button"
+      onClick={[Function]}
+      title="Add a new item to your document."
+      type="button"
+    >
+      Add New Item
+    </button>
+  </div>,
+  <div
+    className="ajc-flex-row ajc-spacing-bottom-small ajc-width-hd-inner ajc-text-black ajc-font-default ajc-flex-justify-left ajc-spacing-top-large"
+  >
+    <h2
+      className="ajc-font-paragraph-heading"
+    >
+      Save your current draft, generate a preview or publish your document:
+    </h2>
+  </div>,
+  <div
+    className="ajc-flex-row ajc-spacing-bottom-small ajc-background-transparent ajc-width-hd-inner ajc-flex-justify-left ajc-spacing-top-reduced"
+  >
+    <button
+      className="ajc-button ajc-font-default ajc-button-grey ajc-spacing-right-small"
+      id="save-as-draft-button"
+      onClick={[Function]}
+      title="Save your document in its current incomplete state. You may return to finish it later."
+      type="button"
+    >
+      Save as Draft
+    </button>
+    <button
+      className="ajc-button ajc-font-default ajc-button-grey ajc-spacing-right-small"
+      id="generate-preview-button"
+      onClick={[Function]}
+      title="Generate a preview of your document in its current state."
+      type="button"
+    >
+      Generate Preview
+    </button>
+    <button
+      className="ajc-button ajc-font-default ajc-button-grey"
+      id="publish-document-button"
+      onClick={[Function]}
+      title="When you are finished with your document, click here to publish it."
+      type="button"
+    >
+      Publish Document
+    </button>
+  </div>,
+  <div
+    className="ajc-flex-row ajc-spacing-bottom-small ajc-width-hd-inner ajc-text-black ajc-font-default ajc-flex-justify-left ajc-spacing-top-large"
+  >
+    <h2
+      className="ajc-font-paragraph-heading"
+    >
+      Click the button below to discard this current draft:
+    </h2>
+  </div>,
+  <div
+    className="ajc-flex-row ajc-spacing-bottom-small ajc-background-transparent ajc-width-hd-inner ajc-flex-justify-left ajc-spacing-top-reduced"
+  >
+    <button
+      className="ajc-button ajc-font-default ajc-button-grey"
+      id="discard-draft-button"
+      onClick={[Function]}
+      title="Discard your current working document. Please note you will not be able to return to it after discarding it."
+      type="button"
+    >
+      Discard Draft
+    </button>
+  </div>,
+]
+`;
+
+exports[`ControlsEditor Transferred props and rendering - All properties custom set verifies the snapshot for the component 1`] = `
+Array [
+  <div
+    className="ajc-flex-row ajc-spacing-bottom-small ajc-width-hd-inner ajc-text-black ajc-font-default ajc-flex-justify-left ajc-spacing-top-large"
+  >
+    <h2
+      className="ajc-font-paragraph-heading"
+    >
+      Click the button below to add new items to your document:
+    </h2>
+  </div>,
+  <div
+    className="ajc-flex-row ajc-spacing-bottom-small ajc-background-transparent ajc-width-hd-inner ajc-flex-justify-left ajc-spacing-top-reduced"
+  >
+    <button
+      className="ajc-button ajc-font-default ajc-button-red"
+      id="add-new-item-button"
+      onClick={[MockFunction]}
+      title="Add a new item to your document."
+      type="button"
+    >
+      Add New Item
+    </button>
+  </div>,
+  <div
+    className="ajc-flex-row ajc-spacing-bottom-small ajc-width-hd-inner ajc-text-black ajc-font-default ajc-flex-justify-left ajc-spacing-top-large"
+  >
+    <h2
+      className="ajc-font-paragraph-heading"
+    >
+      Save your current draft, generate a preview or publish your document:
+    </h2>
+  </div>,
+  <div
+    className="ajc-flex-row ajc-spacing-bottom-small ajc-background-transparent ajc-width-hd-inner ajc-flex-justify-left ajc-spacing-top-reduced"
+  >
+    <button
+      className="ajc-button ajc-font-default ajc-button-red ajc-spacing-right-small"
+      id="save-as-draft-button"
+      onClick={[Function]}
+      title="Save your document in its current incomplete state. You may return to finish it later."
+      type="button"
+    >
+      Save as Draft
+    </button>
+    <button
+      className="ajc-button ajc-font-default ajc-button-red ajc-spacing-right-small"
+      id="generate-preview-button"
+      onClick={[Function]}
+      title="Generate a preview of your document in its current state."
+      type="button"
+    >
+      Generate Preview
+    </button>
+    <button
+      className="ajc-button ajc-font-default ajc-button-red"
+      id="publish-document-button"
+      onClick={[Function]}
+      title="When you are finished with your document, click here to publish it."
+      type="button"
+    >
+      Publish Document
+    </button>
+  </div>,
+  <div
+    className="ajc-flex-row ajc-spacing-bottom-small ajc-width-hd-inner ajc-text-black ajc-font-default ajc-flex-justify-left ajc-spacing-top-large"
+  >
+    <h2
+      className="ajc-font-paragraph-heading"
+    >
+      Click the button below to discard this current draft:
+    </h2>
+  </div>,
+  <div
+    className="ajc-flex-row ajc-spacing-bottom-small ajc-background-transparent ajc-width-hd-inner ajc-flex-justify-left ajc-spacing-top-reduced"
+  >
+    <button
+      className="ajc-button ajc-font-default ajc-button-red"
+      id="discard-draft-button"
+      onClick={[Function]}
+      title="Discard your current working document. Please note you will not be able to return to it after discarding it."
+      type="button"
+    >
+      Discard Draft
+    </button>
+  </div>,
+]
+`;
