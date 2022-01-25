@@ -92,7 +92,7 @@ class ControlsEditorUpper extends React.Component {
     const hiddenDivStyling = 'ajc-display-none';
     return (
       <React.Fragment>
-        <HorizontalButtonList alignment="left" additionalUpperSpacing={this.props.upperButtonListAdditionalSpacing} colour={this.props.colour}
+        <HorizontalButtonList alignment="left" additionalUpperSpacing={this.props.additionalSpacingAboveControls} colour={this.props.colour}
           buttonList={upperEditorButtonsList} labelText="Click the button below to add new items to your document:" />      
         <input id="add-new-item-user-value" type="text" readOnly={true} className={hiddenDivStyling} />
   
@@ -115,13 +115,13 @@ ControlsEditorUpper.propTypes = {
   dialogContentAreaColour: PropTypes.oneOf([ 'grey', 'white', 'yellow' ]),
   /** The time allowance between a state change and a re-render occurring. */
   reRenderAllowance: PropTypes.number,
-  /** Use additional spacing above the upper editor button list. */
-  upperButtonListAdditionalSpacing: PropTypes.bool,
+  /** Use additional spacing above the upper buttons. */
+  additionalSpacingAboveControls: PropTypes.bool,
 };
 ControlsEditorUpper.defaultProps = {
   colour: 'grey',
   dialogContentAreaColour: 'white',
   reRenderAllowance: 100,
-  upperButtonListAdditionalSpacing: false,
+  additionalSpacingAboveControls: false,
 };
 export default ControlsEditorUpper;
