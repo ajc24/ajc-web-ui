@@ -3,8 +3,6 @@ import React from 'react';
 import { TestDev } from 'ajc-jest-enzyme';
 import { DocumentEditor } from '../../../src';
 
-jest.useFakeTimers();
-
 describe('DocumentEditor', () => {
   describe('Default props and rendering - No custom properties set', () => {
     let wrapper;
@@ -33,62 +31,70 @@ describe('DocumentEditor', () => {
       expect(wrapper.find('ControlsEditor').prop('colour')).toBe('grey');
     });
 
-    it('verifies that the handleClickAddNewItem functionality is correctly set to the controls editor element', () => {
-      expect(wrapper.find('ControlsEditor').prop('handleClickAddNewItem')).toBeDefined();
+    it('verifies that the addEditorItem functionality is correctly set to the controls editor element', () => {
+      expect(wrapper.find('ControlsEditor').prop('addEditorItem')).toBeDefined();
     });
 
-    it('verifies that the upperButtonListAdditionalSpacing property is correctly set to the controls editor element', () => {
-      expect(wrapper.find('ControlsEditor').prop('upperButtonListAdditionalSpacing')).toBeFalsy();
+    it('verifies that the dialogContentAreaColour property is correctly passed to the controls editor element', () => {
+      expect(wrapper.find('ControlsEditor').prop('dialogContentAreaColour')).toBe('white');
     });
 
-    it('verifies that the colour property is correctly passed to the add new item dialog element', () => {
-      expect(wrapper.find('AddNewItemDialog').prop('colour')).toBe('grey');
+    it('verifies that the additionalSpacingAboveControls property is correctly set to the controls editor element', () => {
+      expect(wrapper.find('ControlsEditor').prop('additionalSpacingAboveControls')).toBeFalsy();
     });
 
-    it('verifies that the dialogContentAreaColour property is correctly passed to the add new item dialog element', () => {
-      expect(wrapper.find('AddNewItemDialog').prop('dialogContentAreaColour')).toBe('white');
-    });
-
-    it('verifies that the isDisplayed property is correctly set to the add new item dialog element', () => {
-      expect(wrapper.find('AddNewItemDialog').prop('isDisplayed')).toBeFalsy();
-    });
-
-    it('verifies that the handleClickAddNewItem functionality is correctly set to the add new item dialog element', () => {
-      expect(wrapper.find('AddNewItemDialog').prop('handleClickClose')).toBeDefined();
-    });
-
-    it('verifies that the handleClickAddNewItem functionality is correctly set to the add new item dialog element', () => {
-      expect(wrapper.find('AddNewItemDialog').prop('handleClickCancel')).toBeDefined();
-    });
-
-    it('verifies that the handleClickConfirmAddItem functionality is correctly set to the add new item dialog element', () => {
-      expect(wrapper.find('AddNewItemDialog').prop('handleClickConfirmAddItem')).toBeDefined();
-    });
-
-    it('verifies that the colour property is correctly passed to the loading new item dialog element', () => {
-      expect(wrapper.find('LoadingNewItemDialog').prop('colour')).toBe('grey');
-    });
-
-    it('verifies that the dialogContentAreaColour property is correctly passed to the loading new item dialog element', () => {
-      expect(wrapper.find('LoadingNewItemDialog').prop('dialogContentAreaColour')).toBe('white');
-    });
-
-    it('verifies that the isDisplayed property is correctly set to the loading new item dialog element', () => {
-      expect(wrapper.find('LoadingNewItemDialog').prop('isDisplayed')).toBeFalsy();
+    it('verifies that the reRenderAllowance property is correctly passed to the controls editor element', () => {
+      expect(wrapper.find('ControlsEditor').prop('reRenderAllowance')).toBeDefined();
     });
   });
 
-  describe('addEditorItem() functionality - Screenshot with caption text item id', () => {
+  describe('Transferred props and rendering - All custom properties set', () => {
     let wrapper;
 
     beforeAll(() => {
       wrapper = TestDev.mount(
         <React.Fragment>
+          <DocumentEditor colour="red" dialogContentAreaColour="grey" reRenderAllowance={500} />
+        </React.Fragment>
+      );
+    });
+
+    it('verifies that the colour property is correctly passed to the controls editor element', () => {
+      expect(wrapper.find('ControlsEditor').prop('colour')).toBe('red');
+    });
+
+    it('verifies that the dialogContentAreaColour property is correctly passed to the controls editor element', () => {
+      expect(wrapper.find('ControlsEditor').prop('dialogContentAreaColour')).toBe('grey');
+    });
+
+    it('verifies that the reRenderAllowance property is correctly passed to the controls editor element', () => {
+      expect(wrapper.find('ControlsEditor').prop('reRenderAllowance')).toBe(500);
+    });
+  });
+
+  describe('addEditorItem() functionality - Screenshot with caption text item id', () => {
+    let querySelectorSpy;
+    let wrapper;
+
+    beforeAll(() => {
+      querySelectorSpy = jest
+        .spyOn(global.document, 'querySelector')
+        .mockImplementation(() => {
+          return {
+            value: 'screenshot-with-caption',
+          };
+        });
+      wrapper = TestDev.mount(
+        <React.Fragment>
           <DocumentEditor colour="red" />
         </React.Fragment>
       );
-      wrapper.instance().addEditorItem('screenshot-with-caption');
+      wrapper.instance().addEditorItem();
       wrapper.update();
+    });
+
+    afterAll(() => {
+      querySelectorSpy.mockRestore();
     });
 
     it('verifies that the main form element contains one child element', () => {
@@ -137,16 +143,28 @@ describe('DocumentEditor', () => {
   });
 
   describe('addEditorItem() functionality - Invalid item id', () => {
+    let querySelectorSpy;
     let wrapper;
 
     beforeAll(() => {
+      querySelectorSpy = jest
+        .spyOn(global.document, 'querySelector')
+        .mockImplementation(() => {
+          return {
+            value: 'invalid-item-id',
+          };
+        });
       wrapper = TestDev.mount(
         <React.Fragment>
           <DocumentEditor colour="grey" />
         </React.Fragment>
       );
-      wrapper.instance().addEditorItem('invalid-item-id');
+      wrapper.instance().addEditorItem();
       wrapper.update();
+    });
+
+    afterAll(() => {
+      querySelectorSpy.mockRestore();
     });
 
     it('verifies that the main form element does not contain any child elements', () => {
@@ -171,16 +189,28 @@ describe('DocumentEditor', () => {
   });
 
   describe('countNumberOfExistingItemTypes() functionality - Count of existing items', () => {
+    let querySelectorSpy;
     let wrapper;
 
     beforeAll(() => {
+      querySelectorSpy = jest
+        .spyOn(global.document, 'querySelector')
+        .mockImplementation(() => {
+          return {
+            value: 'screenshot-with-caption',
+          };
+        });
       wrapper = TestDev.mount(
         <React.Fragment>
           <DocumentEditor colour="red" />
         </React.Fragment>
       );
-      wrapper.instance().addEditorItem('screenshot-with-caption');
-      wrapper.instance().addEditorItem('screenshot-with-caption');
+      wrapper.instance().addEditorItem();
+      wrapper.instance().addEditorItem();
+    });
+
+    afterAll(() => {
+      querySelectorSpy.mockRestore();
     });
 
     it('verifies that all relevant existing items are found in the list of all editor items', () => {
@@ -205,16 +235,28 @@ describe('DocumentEditor', () => {
   });
 
   describe('countNumberOfValidItemTypes() functionality - Count of valid items', () => {
+    let querySelectorSpy;
     let wrapper;
 
     beforeAll(() => {
+      querySelectorSpy = jest
+        .spyOn(global.document, 'querySelector')
+        .mockImplementation(() => {
+          return {
+            value: 'screenshot-with-caption',
+          };
+        });
       wrapper = TestDev.mount(
         <React.Fragment>
           <DocumentEditor colour="red" />
         </React.Fragment>
       );
-      wrapper.instance().addEditorItem('screenshot-with-caption');
-      wrapper.instance().addEditorItem('screenshot-with-caption');
+      wrapper.instance().addEditorItem();
+      wrapper.instance().addEditorItem();
+    });
+
+    afterAll(() => {
+      querySelectorSpy.mockRestore();
     });
 
     it('verifies that all valid items are found in the list of all editor items', () => {
@@ -228,7 +270,7 @@ describe('DocumentEditor', () => {
       {
         caption: undefined,
         characterLimit: 50,
-        filename: undefined,
+        fileName: undefined,
         imageData: undefined,
         index: 0,
         isDeleted: false,
@@ -236,90 +278,13 @@ describe('DocumentEditor', () => {
         itemType: 'screenshot-with-caption',
       },
     ];
-    let wrapper;
-
-    beforeAll(() => {
-      wrapper = TestDev.mount(
-        <React.Fragment>
-          <DocumentEditor colour="grey" />
-        </React.Fragment>
-      );
-      wrapper.instance().addEditorItem('screenshot-with-caption');
-      copyOfEditorItems = wrapper.instance().generateCopyOfEditorItems();
-    });
-
-    it('verifies that a valid copy of the editor items list is generated as expected', () => {
-      expect(copyOfEditorItems).toMatchObject(expectedCopyOfEditorItems);
-    });
-  });
-
-  describe('hideAddNewItemDialog() functionality', () => {
-    let wrapper;
-
-    beforeAll(() => {
-      wrapper = TestDev.mount(
-        <React.Fragment>
-          <DocumentEditor colour="red" />
-        </React.Fragment>
-      );
-      wrapper.instance().showAddNewItemDialog();
-      wrapper.update();
-      wrapper.instance().hideAddNewItemDialog();
-      wrapper.update();
-    });
-
-    it('verifies that the add new item dialog is marked as hidden as expected', () => {
-      expect(wrapper.find('AddNewItemDialog').prop('isDisplayed')).toBeFalsy();
-    });
-  });
-
-  describe('showAddNewItemDialog() functionality', () => {
-    let wrapper;
-
-    beforeAll(() => {
-      wrapper = TestDev.mount(
-        <React.Fragment>
-          <DocumentEditor colour="grey" />
-        </React.Fragment>
-      );
-      wrapper.instance().showAddNewItemDialog();
-      wrapper.update();
-    });
-
-    it('verifies that the add new item dialog is marked as visible as expected', () => {
-      expect(wrapper.find('AddNewItemDialog').prop('isDisplayed')).toBeTruthy();
-    });
-  });
-
-  describe('showInvalidFileTypeDialog() functionality', () => {
-    let wrapper;
-
-    beforeAll(() => {
-      wrapper = TestDev.mount(
-        <React.Fragment>
-          <DocumentEditor colour="red" />
-        </React.Fragment>
-      );
-      wrapper.instance().showInvalidFileTypeDialog();
-      wrapper.update();
-    });
-
-    it('verifies that the invalid file type dialog is marked as visible as expected', () => {
-      expect(true).toBeTruthy();
-    });
-  });
-
-  describe('showLoadingNewItemDialog() functionality', () => {
-    let addEditorItemSpy;
-    let isAddNewItemDialogDisplayed;
-    let isLoadingNewItemDialogDisplayed;
     let querySelectorSpy;
     let wrapper;
 
     beforeAll(() => {
       querySelectorSpy = jest
-        .spyOn(document, 'querySelector')
-        .mockImplementationOnce(() => {
+        .spyOn(global.document, 'querySelector')
+        .mockImplementation(() => {
           return {
             value: 'screenshot-with-caption',
           };
@@ -329,36 +294,16 @@ describe('DocumentEditor', () => {
           <DocumentEditor colour="grey" />
         </React.Fragment>
       );
-      addEditorItemSpy = jest
-        .spyOn(wrapper.instance(), 'addEditorItem')
-        .mockImplementation(() => {});
-      /* Invoke the functionality being tested and gather all data critical to the unit test verifications */
-      wrapper.instance().showLoadingNewItemDialog();
-      wrapper.update();
-      isAddNewItemDialogDisplayed = wrapper.find('AddNewItemDialog').prop('isDisplayed');
-      isLoadingNewItemDialogDisplayed = wrapper.find('LoadingNewItemDialog').prop('isDisplayed');
-      jest.runAllTimers();
+      wrapper.instance().addEditorItem();
+      copyOfEditorItems = wrapper.instance().generateCopyOfEditorItems();
     });
 
     afterAll(() => {
-      addEditorItemSpy.mockRestore();
       querySelectorSpy.mockRestore();
     });
 
-    it('verifies that the add new item dialog is marked as hidden as expected', () => {
-      expect(isAddNewItemDialogDisplayed).toBeFalsy();
-    });
-
-    it('verifies that the loading new item dialog is marked as visible as expected', () => {
-      expect(isLoadingNewItemDialogDisplayed).toBeTruthy();
-    });
-
-    it('verifies that the addEditorItem functionality is invoked', () => {
-      expect(addEditorItemSpy.mock.calls).toHaveLength(1);
-    });
-
-    it('verifies that the editor item id is correctly passed to the addEditorItem functionality', () => {
-      expect(addEditorItemSpy.mock.calls[0][0]).toBe('screenshot-with-caption');
+    it('verifies that a valid copy of the editor items list is generated as expected', () => {
+      expect(copyOfEditorItems).toMatchObject(expectedCopyOfEditorItems);
     });
   });
 });
@@ -369,6 +314,5 @@ describe('DocumentEditor', () => {
  * 1. countNumberOfExistingItemTypes() functionality - Include mix of items in the editor items list to ensure counter is very correct
  * 2. countNumberOfValidItemTypes() functionality - Include mix of deleted and non-deleted items to ensure counter is very correct
  * 3. generateCopyOfEditorItems() functionality - Include mix of deleted and non deleted items, mix of item types
- * 4. showInvalidFileTypeDialog() functionality - Write a better test for this when this function is fleshed out a bit more
- * 5. Add test for when the preview panel is displayed and editor items panel is hidden when this functionality it fleshed out
+ * 4. Add test for when the preview panel is displayed and editor items panel is hidden when this functionality it fleshed out
  */
