@@ -1,14 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AddNewItemDialog from './supporting-elements/dialogs/AddNewItemDialog';
 import ControlsEditor from './supporting-elements/controls/ControlsEditor';
-import LoadingNewItemDialog from './supporting-elements/dialogs/LoadingNewItemDialog';
 import FileSelection from '../form/FileSelection';
 import TextInput from '../form/TextInput';
 import '../../css/common.css';
 
 /* Data for use with the editor */
-const reRenderAllowance = 100;
 const screenshotCaptionTextCharacterLimit = 50;
 const validImageFileTypes = ['png', 'jpg', 'jpeg'];
 
@@ -19,8 +16,6 @@ class DocumentEditor extends React.Component {
 	constructor(props) {
 		super(props);
     this.state = {
-      dialogAddNewItem: false,
-      dialogLoadingNewItem: false,
       editorItems: [],
       showEditorPanel: true,
     };
@@ -30,17 +25,13 @@ class DocumentEditor extends React.Component {
     this.countNumberOfExistingItemTypes = this.countNumberOfExistingItemTypes.bind(this);
     this.countNumberOfValidItemTypes = this.countNumberOfValidItemTypes.bind(this);
     this.generateCopyOfEditorItems = this.generateCopyOfEditorItems.bind(this);
-    this.hideAddNewItemDialog = this.hideAddNewItemDialog.bind(this);
-    this.showAddNewItemDialog = this.showAddNewItemDialog.bind(this);
-    this.showInvalidFileTypeDialog = this.showInvalidFileTypeDialog.bind(this);
-    this.showLoadingNewItemDialog = this.showLoadingNewItemDialog.bind(this);
 	}
 
   /**
    * Adds a new editor item to the list of all editor items
-   * @param {string} itemId 
    */
-  addEditorItem(itemId) {
+  addEditorItem() {
+    const itemId = document.querySelector('input[id="add-new-item-user-value"]').value;
     const editorItemsCopy = this.generateCopyOfEditorItems();
     const numberOfExistingItemTypes = this.countNumberOfExistingItemTypes(itemId);
     let isInvalidItem = false;
@@ -49,8 +40,9 @@ class DocumentEditor extends React.Component {
       editorItemsCopy.push({
         caption: undefined,
         characterLimit: screenshotCaptionTextCharacterLimit,
-        filename: undefined,
+        fileName: undefined,
         imageData: undefined,
+        reviewIndex: undefined,
       });
     } else {
       /* Mark this item as invalid - this also marks the item as deleted so as it can never be rendered */
@@ -64,7 +56,6 @@ class DocumentEditor extends React.Component {
     editorItemsCopy[this.state.editorItems.length].itemType = itemId;
     /* Update state to include the new editor items list and set the loading dialog as hidden */
     const newState = Object.assign({}, this.state, {
-      dialogLoadingNewItem: false,
       editorItems: editorItemsCopy,
     });
     this.setState(newState);
@@ -111,50 +102,6 @@ class DocumentEditor extends React.Component {
     return editorItemsCopy;
   }
 
-  /**
-   * Marks the add new item dialog as hidden
-   */
-  hideAddNewItemDialog() {
-    const newState = Object.assign({}, this.state, {
-      dialogAddNewItem: false,
-    });
-    this.setState(newState);
-  }
-
-  /**
-   * Marks the add new item dialog as visible
-   */
-  showAddNewItemDialog() {
-    const newState = Object.assign({}, this.state, {
-      dialogAddNewItem: true,
-    });
-    this.setState(newState);
-  }
-
-  /**
-   * Marks the invalid file type dialog as visible
-   */
-  showInvalidFileTypeDialog() {}
-
-  /**
-   * Marks the loading dialog for adding a new item as visible.
-   * Then proceeds to determine the itemId for the newly selected item and
-   * forwards that value to the addEditorItem function.
-   */
-  showLoadingNewItemDialog() {
-    /* Now work on adding the new item to the editor */
-    const itemId = document.querySelector('select[id="add-new-item-dropdown-menu-id"]').value;
-    const newState = Object.assign({}, this.state, {
-      dialogAddNewItem: false,
-      dialogLoadingNewItem: true,
-    });
-    this.setState(newState);
-    /* Invoke the functionality to add the new editor item */
-    setTimeout(() => {
-      this.addEditorItem(itemId);
-    }, reRenderAllowance);
-  }
-
 	render() {
     /* Set the styling for the root component */
     const rootStyling = 'ajc-flex-column ajc-flex-justify-left ajc-background-transparent ajc-width-hd-inner ajc-spacing-bottom-small ajc-text-black ajc-font-default';
@@ -169,39 +116,33 @@ class DocumentEditor extends React.Component {
       editorPanelRootStyling = 'ajc-visibility-visible';
       previewPanelRootStyling = 'ajc-visibility-hidden';
     }
-
     /* Determine whether any valid items are displayed or not */
-    let upperControlsEditorAdditionalSpacing = this.countNumberOfValidItemTypes() > 0;
+    let additionalSpacingAboveControls = this.countNumberOfValidItemTypes() > 0;
     return (
       <div className={rootStyling}>
         {/* Editor panel */}
         <div id="main-editor-container" className={editorPanelRootStyling}>
           <form id="main-editor-form-id">
             {
-              this.state.editorItems.map((item, index) => {
+              this.state.editorItems.map(item => {
                 if (item.itemType === 'screenshot-with-caption' && item.isDeleted === false) {
                   /** Render the screenshot with caption form item */
                   return (
-                    <div id={`screenshot-with-caption-${index}-container`} key={`screenshot-with-caption-${index}-container`}>
-                      <FileSelection id={`screenshot-with-caption-${index}`} colour={this.props.colour} validFileTypes={validImageFileTypes} 
-                        onInvalidFileType={this.showInvalidFileTypeDialog} />
-                      <TextInput id={`screenshot-with-caption-${index}`} characterLimit={screenshotCaptionTextCharacterLimit} />
+                    <div id={`screenshot-with-caption-${item.index}-container`} key={`screenshot-with-caption-${item.index}-container`}>
+                      <FileSelection id={`screenshot-with-caption-${item.index}`} colour={this.props.colour} validFileTypes={validImageFileTypes} 
+                        onInvalidFileType={() => {}} labelText={`Add / Edit Screenshot ${item.itemIndex}`} additionalUpperSpacing={true}
+                        imagePath={item.fileName}/>
+                      <TextInput id={`screenshot-with-caption-${item.index}`} characterLimit={screenshotCaptionTextCharacterLimit}
+                        labelText="Please enter the caption text for this screenshot:" />
                     </div>
                   );
                 }
               })
             }
           </form>
-          <ControlsEditor colour={this.props.colour} handleClickAddNewItem={this.showAddNewItemDialog}
-            upperButtonListAdditionalSpacing={upperControlsEditorAdditionalSpacing} />
+          <ControlsEditor colour={this.props.colour} addEditorItem={this.addEditorItem} dialogContentAreaColour={this.props.dialogContentAreaColour}
+            additionalSpacingAboveControls={additionalSpacingAboveControls} reRenderAllowance={this.props.reRenderAllowance} />
         </div>
-
-        {/* Add new item dialog */}
-        <AddNewItemDialog colour={this.props.colour} dialogContentAreaColour={this.props.dialogContentAreaColour} isDisplayed={this.state.dialogAddNewItem}
-          handleClickClose={this.hideAddNewItemDialog} handleClickCancel={this.hideAddNewItemDialog} handleClickConfirmAddItem={this.showLoadingNewItemDialog} />
-        
-        {/* Loading new item dialog */}
-        <LoadingNewItemDialog colour={this.props.colour} dialogContentAreaColour={this.props.dialogContentAreaColour} isDisplayed={this.state.dialogLoadingNewItem} />
 
         {/* Preview panel */}
         <div id="preview-panel-container" className={previewPanelRootStyling}>
@@ -216,9 +157,12 @@ DocumentEditor.propTypes = {
   colour: PropTypes.oneOf([ 'grey', 'red' ]),
   /** The background colour for the content area of any dialogs rendered in the editor. By default this is set to white. */
   dialogContentAreaColour: PropTypes.oneOf([ 'grey', 'white', 'yellow' ]),
+  /** The time allowance between a state change and a re-render occurring. */
+  reRenderAllowance: PropTypes.number,
 };
 DocumentEditor.defaultProps = {
 	colour: 'grey',
   dialogContentAreaColour: 'white',
+  reRenderAllowance: 100,
 };
 export default DocumentEditor;
