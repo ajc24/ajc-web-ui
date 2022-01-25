@@ -94,7 +94,7 @@ describe('ControlsEditorUpper', () => {
       /* Mount the component */
       wrapper = TestDev.mount(
         <React.Fragment>
-          <ControlsEditorUpper addEditorItem={jest.fn()} colour="red" dialogContentAreaColour="grey" upperButtonListAdditionalSpacing={true} />
+          <ControlsEditorUpper addEditorItem={jest.fn()} colour="red" dialogContentAreaColour="grey" additionalSpacingAboveControls={true} />
         </React.Fragment>
       );
     });
