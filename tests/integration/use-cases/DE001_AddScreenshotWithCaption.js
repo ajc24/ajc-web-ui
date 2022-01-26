@@ -7,10 +7,26 @@ jest.useFakeTimers();
 
 describe('Document Editor: Reference 001', () => {
   describe('Add Screenshot With Caption', () => {
-    let querySelectorSpy;
+    let optionElement;
+    let selectElement;
+    let spanHiddenElement;
     let wrapper;
 
     beforeAll(() => {
+      /* Add the relevant elements to the document body */
+      optionElement = document.createElement('option');
+      optionElement.setAttribute('value', 'screenshot-with-caption');
+
+      selectElement = document.createElement('select');
+      selectElement.setAttribute('id', 'add-new-item-dropdown-menu-id');
+      selectElement.appendChild(optionElement);
+      document.body.appendChild(selectElement);
+
+      spanHiddenElement = document.createElement('span');
+      spanHiddenElement.setAttribute('id', 'add-new-item-user-value');
+      spanHiddenElement.textContent = '';
+      document.body.appendChild(spanHiddenElement);
+      /* Mount the component being tested */
       wrapper = TestDev.mount(
         <PageContent title="DE001 - Add Screenshot With Caption">
           <DocumentEditor />
@@ -19,7 +35,9 @@ describe('Document Editor: Reference 001', () => {
     });
 
     afterAll(() => {
-      querySelectorSpy.mockRestore();
+      selectElement.removeChild(optionElement);
+      document.body.removeChild(selectElement);
+      document.body.removeChild(spanHiddenElement);
     });
 
     it('verifies that a screenshot with caption element can be added to the document editor', () => {
@@ -31,12 +49,7 @@ describe('Document Editor: Reference 001', () => {
       expect(wrapper.find('AddNewItemDialog').prop('isDisplayed')).toBeTruthy();
 
       /* Step 3: The user selects the "Screenshot with Caption" option from the dropdown menu labelled "Please select an item to be added to your document:" */
-      querySelectorSpy = jest.spyOn(document, 'querySelector')
-        .mockImplementationOnce(() => {
-          return {
-            value: 'screenshot-with-caption',
-          };
-        });
+      selectElement.value = 'screenshot-with-caption';
 
       /* Step 4: The user clicks on the button labelled "Confirm and Add". */
       wrapper.find('button#confirm-add-new-item-button').prop('onClick')();
