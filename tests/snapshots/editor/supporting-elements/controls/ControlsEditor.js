@@ -10,7 +10,7 @@ describe('ControlsEditor', () => {
     beforeAll(() => {
       jsonSnapshot = TestDev.createSnapshot(
         <React.Fragment>
-          <ControlsEditor />
+          <ControlsEditor addEditorItem={jest.fn()} />
         </React.Fragment>
       );
     });
@@ -25,7 +25,7 @@ describe('ControlsEditor', () => {
     beforeAll(() => {
       jsonSnapshot = TestDev.createSnapshot(
         <React.Fragment>
-          <ControlsEditor colour="red" handleClickAddNewItem={jest.fn()} upperButtonListAdditionalSpacing={true} />
+          <ControlsEditor colour="red" addEditorItem={jest.fn()} additionalSpacingAboveControls={true} dialogContentAreaColour="grey" reRenderAllowance={500} />
         </React.Fragment>
       );
     });
