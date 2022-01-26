@@ -45,7 +45,7 @@ describe('DocumentEditor', () => {
         .spyOn(global.document, 'querySelector')
         .mockImplementation(() => {
           return {
-            value: 'screenshot-with-caption',
+            textContent: 'screenshot-with-caption',
           };
         });
       const wrapper = TestDev.mount(

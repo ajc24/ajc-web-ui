@@ -16,7 +16,7 @@ describe('ControlsEditor', () => {
       const html = TestDev.mountHtmlTemplate(
         <PageContent title="Accessibility Test">
           <h1>Controls Editor Accessibility Test</h1>
-          <ControlsEditor />
+          <ControlsEditor addEditorItem={jest.fn()} />
         </PageContent>
       );
       results = await AccessibilityDev.runAxeCore(html);
@@ -34,7 +34,7 @@ describe('ControlsEditor', () => {
       const html = TestDev.mountHtmlTemplate(
         <PageContent title="Accessibility Test">
           <h1>Controls Editor Accessibility Test</h1>
-          <ControlsEditor colour="red" handleClickAddNewItem={jest.fn()} upperButtonListAdditionalSpacing={true} />
+          <ControlsEditor colour="red" addEditorItem={jest.fn()} additionalSpacingAboveControls={true} dialogContentAreaColour="grey" reRenderAllowance={500} />
         </PageContent>
       );
       results = await AccessibilityDev.runAxeCore(html);

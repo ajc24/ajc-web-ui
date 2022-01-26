@@ -33,11 +33,9 @@ exports[`DocumentEditor Default props and rendering - Component with grey theme 
         Add New Item
       </button>
     </div>
-    <input
+    <span
       className="ajc-display-none"
       id="add-new-item-user-value"
-      readOnly={true}
-      type="text"
     />
   </div>
   <div
@@ -82,11 +80,9 @@ exports[`DocumentEditor Transferred props and rendering - Component with all cus
         Add New Item
       </button>
     </div>
-    <input
+    <span
       className="ajc-display-none"
       id="add-new-item-user-value"
-      readOnly={true}
-      type="text"
     />
   </div>
   <div
@@ -98,4 +94,4 @@ exports[`DocumentEditor Transferred props and rendering - Component with all cus
 </div>
 `;
 
-exports[`DocumentEditor Transferred props and rendering - Editor displaying screenshot with caption item verifies the snapshot for the component 1`] = `"<div class=\\"ajc-flex-column ajc-flex-justify-left ajc-background-transparent ajc-width-hd-inner ajc-spacing-bottom-small ajc-text-black ajc-font-default\\"><div id=\\"main-editor-container\\" class=\\"ajc-visibility-visible\\"><form id=\\"main-editor-form-id\\"><div id=\\"screenshot-with-caption-0-container\\"><div id=\\"screenshot-with-caption-0-file-selection-root\\" class=\\"ajc-flex-column ajc-flex-justify-left ajc-background-transparent ajc-black-text ajc-font-default\\"><label for=\\"screenshot-with-caption-0-file\\" class=\\"ajc-row ajc-flex-justify-left ajc-spacing-bottom-small ajc-spacing-bottom-reduced ajc-label-standalone ajc-spacing-top-large\\">Add / Edit Screenshot 1</label><p class=\\"ajc-flex-row ajc-background-transparent ajc-page-content-text ajc-spacing-bottom-small ajc-text-black ajc-font-default ajc-flex-justify-left\\">Loading. Please wait.</p><img id=\\"screenshot-with-caption-0-image\\" role=\\"presentation\\"><input id=\\"screenshot-with-caption-0-file\\" name=\\"screenshot-with-caption-0-file\\" type=\\"file\\" class=\\"ajc-display-none\\"></div><div id=\\"screenshot-with-caption-0-text-input-root\\" class=\\"ajc-flex-column ajc-flex-justify-left ajc-background-transparent ajc-spacing-bottom-small ajc-text-black ajc-font-default\\">Text Input Component</div></div></form><div class=\\"ajc-flex-row ajc-spacing-bottom-small ajc-width-hd-inner ajc-text-black ajc-font-default ajc-flex-justify-left ajc-spacing-top-large\\"><h2 class=\\"ajc-font-paragraph-heading\\">Click the button below to add new items to your document:</h2></div><div class=\\"ajc-flex-row ajc-spacing-bottom-small ajc-background-transparent ajc-width-hd-inner ajc-flex-justify-left ajc-spacing-top-reduced\\"><button id=\\"add-new-item-button\\" class=\\"ajc-button ajc-font-default ajc-button-grey\\" type=\\"button\\" title=\\"Add a new item to your document.\\">Add New Item</button></div><input id=\\"add-new-item-user-value\\" type=\\"text\\" readonly=\\"\\" class=\\"ajc-display-none\\"></div><div id=\\"preview-panel-container\\" class=\\"ajc-visibility-hidden\\">Hello World</div></div>"`;
+exports[`DocumentEditor Transferred props and rendering - Editor displaying screenshot with caption item verifies the snapshot for the component 1`] = `"<div class=\\"ajc-flex-column ajc-flex-justify-left ajc-background-transparent ajc-width-hd-inner ajc-spacing-bottom-small ajc-text-black ajc-font-default\\"><div id=\\"main-editor-container\\" class=\\"ajc-visibility-visible\\"><form id=\\"main-editor-form-id\\"><div id=\\"screenshot-with-caption-0-container\\"><div id=\\"screenshot-with-caption-0-file-selection-root\\" class=\\"ajc-flex-column ajc-flex-justify-left ajc-background-transparent ajc-black-text ajc-font-default\\"><label for=\\"screenshot-with-caption-0-file\\" class=\\"ajc-row ajc-flex-justify-left ajc-spacing-bottom-small ajc-spacing-bottom-reduced ajc-label-standalone ajc-spacing-top-large\\">Add / Edit Screenshot 1</label><p class=\\"ajc-flex-row ajc-background-transparent ajc-page-content-text ajc-spacing-bottom-small ajc-text-black ajc-font-default ajc-flex-justify-left\\">Loading. Please wait.</p><img id=\\"screenshot-with-caption-0-image\\" role=\\"presentation\\"><input id=\\"screenshot-with-caption-0-file\\" name=\\"screenshot-with-caption-0-file\\" type=\\"file\\" class=\\"ajc-display-none\\"></div><div id=\\"screenshot-with-caption-0-text-input-root\\" class=\\"ajc-flex-column ajc-flex-justify-left ajc-background-transparent ajc-spacing-bottom-small ajc-text-black ajc-font-default\\">Text Input Component</div></div></form><div class=\\"ajc-flex-row ajc-spacing-bottom-small ajc-width-hd-inner ajc-text-black ajc-font-default ajc-flex-justify-left ajc-spacing-top-large\\"><h2 class=\\"ajc-font-paragraph-heading\\">Click the button below to add new items to your document:</h2></div><div class=\\"ajc-flex-row ajc-spacing-bottom-small ajc-background-transparent ajc-width-hd-inner ajc-flex-justify-left ajc-spacing-top-reduced\\"><button id=\\"add-new-item-button\\" class=\\"ajc-button ajc-font-default ajc-button-grey\\" type=\\"button\\" title=\\"Add a new item to your document.\\">Add New Item</button></div><span id=\\"add-new-item-user-value\\" class=\\"ajc-display-none\\"></span></div><div id=\\"preview-panel-container\\" class=\\"ajc-visibility-hidden\\">Hello World</div></div>"`;

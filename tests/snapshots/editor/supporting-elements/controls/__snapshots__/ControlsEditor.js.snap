@@ -24,11 +24,9 @@ Array [
       Add New Item
     </button>
   </div>,
-  <input
+  <span
     className="ajc-display-none"
     id="add-new-item-user-value"
-    readOnly={true}
-    type="text"
   />,
 ]
 `;
@@ -57,11 +55,9 @@ Array [
       Add New Item
     </button>
   </div>,
-  <input
+  <span
     className="ajc-display-none"
     id="add-new-item-user-value"
-    readOnly={true}
-    type="text"
   />,
 ]
 `;

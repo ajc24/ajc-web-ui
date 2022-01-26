@@ -81,7 +81,7 @@ describe('DocumentEditor', () => {
         .spyOn(global.document, 'querySelector')
         .mockImplementation(() => {
           return {
-            value: 'screenshot-with-caption',
+            textContent: 'screenshot-with-caption',
           };
         });
       wrapper = TestDev.mount(
@@ -151,7 +151,7 @@ describe('DocumentEditor', () => {
         .spyOn(global.document, 'querySelector')
         .mockImplementation(() => {
           return {
-            value: 'invalid-item-id',
+            textContent: 'invalid-item-id',
           };
         });
       wrapper = TestDev.mount(
@@ -197,7 +197,7 @@ describe('DocumentEditor', () => {
         .spyOn(global.document, 'querySelector')
         .mockImplementation(() => {
           return {
-            value: 'screenshot-with-caption',
+            textContent: 'screenshot-with-caption',
           };
         });
       wrapper = TestDev.mount(
@@ -243,7 +243,7 @@ describe('DocumentEditor', () => {
         .spyOn(global.document, 'querySelector')
         .mockImplementation(() => {
           return {
-            value: 'screenshot-with-caption',
+            textContent: 'screenshot-with-caption',
           };
         });
       wrapper = TestDev.mount(
@@ -286,7 +286,7 @@ describe('DocumentEditor', () => {
         .spyOn(global.document, 'querySelector')
         .mockImplementation(() => {
           return {
-            value: 'screenshot-with-caption',
+            textContent: 'screenshot-with-caption',
           };
         });
       wrapper = TestDev.mount(

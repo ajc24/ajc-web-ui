@@ -33,7 +33,7 @@ describe('DocumentEditor', () => {
       const html = TestDev.mountHtmlTemplate(
         <PageContent title="Accessibility Test">
           <h1>Document Editor Accessibility Test</h1>
-          <DocumentEditor colour="red" dialogContentAreaColour="grey" />
+          <DocumentEditor colour="red" dialogContentAreaColour="grey" reRenderAllowance={500} />
         </PageContent>
       );
       results = await AccessibilityDev.runAxeCore(html);
@@ -44,38 +44,16 @@ describe('DocumentEditor', () => {
     });
   });
 
-  describe('Dialog visible - Add new item dialog', () => {
-    let results;
-
-    beforeAll(async () => {
-      const wrapper = TestDev.mount(
-        <PageContent title="Accessibility Test">
-          <h1>Document Editor Accessibility Test</h1>
-          <DocumentEditor />
-        </PageContent>
-      );
-      wrapper.find('DocumentEditor').instance().showAddNewItemDialog();
-      wrapper.update();
-      const wrapperHtml = TestDev.html(wrapper);
-      const html = TestDev.mountHtmlTemplate(wrapperHtml);
-      results = await AccessibilityDev.runAxeCore(html);
-    }, testTimeout);
-
-    it('verifies the accessibility standards for the component', () => {
-      expect(results).toBeTruthy();
-    });
-  });
-
-  describe('Dialog visible - Loading new item dialog', () => {
+  describe('Transferred props and rendering - Editor displaying screenshot with caption item', () => {
     let querySelectorSpy;
     let results;
 
     beforeAll(async () => {
       querySelectorSpy = jest
-        .spyOn(document, 'querySelector')
+        .spyOn(global.document, 'querySelector')
         .mockImplementationOnce(() => {
           return {
-            value: 'screenshot-with-caption',
+            textContent: 'screenshot-with-caption',
           };
         });
       const wrapper = TestDev.mount(
@@ -84,7 +62,7 @@ describe('DocumentEditor', () => {
           <DocumentEditor />
         </PageContent>
       );
-      wrapper.find('DocumentEditor').instance().showLoadingNewItemDialog();
+      wrapper.find('DocumentEditor').instance().addEditorItem();
       wrapper.update();
       const wrapperHtml = TestDev.html(wrapper);
       const html = TestDev.mountHtmlTemplate(wrapperHtml);
@@ -94,28 +72,6 @@ describe('DocumentEditor', () => {
     afterAll(() => {
       querySelectorSpy.mockRestore();
     });
-
-    it('verifies the accessibility standards for the component', () => {
-      expect(results).toBeTruthy();
-    });
-  });
-
-  describe('Transferred props and rendering - Editor displaying screenshot with caption item', () => {
-    let results;
-
-    beforeAll(async () => {
-      const wrapper = TestDev.mount(
-        <PageContent title="Accessibility Test">
-          <h1>Document Editor Accessibility Test</h1>
-          <DocumentEditor />
-        </PageContent>
-      );
-      wrapper.find('DocumentEditor').instance().addEditorItem('screenshot-with-caption');
-      wrapper.update();
-      const wrapperHtml = TestDev.html(wrapper);
-      const html = TestDev.mountHtmlTemplate(wrapperHtml);
-      results = await AccessibilityDev.runAxeCore(html);
-    }, testTimeout);
 
     it('verifies the accessibility standards for the component', () => {
       expect(results).toBeTruthy();

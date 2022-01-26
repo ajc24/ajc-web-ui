@@ -42,12 +42,12 @@ describe('ControlsEditorUpper', () => {
       expect(wrapper.find('HorizontalButtonList').prop('labelText')).toBe('Click the button below to add new items to your document:');
     });
 
-    it('verifies that the hidden input field element is rendered', () => {
-      expect(wrapper.find('input#add-new-item-user-value').exists()).toBeTruthy();
+    it('verifies that the hidden span element is rendered', () => {
+      expect(wrapper.find('span#add-new-item-user-value').exists()).toBeTruthy();
     });
 
-    it('verifies that by default, there is no value set to the hidden input field element', () => {
-      expect(wrapper.find('input#add-new-item-user-value').instance().value).toBe('');
+    it('verifies that by default, there is no value set to the hidden span element', () => {
+      expect(wrapper.find('span#add-new-item-user-value').instance().textContent).toBe('');
     });
 
     it('verifies that the colour property is correctly passed to the add new item dialog element', () => {
@@ -221,9 +221,9 @@ describe('ControlsEditorUpper', () => {
         .spyOn(global.document, 'querySelector')
         .mockImplementation(cssSelector => {
           let response;
-          if (cssSelector === 'input[id="add-new-item-user-value"]') {
+          if (cssSelector === 'span[id="add-new-item-user-value"]') {
             response = {
-              value: '',
+              textContent: '',
             };
           } else if (cssSelector === 'select[id="add-new-item-dropdown-menu-id"]') {
             response = {
