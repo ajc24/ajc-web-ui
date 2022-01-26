@@ -27,7 +27,7 @@ class ControlsEditorUpper extends React.Component {
    */
   handleClickConfirmAddItem() {
     /* Set the user value to the hidden input field */
-    document.querySelector('input[id="add-new-item-user-value"]').value = document.querySelector('select[id="add-new-item-dropdown-menu-id"]').value;
+    document.querySelector('span[id="add-new-item-user-value"]').textContent = document.querySelector('select[id="add-new-item-dropdown-menu-id"]').value;
     /* Invoke the functionality to add the new editor item */
     this.showLoadingNewItemDialog();
     setTimeout(() => {
@@ -88,13 +88,13 @@ class ControlsEditorUpper extends React.Component {
         type: 'button',
       },
     ];
-    /* Set the CSS styling for the input field to hold the value of the item to be added */
-    const hiddenDivStyling = 'ajc-display-none';
+    /* Set the CSS styling for the span element to hold the value of the item to be added */
+    const hiddenSpanStyling = 'ajc-display-none';
     return (
       <React.Fragment>
         <HorizontalButtonList alignment="left" additionalUpperSpacing={this.props.additionalSpacingAboveControls} colour={this.props.colour}
           buttonList={upperEditorButtonsList} labelText="Click the button below to add new items to your document:" />      
-        <input id="add-new-item-user-value" type="text" readOnly={true} className={hiddenDivStyling} />
+        <span id="add-new-item-user-value" className={hiddenSpanStyling} />
   
         {/* Add new item dialog */}
         <AddNewItemDialog colour={this.props.colour} dialogContentAreaColour={this.props.dialogContentAreaColour} isDisplayed={this.state.dialogAddNewItem}

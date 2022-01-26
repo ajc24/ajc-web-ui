@@ -31,7 +31,7 @@ class DocumentEditor extends React.Component {
    * Adds a new editor item to the list of all editor items
    */
   addEditorItem() {
-    const itemId = document.querySelector('input[id="add-new-item-user-value"]').value;
+    const itemId = document.querySelector('span[id="add-new-item-user-value"]').textContent;
     const editorItemsCopy = this.generateCopyOfEditorItems();
     const numberOfExistingItemTypes = this.countNumberOfExistingItemTypes(itemId);
     let isInvalidItem = false;
