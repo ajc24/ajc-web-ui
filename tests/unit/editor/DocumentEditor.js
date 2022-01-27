@@ -109,36 +109,24 @@ describe('DocumentEditor', () => {
       expect(wrapper.find('div#screenshot-with-caption-0-container').children()).toHaveLength(2);
     });
 
-    it('verifies that a FileSelection item is rendered', () => {
-      expect(wrapper.find('div#screenshot-with-caption-0-container FileSelection').exists()).toBeTruthy();
+    it('verifies that a ScreenshotWithCaption form item is rendered', () => {
+      expect(wrapper.find('ScreenshotWithCaption').exists()).toBeTruthy();
     });
 
-    it('verifies that the id property is correctly passed to the FileSelection element', () => {
-      expect(wrapper.find('div#screenshot-with-caption-0-container FileSelection').prop('id')).toBe('screenshot-with-caption-0');
+    it('verifies that the item property is correctly passed to the ScreenshotWithCaption form item', () => {
+      expect(wrapper.find('ScreenshotWithCaption').prop('item')).toBeDefined();
     });
 
-    it('verifies that the colour property is correctly passed to the FileSelection element', () => {
-      expect(wrapper.find('div#screenshot-with-caption-0-container FileSelection').prop('colour')).toBe('red');
+    it('verifies that the colour property is correctly passed to the ScreenshotWithCaption form item', () => {
+      expect(wrapper.find('ScreenshotWithCaption').prop('colour')).toBe('red');
     });
 
-    it('verifies that the validFileTypes property is correctly passed to the FileSelection element', () => {
-      expect(wrapper.find('div#screenshot-with-caption-0-container FileSelection').prop('validFileTypes')).toMatchObject(['png', 'jpg', 'jpeg']);
+    it('verifies that the validFileTypes property is correctly passed to the ScreenshotWithCaption form item', () => {
+      expect(wrapper.find('ScreenshotWithCaption').prop('validFileTypes')).toMatchObject(['png', 'jpg', 'jpeg']);
     });
 
-    it('verifies that the onInvalidFileType functionality is correctly set to the FileSelection element', () => {
-      expect(wrapper.find('div#screenshot-with-caption-0-container FileSelection').prop('onInvalidFileType')).toBeDefined();
-    });
-
-    it('verifies that a TextInput item is rendered', () => {
-      expect(wrapper.find('div#screenshot-with-caption-0-container TextInput').exists()).toBeTruthy();
-    });
-
-    it('verifies that the id property is correctly passed to the TextInput element', () => {
-      expect(wrapper.find('div#screenshot-with-caption-0-container TextInput').prop('id')).toBe('screenshot-with-caption-0');
-    });
-
-    it('verifies that the characterLimit property is correctly passed to the TextInput element', () => {
-      expect(wrapper.find('div#screenshot-with-caption-0-container TextInput').prop('characterLimit')).toBe(50);
+    it('verifies that the characterLimit property is correctly passed to the ScreenshotWithCaption form item', () => {
+      expect(wrapper.find('ScreenshotWithCaption').prop('characterLimit')).toBe(50);
     });
   });
 
@@ -276,6 +264,7 @@ describe('DocumentEditor', () => {
         isDeleted: false,
         itemIndex: 1,
         itemType: 'screenshot-with-caption',
+        reviewIndex: undefined,
       },
     ];
     let querySelectorSpy;
