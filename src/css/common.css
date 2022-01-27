@@ -30,6 +30,10 @@
   border-color: #000000;
 }
 
+.ajc-display-none {
+  display: none;
+}
+
 .ajc-flex-column {
   display: flex;
   flex-direction: column;

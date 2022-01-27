@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ControlsEditor from './supporting-elements/controls/ControlsEditor';
-import FileSelection from '../form/FileSelection';
-import TextInput from '../form/TextInput';
+import ScreenshotWithCaption from './supporting-elements/form-items/ScreenshotWithCaption';
 import '../../css/common.css';
 
 /* Data for use with the editor */
@@ -127,15 +126,10 @@ class DocumentEditor extends React.Component {
               this.state.editorItems.map(item => {
                 if (item.itemType === 'screenshot-with-caption' && item.isDeleted === false) {
                   /** Render the screenshot with caption form item */
-                  return (
-                    <div id={`screenshot-with-caption-${item.index}-container`} key={`screenshot-with-caption-${item.index}-container`}>
-                      <FileSelection id={`screenshot-with-caption-${item.index}`} colour={this.props.colour} validFileTypes={validImageFileTypes} 
-                        onInvalidFileType={() => {}} labelText={`Add / Edit Screenshot ${item.itemIndex}`} additionalUpperSpacing={true}
-                        imagePath={item.fileName}/>
-                      <TextInput id={`screenshot-with-caption-${item.index}`} characterLimit={screenshotCaptionTextCharacterLimit}
-                        labelText="Please enter the caption text for this screenshot:" />
-                    </div>
-                  );
+                  return <React.Fragment key={`screenshot-with-caption-${item.index}-container`}>
+                    <ScreenshotWithCaption item={item} colour={this.props.colour} validFileTypes={validImageFileTypes}
+                      characterLimit={screenshotCaptionTextCharacterLimit} />
+                  </React.Fragment>;
                 }
               })
             }
